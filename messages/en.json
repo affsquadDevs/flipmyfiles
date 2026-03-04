@@ -1,0 +1,349 @@
+{
+  "nav": {
+    "tools": "Tools",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "allTools": "All Tools",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "description": "Free online file converter supporting 100+ formats. No signup required. Your files are processed securely and never stored.",
+    "links": "Links",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved.",
+    "allTools": "All Tools",
+    "imageConverter": "Image Converter",
+    "videoConverter": "Video Converter",
+    "audioConverter": "Audio Converter",
+    "about": "About",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "home": {
+    "badge": "100% Free · No Signup Required · 100+ Formats",
+    "hero": {
+      "title": "Convert Any File,",
+      "titleHighlight": "Instantly",
+      "subtitle": "Free online file converter for images, video, audio & documents. Nothing to install. No account needed."
+    },
+    "dropzone": {
+      "idle": "Drag & drop your file here",
+      "dragging": "Drop your file here",
+      "subtitle": "or click the button below to browse your device",
+      "button": "Upload & Convert",
+      "aria": "Drop zone: drag and drop your file here or press Enter to browse",
+      "chooseFile": "Choose file to convert",
+      "maxSize": "Max file size: 250 MB"
+    },
+    "chooseFormat": "Choose Output Format",
+    "cta": {
+      "title": "Ready to Convert Your Files?",
+      "subtitle": "Upload a file to get started. No registration, no software to install, and no hidden fees. Your file will be converted and ready to download in seconds.",
+      "button": "Upload & Convert"
+    }
+  },
+  "converter": {
+    "dropzone": {
+      "title": "Drop your {format} file here",
+      "subtitle": "or click to browse from your device",
+      "button": "Choose File",
+      "supports": "Supports {format} · Max 250 MB",
+      "aria": "Drop zone: drag and drop your {format} file here or press Enter to browse"
+    },
+    "convertBtn": "Convert to {format}",
+    "home": "Home",
+    "tools": "Tools",
+    "privacy": {
+      "browser": "🔒 Converted entirely in your browser — your file never leaves your device.",
+      "server": "🔒 Files are processed securely and deleted immediately after conversion."
+    },
+    "whatIs": "What Is {format}?",
+    "whyConvert": "Why Convert {from} to {to}?",
+    "howToConvert": "How to Convert {from} to {to}",
+    "faqTitle": "Frequently Asked Questions",
+    "relatedConversions": "Related Conversions",
+    "securityTitle": "Privacy & Security",
+    "securityBrowser": "This conversion is processed entirely in your browser using WebAssembly. Your file is never uploaded to our servers — full privacy guaranteed.",
+    "securityServer": "Your file is transmitted over HTTPS and processed in server memory only. It is never saved to disk and is discarded immediately after the converted file is returned to you.",
+    "steps": {
+      "uploadTitle": "Upload your {format} file",
+      "uploadBody": "Drag and drop your {format} file into the upload area above, or click to open your file browser.",
+      "convertTitle": "Start the conversion",
+      "convertBody": "Click the \"Convert to {format}\" button. The conversion begins immediately and you can track progress.",
+      "downloadTitle": "Download the result",
+      "downloadBody": "Once complete, click the download button to save your {format} file to your device."
+    },
+    "trustBadges": {
+      "secure": "Secure",
+      "fast": "Fast",
+      "free": "Free",
+      "noSignup": "No Signup",
+      "maxSize": "Max 250 MB"
+    },
+    "online": "Online",
+    "freeSecure": "Free, fast, and no account required."
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Convert your files in three simple steps",
+    "step1": {
+      "label": "Step 1",
+      "title": "Upload Your File",
+      "description": "Drag and drop your file or click to browse. We support 100+ file formats."
+    },
+    "step2": {
+      "label": "Step 2",
+      "title": "Choose Format",
+      "description": "Select your desired output format and adjust optional quality settings."
+    },
+    "step3": {
+      "label": "Step 3",
+      "title": "Download Result",
+      "description": "Your converted file is ready instantly. Download it with one click."
+    }
+  },
+  "security": {
+    "title": "Security and Privacy",
+    "subtitle": "Your files are handled with care. We do not store, share, or analyze the content of any file you convert through FlipMyFiles.",
+    "feature1": {
+      "title": "Encrypted Transfers",
+      "description": "All uploads and downloads are transmitted over HTTPS with TLS encryption, protecting your files during transfer."
+    },
+    "feature2": {
+      "title": "No File Storage",
+      "description": "Server-side conversions process files in memory only. Files are not saved to disk and are discarded after conversion."
+    },
+    "feature3": {
+      "title": "Browser-Based Processing",
+      "description": "Video and audio conversions run entirely in your browser using WebAssembly. Those files never leave your device."
+    },
+    "feature4": {
+      "title": "No Account Required",
+      "description": "Use the full conversion service without creating an account, providing personal information, or signing up for anything."
+    }
+  },
+  "stats": {
+    "formatsSupported": "Formats Supported",
+    "freeForever": "Free Forever",
+    "signupsRequired": "Signups Required",
+    "maxFileSize": "Max File Size"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Common questions about FlipMyFiles and how the service works.",
+    "q1": "What file formats does FlipMyFiles support?",
+    "a1": "FlipMyFiles supports conversion across images (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, SVG, ICO, HEIC), video (MP4, AVI, MOV, MKV, WebM, FLV, WMV), audio (MP3, WAV, OGG, FLAC, AAC, WMA, M4A), documents (DOCX, PDF, TXT, CSV, XLSX), and archives (ZIP, TAR, GZ). Visit the Tools page for a complete list of all available conversion pairs.",
+    "q2": "Is FlipMyFiles really free to use?",
+    "a2": "Yes. FlipMyFiles is free to use with no hidden fees, no premium tiers, and no watermarks on converted files. The service is supported by advertising, which allows us to keep it accessible to everyone.",
+    "q3": "Do I need to create an account?",
+    "a3": "No. FlipMyFiles does not require registration, an email address, or any personal information. You can start converting files immediately without signing up.",
+    "q4": "What happens to my files after conversion?",
+    "a4": "Server-side conversions (images, documents, archives) are processed in memory and discarded immediately after the result is returned to your browser. Video and audio files are converted entirely within your browser and are never uploaded to our servers.",
+    "q5": "What is the maximum file size I can upload?",
+    "a5": "The current file size limit is 250 MB per file. This applies to all file types. For video and audio files, conversion speed depends on your device since processing happens in the browser.",
+    "q6": "Why do some conversions happen in the browser?",
+    "a6": "Video and audio conversions use FFmpeg compiled to WebAssembly, which runs directly in your browser. This means those files never leave your device, providing an extra layer of privacy. Image and document conversions are handled server-side for faster processing."
+  },
+  "tools": {
+    "badge": "Free · No account needed · Instant results",
+    "title": "All Conversion",
+    "titleHighlight": "Tools",
+    "subtitle": "Browse 100+ file format converters across images, video, audio, documents, and archives. Pick a tool and convert your file in seconds.",
+    "allCategory": "All",
+    "searchPlaceholder": "Search conversions…",
+    "noResults": "No converters in this category.",
+    "clearSearch": "Clear search",
+    "convertersAvailable": "{count} converters available",
+    "stats": {
+      "formatsSupported": "Formats supported",
+      "categories": "File categories",
+      "signupRequired": "Signup required",
+      "maxFileSize": "Max file size"
+    },
+    "categories": {
+      "images": "Images",
+      "video": "Video",
+      "audio": "Audio",
+      "documents": "Documents",
+      "archives": "Archives"
+    },
+    "categoryPage": {
+      "converters": "Converters",
+      "noConversions": "No conversions available in this category yet. Check back soon!"
+    }
+  },
+  "blog": {
+    "label": "Blog",
+    "title": "Insights & Guides",
+    "subtitle": "Tips, format explainers, and how-to guides to help you work with files faster.",
+    "readMore": "Read more",
+    "read": "Read",
+    "allCategory": "All",
+    "noArticles": "No articles found",
+    "noArticlesSubtitle": "Try selecting a different category or check back later.",
+    "viewAll": "View all posts",
+    "page": "Page",
+    "of": "of",
+    "previous": "← Previous",
+    "next": "Next →",
+    "home": "Home",
+    "faq": "Frequently Asked Questions",
+    "tableOfContents": "Table of Contents",
+    "share": "Share",
+    "relatedArticles": "Related Articles"
+  },
+  "about": {
+    "badge": "Free · Private · Browser-Based",
+    "title": "About",
+    "titleHighlight": "FlipMyFiles",
+    "subtitle": "A free, browser-based file conversion tool built for speed, privacy, and simplicity. No account. No software. No limits.",
+    "intro": "FlipMyFiles is a browser-based file conversion tool designed to help users convert images, videos, audio files, and documents between common formats. The service is free to use and does not require an account or registration.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "We created FlipMyFiles with a straightforward goal: provide a reliable file conversion tool that respects user privacy and works directly in the browser. Many existing conversion tools require software downloads, account creation, or paid subscriptions for basic features. FlipMyFiles removes those barriers by offering conversion tools accessible to anyone with a web browser."
+    },
+    "why": {
+      "title": "Why FlipMyFiles Was Built",
+      "p1": "File format compatibility remains a common challenge. Whether you need to convert a photo taken on your phone to a format your editing software supports, extract audio from a video, or turn a spreadsheet into a CSV for data import, these tasks come up regularly for both personal and professional use.",
+      "p2": "FlipMyFiles was built to address these needs in a simple, accessible way. Rather than installing desktop software or navigating complex settings, users can upload a file, select the output format, and download the result within seconds."
+    },
+    "whatWeSupport": {
+      "title": "What We Support",
+      "intro": "FlipMyFiles supports conversion across several file categories:",
+      "images": "Images: JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, SVG, ICO, and HEIC",
+      "video": "Video: MP4, AVI, MOV, MKV, WebM, FLV, and WMV",
+      "audio": "Audio: MP3, WAV, OGG, FLAC, AAC, WMA, and M4A",
+      "documents": "Documents: DOCX, PDF, TXT, CSV, and XLSX",
+      "archives": "Archives: ZIP, TAR, and GZ",
+      "processing": "Video and audio conversions are processed entirely in your browser using WebAssembly technology, meaning those files never leave your device. Image and document conversions are processed on the server and the data is discarded immediately after the conversion completes."
+    },
+    "privacy": {
+      "title": "Privacy and File Handling",
+      "intro": "We take file handling seriously. Here is how the service works:",
+      "point1": "Files processed server-side are handled in memory and are not written to permanent storage",
+      "point2": "Video and audio files are converted entirely in your browser and never uploaded to our servers",
+      "point3": "No user accounts or personal information are collected",
+      "point4": "All file transfers are encrypted using HTTPS",
+      "point5": "We do not analyze, index, or retain the content of uploaded files",
+      "readMore": "For more details, please review our",
+      "privacyLink": "Privacy Policy"
+    },
+    "limitations": {
+      "title": "Limitations",
+      "intro": "We believe in being transparent about what the service can and cannot do:",
+      "point1": "The maximum upload size is 250 MB per file",
+      "point2": "Some format combinations may produce varying results depending on the source file's encoding or complexity",
+      "point3": "Video and audio conversion speed depends on your device's processing power since those conversions run in the browser",
+      "point4": "Document conversions (such as DOCX to PDF) handle text content well but may not preserve complex formatting, embedded objects, or custom fonts",
+      "point5": "The service may experience temporary downtime during maintenance or updates",
+      "contact": "We continuously work to improve conversion quality and add support for additional formats. If you encounter an issue or would like to request a new format, feel free to reach out through our",
+      "contactLink": "Contact page"
+    },
+    "technology": {
+      "title": "Technology",
+      "text": "FlipMyFiles uses a combination of server-side and client-side processing to handle conversions. Image conversions use the Sharp library, a high-performance image processing tool. Video and audio conversions use FFmpeg compiled to WebAssembly, allowing those conversions to happen directly in the browser without sending data to a server. Document conversions rely on specialized libraries for each format type.",
+      "cardTitle": "Built with Modern, Trusted Technology",
+      "cardText": "FlipMyFiles is built with Next.js, TypeScript, and React on the frontend, Sharp for high-performance server-side image processing, and FFmpeg compiled to WebAssembly for in-browser video and audio conversion. Your files are handled by battle-tested, widely-used open source libraries.",
+      "howItWorksBtn": "How It Works",
+      "reportIssueBtn": "Report an Issue",
+      "privacyBtn": "Privacy Policy",
+      "builtWith": "Built with:"
+    }
+  },
+  "contact": {
+    "badge": "Get in Touch",
+    "title": "Contact Us",
+    "subtitle": "Have a question, found a bug, or want to suggest a new format? We'd love to hear from you.",
+    "email": {
+      "title": "Email Us",
+      "address": "support@flipmyfiles.com"
+    },
+    "response": {
+      "title": "Quick Response",
+      "text": "We reply within 1–2 business days"
+    },
+    "followUs": {
+      "title": "Follow Us"
+    },
+    "feedback": {
+      "title": "We Value Feedback",
+      "text": "Your input helps us improve"
+    }
+  },
+  "howItWorksPage": {
+    "badge": "How It Works",
+    "title": "Convert Files in Three Steps",
+    "subtitle": "FlipMyFiles converts your files directly in the browser or on our servers — no downloads, no account, no waiting. Here is exactly how the process works.",
+    "steps": {
+      "step": "STEP",
+      "s1title": "Upload Your File",
+      "s1desc": "Drag and drop your file onto the upload area, or click to browse your device. You can upload images, videos, audio files, documents, and archives up to 250 MB.",
+      "s2title": "Choose Output Format",
+      "s2desc": "Select the format you want to convert to from the dropdown. Available options are shown based on your input file type. Some converters offer optional quality or compression settings.",
+      "s3title": "Download the Result",
+      "s3desc": "Once conversion is complete, your file is ready to download immediately. Click the download button and the converted file saves directly to your device."
+    },
+    "processing": {
+      "title": "How Files Are Processed",
+      "subtitle": "Different file types use different conversion methods to ensure the best results and privacy.",
+      "browser": {
+        "title": "Browser-Based (Video & Audio)",
+        "badge": "Your Device",
+        "desc": "Video and audio conversions run entirely in your browser using FFmpeg compiled to WebAssembly (WASM). Your files are never uploaded to our servers — the entire conversion happens locally on your device.",
+        "p1": "Files stay on your device at all times",
+        "p2": "Works offline once the converter is loaded",
+        "p3": "Conversion speed depends on your device hardware",
+        "p4": "No file size restrictions from server bandwidth"
+      },
+      "server": {
+        "title": "Server-Side (Images & Documents)",
+        "badge": "Our Servers",
+        "desc": "Image and document conversions are processed on our servers using the Sharp library for images and specialized libraries for documents. Files are handled in memory and discarded immediately after the converted file is delivered.",
+        "p1": "Processed in memory — never written to disk",
+        "p2": "All transfers encrypted with HTTPS",
+        "p3": "File data discarded after download",
+        "p4": "No user data or file content is retained"
+      }
+    },
+    "faqs": {
+      "title": "Common Questions",
+      "q1": "Do I need to create an account?",
+      "a1": "No. FlipMyFiles does not require registration or login. You can start converting files immediately without creating an account.",
+      "q2": "What is the maximum file size?",
+      "a2": "The maximum upload size is 250 MB per file. For video and audio files processed in-browser, this limit is governed by your device's available memory.",
+      "q3": "How long does conversion take?",
+      "a3": "Image and document conversions are typically completed in under a few seconds. Video and audio conversions run in your browser and depend on file size and your device's processing power — larger files may take longer.",
+      "q4": "Are my files stored after conversion?",
+      "a4": "No. Files processed server-side are handled entirely in memory and discarded as soon as you download the result. Video and audio files never leave your device at all.",
+      "q5": "What happens if a conversion fails?",
+      "a5": "If a conversion fails, an error message will be displayed. Common causes include unsupported source encoding, corrupted files, or files that exceed the size limit. You can try again or contact us if the issue persists."
+    },
+    "cta": {
+      "title": "Ready to Convert a File?",
+      "subtitle": "No account required. Just upload, select a format, and download.",
+      "button": "Start Converting"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: February 2026"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: February 2026"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "The page you're looking for doesn't exist or has been moved.",
+    "goHome": "Go Home",
+    "browseTools": "Browse Tools"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "languageSwitcher": "Language",
+    "readPct": "{pct}% read"
+  }
+}

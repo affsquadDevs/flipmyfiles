@@ -9,9 +9,24 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
+    "@types/archiver": "^7.0.0",
+    "@types/unzipper": "^0.10.11",
+    "archiver": "^7.0.1",
+    "csv-parse": "^6.1.0",
+    "csv-stringify": "^6.6.0",
+    "exceljs": "^4.4.0",
+    "jszip": "^3.10.1",
+    "lucide-react": "^0.575.0",
+    "mammoth": "^1.11.0",
     "next": "16.1.6",
+    "next-intl": "^4.8.3",
+    "pdf-lib": "^1.17.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sharp": "^0.34.5",
+    "unzipper": "^0.12.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

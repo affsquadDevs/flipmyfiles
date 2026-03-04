@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#1E3A5F"/>
+  <text x="256" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="160" font-weight="800" fill="white" text-anchor="middle" dominant-baseline="central">Flip</text>
+  <text x="256" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="120" font-weight="800" text-anchor="middle" dominant-baseline="central">
+    <tspan fill="#22C55E">My</tspan><tspan fill="white">Files</tspan>
+  </text>
+</svg>

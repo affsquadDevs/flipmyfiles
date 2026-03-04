@@ -1,0 +1,349 @@
+{
+  "nav": {
+    "tools": "Nástroje",
+    "blog": "Blog",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "allTools": "Všechny nástroje",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu"
+  },
+  "footer": {
+    "description": "Bezplatný online konvertor souborů s podporou více než 100 formátů. Registrace není nutná. Vaše soubory jsou zpracovávány bezpečně a nikdy nejsou ukládány.",
+    "links": "Odkazy",
+    "followUs": "Sledujte nás",
+    "rights": "Všechna práva vyhrazena.",
+    "allTools": "Všechny nástroje",
+    "imageConverter": "Konvertor obrázků",
+    "videoConverter": "Konvertor videa",
+    "audioConverter": "Konvertor audia",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "privacyPolicy": "Zásady ochrany osobních údajů",
+    "termsOfService": "Podmínky použití"
+  },
+  "home": {
+    "badge": "100% Zdarma · Bez registrace · 100+ formátů",
+    "hero": {
+      "title": "Převeďte jakýkoli soubor,",
+      "titleHighlight": "okamžitě",
+      "subtitle": "Bezplatný online konvertor souborů pro obrázky, video, audio a dokumenty. Nic k instalaci. Není potřeba účet."
+    },
+    "dropzone": {
+      "idle": "Přetáhněte soubor sem",
+      "dragging": "Pusťte soubor zde",
+      "subtitle": "nebo klikněte na tlačítko níže a vyberte soubor ze zařízení",
+      "button": "Nahrát a převést",
+      "aria": "Zóna přetažení: přetáhněte soubor sem nebo stiskněte Enter pro procházení",
+      "chooseFile": "Vyberte soubor k převodu",
+      "maxSize": "Maximální velikost souboru: 250 MB"
+    },
+    "chooseFormat": "Vyberte výstupní formát",
+    "cta": {
+      "title": "Připraveni převést soubory?",
+      "subtitle": "Nahrajte soubor a začněte. Bez registrace, bez softwaru ke stažení a bez skrytých poplatků. Váš soubor bude převeden a připraven ke stažení během několika sekund.",
+      "button": "Nahrát a převést"
+    }
+  },
+  "converter": {
+    "dropzone": {
+      "title": "Přetáhněte soubor {format} sem",
+      "subtitle": "nebo klikněte pro procházení ze zařízení",
+      "button": "Vybrat soubor",
+      "supports": "Podporuje {format} · Max. 250 MB",
+      "aria": "Zóna přetažení: přetáhněte soubor {format} sem nebo stiskněte Enter pro procházení"
+    },
+    "convertBtn": "Převést do {format}",
+    "home": "Domů",
+    "tools": "Nástroje",
+    "privacy": {
+      "browser": "🔒 Převedeno zcela ve vašem prohlížeči — váš soubor nikdy neopustí vaše zařízení.",
+      "server": "🔒 Soubory jsou zpracovávány bezpečně a ihned po převodu smazány."
+    },
+    "whatIs": "Co je {format}?",
+    "whyConvert": "Proč převádět {from} do {to}?",
+    "howToConvert": "Jak převést {from} do {to}",
+    "faqTitle": "Časté otázky",
+    "relatedConversions": "Související převody",
+    "securityTitle": "Soukromí a zabezpečení",
+    "securityBrowser": "Tento převod probíhá zcela ve vašem prohlížeči pomocí WebAssembly. Váš soubor není nikdy nahrán na naše servery — plné soukromí zaručeno.",
+    "securityServer": "Váš soubor je přenesen přes HTTPS a zpracován pouze v paměti serveru. Nikdy není uložen na disk a je okamžitě smazán po vrácení převedeného souboru.",
+    "steps": {
+      "uploadTitle": "Nahrajte soubor {format}",
+      "uploadBody": "Přetáhněte soubor {format} do oblasti nahrávání výše nebo klikněte pro otevření prohlížeče souborů.",
+      "convertTitle": "Spusťte převod",
+      "convertBody": "Klikněte na tlačítko „Převést do {format}”. Převod začne okamžitě a můžete sledovat průběh.",
+      "downloadTitle": "Stáhněte výsledek",
+      "downloadBody": "Po dokončení klikněte na tlačítko stažení a uložte soubor {format} do svého zařízení."
+    },
+    "trustBadges": {
+      "secure": "Bezpečné",
+      "fast": "Rychlé",
+      "free": "Zdarma",
+      "noSignup": "Bez registrace",
+      "maxSize": "Max. 250 MB"
+    },
+    "online": "Online",
+    "freeSecure": "Zdarma, rychle a bez účtu."
+  },
+  "howItWorks": {
+    "title": "Jak to funguje",
+    "subtitle": "Převeďte soubory ve třech jednoduchých krocích",
+    "step1": {
+      "label": "Krok 1",
+      "title": "Nahrajte soubor",
+      "description": "Přetáhněte soubor nebo klikněte pro procházení. Podporujeme více než 100 formátů souborů."
+    },
+    "step2": {
+      "label": "Krok 2",
+      "title": "Vyberte formát",
+      "description": "Vyberte požadovaný výstupní formát a upravte volitelné nastavení kvality."
+    },
+    "step3": {
+      "label": "Krok 3",
+      "title": "Stáhněte výsledek",
+      "description": "Převedený soubor je připraven okamžitě. Stáhněte ho jedním kliknutím."
+    }
+  },
+  "security": {
+    "title": "Bezpečnost a soukromí",
+    "subtitle": "S vašimi soubory zacházíme opatrně. Neukládáme, nesdílíme ani neanalyzujeme obsah žádného souboru, který přes FlipMyFiles převedete.",
+    "feature1": {
+      "title": "Šifrované přenosy",
+      "description": "Všechna nahrávání a stahování jsou přenášena přes HTTPS s šifrováním TLS, čímž jsou vaše soubory chráněny při přenosu."
+    },
+    "feature2": {
+      "title": "Bez ukládání souborů",
+      "description": "Serverové převody zpracovávají soubory pouze v paměti. Soubory nejsou ukládány na disk a po převodu jsou smazány."
+    },
+    "feature3": {
+      "title": "Zpracování v prohlížeči",
+      "description": "Převody videa a audia probíhají zcela ve vašem prohlížeči pomocí WebAssembly. Tyto soubory nikdy neopustí vaše zařízení."
+    },
+    "feature4": {
+      "title": "Účet není potřeba",
+      "description": "Používejte plný konverzní servis bez vytváření účtu, poskytování osobních údajů nebo registrace kdekoli."
+    }
+  },
+  "stats": {
+    "formatsSupported": "Podporovaných formátů",
+    "freeForever": "Navždy zdarma",
+    "signupsRequired": "Požadovaných registrací",
+    "maxFileSize": "Maximální velikost souboru"
+  },
+  "faq": {
+    "title": "Časté otázky",
+    "subtitle": "Běžné otázky o FlipMyFiles a o tom, jak služba funguje.",
+    "q1": "Jaké formáty souborů FlipMyFiles podporuje?",
+    "a1": "FlipMyFiles podporuje převod obrázků (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, SVG, ICO, HEIC), videa (MP4, AVI, MOV, MKV, WebM, FLV, WMV), audia (MP3, WAV, OGG, FLAC, AAC, WMA, M4A), dokumentů (DOCX, PDF, TXT, CSV, XLSX) a archivů (ZIP, TAR, GZ). Navštivte stránku Nástroje pro úplný seznam všech dostupných párů převodů.",
+    "q2": "Je FlipMyFiles opravdu zdarma?",
+    "a2": "Ano. FlipMyFiles je zdarma bez skrytých poplatků, bez prémiových plánů a bez vodoznaků na převedených souborech. Provoz služby je financován reklamou, díky čemuž ji můžeme udržet přístupnou pro všechny.",
+    "q3": "Musím si vytvořit účet?",
+    "a3": "Ne. FlipMyFiles nevyžaduje registraci, e-mailovou adresu ani žádné osobní údaje. Můžete okamžitě začít převádět soubory bez registrace.",
+    "q4": "Co se stane s mými soubory po převodu?",
+    "a4": "Serverové převody (obrázky, dokumenty, archivy) jsou zpracovány v paměti a okamžitě smazány po vrácení výsledku do vašeho prohlížeče. Video a audio soubory jsou převáděny zcela ve vašem prohlížeči a nikdy nejsou nahrávány na naše servery.",
+    "q5": "Jaká je maximální velikost souboru, který mohu nahrát?",
+    "a5": "Aktuální limit velikosti souboru je 250 MB na soubor. To platí pro všechny typy souborů. U videa a audia závisí rychlost převodu na vašem zařízení, protože zpracování probíhá v prohlížeči.",
+    "q6": "Proč některé převody probíhají v prohlížeči?",
+    "a6": "Převody videa a audia používají FFmpeg zkompilovaný do WebAssembly, který běží přímo ve vašem prohlížeči. To znamená, že tyto soubory nikdy neopustí vaše zařízení, což poskytuje další vrstvu ochrany soukromí. Převody obrázků a dokumentů jsou zpracovávány na serveru pro rychlejší zpracování."
+  },
+  "tools": {
+    "badge": "Zdarma · Bez účtu · Okamžité výsledky",
+    "title": "Všechny",
+    "titleHighlight": "nástroje pro převod",
+    "subtitle": "Procházejte více než 100 konvertorů formátů souborů pro obrázky, video, audio, dokumenty a archivy. Vyberte nástroj a převeďte soubor během několika sekund.",
+    "allCategory": "Vše",
+    "searchPlaceholder": "Hledat převody…",
+    "noResults": "V této kategorii nejsou žádné konvertory.",
+    "clearSearch": "Vymazat vyhledávání",
+    "convertersAvailable": "{count} konvertorů k dispozici",
+    "stats": {
+      "formatsSupported": "Podporovaných formátů",
+      "categories": "Kategorie souborů",
+      "signupRequired": "Registrace nutná",
+      "maxFileSize": "Maximální velikost souboru"
+    },
+    "categories": {
+      "images": "Obrázky",
+      "video": "Video",
+      "audio": "Audio",
+      "documents": "Dokumenty",
+      "archives": "Archivy"
+    },
+    "categoryPage": {
+      "converters": "Konvertory",
+      "noConversions": "V této kategorii zatím nejsou žádné převody. Brzy se vrátí!"
+    }
+  },
+  "blog": {
+    "label": "Blog",
+    "title": "Tipy a průvodci",
+    "subtitle": "Tipy, vysvětlení formátů a praktické průvodce, které vám pomohou pracovat se soubory rychleji.",
+    "readMore": "Číst více",
+    "read": "Číst",
+    "noArticles": "Nebyly nalezeny žádné články",
+    "noArticlesSubtitle": "Zkuste vybrat jinou kategorii nebo se vraťte později.",
+    "viewAll": "Zobrazit všechny příspěvky",
+    "page": "Stránka",
+    "of": "z",
+    "previous": "← Předchozí",
+    "next": "Další →",
+    "home": "Domů",
+    "faq": "Časté otázky",
+    "tableOfContents": "Obsah",
+    "share": "Sdílet",
+    "relatedArticles": "Související články",
+    "allCategory": "Vše"
+  },
+  "about": {
+    "badge": "Zdarma · Soukromé · Prohlížečové",
+    "title": "O",
+    "titleHighlight": "FlipMyFiles",
+    "subtitle": "Bezplatný konvertor souborů fungující v prohlížeči, vytvořený pro rychlost, soukromí a jednoduchost. Bez účtu. Bez softwaru. Bez omezení.",
+    "intro": "FlipMyFiles je konvertor souborů fungující v prohlížeči, navržený pro pomoc uživatelům při převodu obrázků, videí, zvukových souborů a dokumentů mezi běžnými formáty. Služba je zdarma a nevyžaduje účet ani registraci.",
+    "mission": {
+      "title": "Naše mise",
+      "text": "FlipMyFiles jsme vytvořili s jednoduchým cílem: poskytnout spolehlivý konvertor souborů, který respektuje soukromí uživatelů a funguje přímo v prohlížeči. Mnoho stávajících konverzních nástrojů vyžaduje stahování softwaru, vytváření účtu nebo placené předplatné pro základní funkce. FlipMyFiles odstraňuje tyto bariéry tím, že nabízí konverzní nástroje přístupné komukoli s webovým prohlížečem."
+    },
+    "why": {
+      "title": "Proč vznikl FlipMyFiles",
+      "p1": "Kompatibilita formátů souborů zůstává běžnou výzvou. Ať už potřebujete převést fotku pořízenou telefonem do formátu podporovaného vaším editačním softwarem, extrahovat audio z videa nebo transformovat tabulku do CSV pro import dat — tyto úkoly se pravidelně objevují jak pro osobní, tak pro profesionální použití.",
+      "p2": "FlipMyFiles byl vytvořen pro řešení těchto potřeb jednoduchým a dostupným způsobem. Místo instalace desktopového softwaru nebo procházení složitých nastavení mohou uživatelé nahrát soubor, vybrat výstupní formát a stáhnout výsledek během několika sekund."
+    },
+    "whatWeSupport": {
+      "title": "Co podporujeme",
+      "intro": "FlipMyFiles podporuje převod v několika kategoriích souborů:",
+      "images": "Obrázky: JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, SVG, ICO a HEIC",
+      "video": "Video: MP4, AVI, MOV, MKV, WebM, FLV a WMV",
+      "audio": "Audio: MP3, WAV, OGG, FLAC, AAC, WMA a M4A",
+      "documents": "Dokumenty: DOCX, PDF, TXT, CSV a XLSX",
+      "archives": "Archivy: ZIP, TAR a GZ",
+      "processing": "Převody videa a audia jsou zpracovávány zcela ve vašem prohlížeči pomocí technologie WebAssembly, což znamená, že tyto soubory nikdy neopustí vaše zařízení. Převody obrázků a dokumentů jsou zpracovávány na serveru a data jsou okamžitě smazána po dokončení převodu."
+    },
+    "privacy": {
+      "title": "Soukromí a nakládání se soubory",
+      "intro": "Nakládání se soubory bereme vážně. Takto služba funguje:",
+      "point1": "Soubory zpracovávané na serveru jsou uchovávány v paměti a nejsou zapisovány na trvalé úložiště",
+      "point2": "Video a audio soubory jsou převáděny zcela ve vašem prohlížeči a nikdy nejsou nahrávány na naše servery",
+      "point3": "Nejsou sbírány žádné uživatelské účty ani osobní informace",
+      "point4": "Všechny přenosy souborů jsou šifrovány pomocí HTTPS",
+      "point5": "Neanalyzujeme, neindexujeme ani neuchováváme obsah nahraných souborů",
+      "readMore": "Více podrobností najdete v našich",
+      "privacyLink": "Zásadách ochrany osobních údajů"
+    },
+    "limitations": {
+      "title": "Omezení",
+      "intro": "Věříme v transparentnost ohledně toho, co služba může a nemůže dělat:",
+      "point1": "Maximální velikost nahrávání je 250 MB na soubor",
+      "point2": "Některé kombinace formátů mohou přinést různé výsledky v závislosti na kódování nebo složitosti zdrojového souboru",
+      "point3": "Rychlost převodu videa a audia závisí na výpočetním výkonu vašeho zařízení, protože tyto převody probíhají v prohlížeči",
+      "point4": "Převody dokumentů (jako DOCX do PDF) dobře zpracovávají textový obsah, ale nemusí zachovat složité formátování, vložené objekty nebo vlastní písma",
+      "point5": "Služba může zaznamenat dočasný výpadek během údržby nebo aktualizací",
+      "contact": "Neustále pracujeme na zlepšování kvality převodu a přidávání podpory pro další formáty. Pokud narazíte na problém nebo chcete navrhnout nový formát, neváhejte nás kontaktovat prostřednictvím naší",
+      "contactLink": "stránky kontaktů"
+    },
+    "technology": {
+      "title": "Technologie",
+      "text": "FlipMyFiles používá kombinaci serverového a klientského zpracování pro převody. Převody obrázků využívají knihovnu Sharp, vysoce výkonný nástroj pro zpracování obrázků. Převody videa a audia využívají FFmpeg zkompilovaný do WebAssembly, což umožňuje tyto převody přímo v prohlížeči bez odesílání dat na server. Převody dokumentů se spoléhají na specializované knihovny pro každý typ formátu.",
+      "cardTitle": "Vytvořeno s moderní, osvědčenou technologií",
+      "cardText": "FlipMyFiles je postaven na Next.js, TypeScript a React na frontendu, Sharp pro vysoce výkonné serverové zpracování obrázků a FFmpeg zkompilovaný do WebAssembly pro převod videa a audia v prohlížeči. Vaše soubory jsou zpracovávány osvědčenými, široce používanými open-source knihovnami.",
+      "howItWorksBtn": "Jak to funguje",
+      "reportIssueBtn": "Nahlásit problém",
+      "privacyBtn": "Zásady ochrany osobních údajů",
+      "builtWith": "Vytvořeno s:"
+    }
+  },
+  "contact": {
+    "badge": "Kontaktujte nás",
+    "title": "Kontakt",
+    "subtitle": "Máte otázku, našli jste chybu nebo chcete navrhnout nový formát? Rádi se od vás uslyšíme.",
+    "email": {
+      "title": "Napište nám",
+      "address": "support@flipmyfiles.com"
+    },
+    "response": {
+      "title": "Rychlá odpověď",
+      "text": "Odpovídáme do 1–2 pracovních dnů"
+    },
+    "followUs": {
+      "title": "Sledujte nás"
+    },
+    "feedback": {
+      "title": "Ceníme si zpětné vazby",
+      "text": "Vaše podněty nám pomáhají se zlepšovat"
+    }
+  },
+  "howItWorksPage": {
+    "badge": "Jak to funguje",
+    "title": "Převeďte soubory ve třech krocích",
+    "subtitle": "FlipMyFiles převádí vaše soubory přímo v prohlížeči nebo na našich serverech — bez stahování, bez účtu, bez čekání. Zde je přesně to, jak proces funguje.",
+    "steps": {
+      "step": "KROK",
+      "s1title": "Nahrajte soubor",
+      "s1desc": "Přetáhněte soubor do oblasti nahrávání nebo klikněte pro procházení zařízení. Můžete nahrát obrázky, videa, zvukové soubory, dokumenty a archivy do 250 MB.",
+      "s2title": "Vyberte výstupní formát",
+      "s2desc": "Vyberte formát, do kterého chcete převést, z rozbalovacího menu. Dostupné možnosti se zobrazují na základě typu vstupního souboru. Některé konvertory nabízejí volitelné nastavení kvality nebo komprese.",
+      "s3title": "Stáhněte výsledek",
+      "s3desc": "Po dokončení převodu je soubor připraven ke stažení okamžitě. Klikněte na tlačítko stažení a převedený soubor se uloží přímo do vašeho zařízení."
+    },
+    "processing": {
+      "title": "Jak jsou soubory zpracovávány",
+      "subtitle": "Různé typy souborů používají různé metody převodu pro zajištění nejlepších výsledků a soukromí.",
+      "browser": {
+        "title": "V prohlížeči (video a audio)",
+        "badge": "Vaše zařízení",
+        "desc": "Převody videa a audia probíhají zcela ve vašem prohlížeči pomocí FFmpeg zkompilovaného do WebAssembly (WASM). Vaše soubory nejsou nikdy nahrány na naše servery — celý převod probíhá lokálně na vašem zařízení.",
+        "p1": "Soubory zůstávají na vašem zařízení po celou dobu",
+        "p2": "Funguje offline, jakmile je konvertor načten",
+        "p3": "Rychlost převodu závisí na hardwaru vašeho zařízení",
+        "p4": "Žádná omezení velikosti souboru kvůli šířce pásma serveru"
+      },
+      "server": {
+        "title": "Na serveru (obrázky a dokumenty)",
+        "badge": "Naše servery",
+        "desc": "Převody obrázků a dokumentů jsou zpracovávány na našich serverech pomocí knihovny Sharp pro obrázky a specializovaných knihoven pro dokumenty. Soubory jsou zpracovávány v paměti a okamžitě smazány po doručení převedeného souboru.",
+        "p1": "Zpracováno v paměti — nikdy nezapsáno na disk",
+        "p2": "Všechny přenosy šifrovány pomocí HTTPS",
+        "p3": "Data souboru smazána po stažení",
+        "p4": "Žádná uživatelská data ani obsah souborů nejsou uchovávány"
+      }
+    },
+    "faqs": {
+      "title": "Běžné otázky",
+      "q1": "Musím si vytvořit účet?",
+      "a1": "Ne. FlipMyFiles nevyžaduje registraci ani přihlášení. Můžete okamžitě začít převádět soubory bez vytvoření účtu.",
+      "q2": "Jaká je maximální velikost souboru?",
+      "a2": "Maximální velikost nahrávání je 250 MB na soubor. U video a audio souborů zpracovávaných v prohlížeči je tento limit řízen dostupnou pamětí vašeho zařízení.",
+      "q3": "Jak dlouho trvá převod?",
+      "a3": "Převody obrázků a dokumentů jsou obvykle dokončeny za pár sekund. Převody videa a audia probíhají ve vašem prohlížeči a závisí na velikosti souboru a výpočetním výkonu vašeho zařízení — větší soubory mohou trvat déle.",
+      "q4": "Jsou moje soubory po převodu uloženy?",
+      "a4": "Ne. Soubory zpracovávané na serveru jsou spravovány zcela v paměti a smazány, jakmile si stáhnete výsledek. Video a audio soubory vaše zařízení vůbec neopustí.",
+      "q5": "Co se stane, pokud převod selže?",
+      "a5": "Pokud převod selže, zobrazí se chybová zpráva. Mezi běžné příčiny patří nepodporované zdrojové kódování, poškozené soubory nebo soubory překračující limit velikosti. Můžete to zkusit znovu nebo nás kontaktovat, pokud problém přetrvává."
+    },
+    "cta": {
+      "title": "Připraveni převést soubor?",
+      "subtitle": "Účet není potřeba. Stačí nahrát, vybrat formát a stáhnout.",
+      "button": "Začít převádět"
+    }
+  },
+  "privacy": {
+    "title": "Zásady ochrany osobních údajů",
+    "lastUpdated": "Poslední aktualizace: únor 2026"
+  },
+  "terms": {
+    "title": "Podmínky použití",
+    "lastUpdated": "Poslední aktualizace: únor 2026"
+  },
+  "notFound": {
+    "title": "Stránka nenalezena",
+    "message": "Stránka, kterou hledáte, neexistuje nebo byla přesunuta.",
+    "goHome": "Přejít domů",
+    "browseTools": "Procházet nástroje"
+  },
+  "common": {
+    "skipToContent": "Přeskočit na obsah",
+    "languageSwitcher": "Jazyk",
+    "readPct": "{pct}% přečteno"
+  }
+}

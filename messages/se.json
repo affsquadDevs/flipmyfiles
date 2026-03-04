@@ -1,0 +1,349 @@
+{
+  "nav": {
+    "tools": "Verktyg",
+    "blog": "Blogg",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "allTools": "Alla verktyg",
+    "openMenu": "Öppna meny",
+    "closeMenu": "Stäng meny"
+  },
+  "footer": {
+    "description": "Gratis filkonverterare online med stöd för över 100 format. Ingen registrering krävs. Dina filer bearbetas säkert och lagras aldrig.",
+    "links": "Länkar",
+    "followUs": "Följ oss",
+    "rights": "Alla rättigheter förbehållna.",
+    "allTools": "Alla verktyg",
+    "imageConverter": "Bildkonverterare",
+    "videoConverter": "Videokonverterare",
+    "audioConverter": "Ljudkonverterare",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "privacyPolicy": "Integritetspolicy",
+    "termsOfService": "Användarvillkor"
+  },
+  "home": {
+    "badge": "100% Gratis · Ingen registrering · 100+ format",
+    "hero": {
+      "title": "Konvertera vilken fil som helst,",
+      "titleHighlight": "direkt",
+      "subtitle": "Gratis filkonverterare online för bilder, video, ljud och dokument. Inget att installera. Inget konto behövs."
+    },
+    "dropzone": {
+      "idle": "Dra och släpp din fil här",
+      "dragging": "Släpp din fil här",
+      "subtitle": "eller klicka på knappen nedan för att bläddra på din enhet",
+      "button": "Ladda upp och konvertera",
+      "aria": "Släppzon: dra och släpp din fil här eller tryck Enter för att bläddra",
+      "chooseFile": "Välj fil att konvertera",
+      "maxSize": "Max filstorlek: 250 MB"
+    },
+    "chooseFormat": "Välj utdataformat",
+    "cta": {
+      "title": "Redo att konvertera dina filer?",
+      "subtitle": "Ladda upp en fil för att komma igång. Ingen registrering, ingen mjukvara att installera och inga dolda avgifter. Din fil konverteras och är redo att ladda ner på några sekunder.",
+      "button": "Ladda upp och konvertera"
+    }
+  },
+  "converter": {
+    "dropzone": {
+      "title": "Släpp din {format}-fil här",
+      "subtitle": "eller klicka för att bläddra från din enhet",
+      "button": "Välj fil",
+      "supports": "Stöder {format} · Max 250 MB",
+      "aria": "Släppzon: dra och släpp din {format}-fil här eller tryck Enter för att bläddra"
+    },
+    "convertBtn": "Konvertera till {format}",
+    "home": "Hem",
+    "tools": "Verktyg",
+    "privacy": {
+      "browser": "🔒 Konverteras helt i din webbläsare — din fil lämnar aldrig din enhet.",
+      "server": "🔒 Filer bearbetas säkert och raderas omedelbart efter konvertering."
+    },
+    "whatIs": "Vad är {format}?",
+    "whyConvert": "Varför konvertera {from} till {to}?",
+    "howToConvert": "Hur du konverterar {from} till {to}",
+    "faqTitle": "Vanliga frågor",
+    "relatedConversions": "Relaterade konverteringar",
+    "securityTitle": "Integritet och säkerhet",
+    "securityBrowser": "Den här konverteringen bearbetas helt i din webbläsare med WebAssembly. Din fil laddas aldrig upp till våra servrar — full integritet garanterad.",
+    "securityServer": "Din fil överförs via HTTPS och bearbetas endast i serverns minne. Den sparas aldrig på disk och raderas omedelbart efter att den konverterade filen returneras.",
+    "steps": {
+      "uploadTitle": "Ladda upp din {format}-fil",
+      "uploadBody": "Dra och släpp din {format}-fil i uppladdningsområdet ovan, eller klicka för att öppna filbläddraren.",
+      "convertTitle": "Starta konverteringen",
+      "convertBody": "Klicka på knappen «Konvertera till {format}». Konverteringen startar omedelbart och du kan följa förloppet.",
+      "downloadTitle": "Ladda ner resultatet",
+      "downloadBody": "När det är klart klickar du på nedladdningsknappen för att spara din {format}-fil på din enhet."
+    },
+    "trustBadges": {
+      "secure": "Säkert",
+      "fast": "Snabbt",
+      "free": "Gratis",
+      "noSignup": "Ingen registrering",
+      "maxSize": "Max 250 MB"
+    },
+    "online": "Online",
+    "freeSecure": "Gratis, snabbt och utan konto."
+  },
+  "howItWorks": {
+    "title": "Så här fungerar det",
+    "subtitle": "Konvertera dina filer i tre enkla steg",
+    "step1": {
+      "label": "Steg 1",
+      "title": "Ladda upp din fil",
+      "description": "Dra och släpp din fil eller klicka för att bläddra. Vi stöder över 100 filformat."
+    },
+    "step2": {
+      "label": "Steg 2",
+      "title": "Välj format",
+      "description": "Välj önskat utdataformat och justera valfria kvalitetsinställningar."
+    },
+    "step3": {
+      "label": "Steg 3",
+      "title": "Ladda ner resultatet",
+      "description": "Din konverterade fil är klar direkt. Ladda ner den med ett klick."
+    }
+  },
+  "security": {
+    "title": "Säkerhet och integritet",
+    "subtitle": "Dina filer hanteras med omsorg. Vi lagrar, delar eller analyserar inte innehållet i någon fil du konverterar via FlipMyFiles.",
+    "feature1": {
+      "title": "Krypterade överföringar",
+      "description": "Alla uppladdningar och nedladdningar överförs via HTTPS med TLS-kryptering, vilket skyddar dina filer under överföringen."
+    },
+    "feature2": {
+      "title": "Ingen fillagring",
+      "description": "Konverteringar på serversidan bearbetar filer enbart i minnet. Filer sparas inte på disk och raderas efter konverteringen."
+    },
+    "feature3": {
+      "title": "Bearbetning i webbläsaren",
+      "description": "Video- och ljudkonverteringar körs helt i din webbläsare med WebAssembly. Dessa filer lämnar aldrig din enhet."
+    },
+    "feature4": {
+      "title": "Inget konto krävs",
+      "description": "Använd hela konverteringstjänsten utan att skapa ett konto, ange personuppgifter eller registrera dig någonstans."
+    }
+  },
+  "stats": {
+    "formatsSupported": "Format som stöds",
+    "freeForever": "Gratis för alltid",
+    "signupsRequired": "Registreringar krävs",
+    "maxFileSize": "Max filstorlek"
+  },
+  "faq": {
+    "title": "Vanliga frågor",
+    "subtitle": "Vanliga frågor om FlipMyFiles och hur tjänsten fungerar.",
+    "q1": "Vilka filformat stöder FlipMyFiles?",
+    "a1": "FlipMyFiles stöder konvertering av bilder (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, SVG, ICO, HEIC), video (MP4, AVI, MOV, MKV, WebM, FLV, WMV), ljud (MP3, WAV, OGG, FLAC, AAC, WMA, M4A), dokument (DOCX, PDF, TXT, CSV, XLSX) och arkiv (ZIP, TAR, GZ). Besök sidan Verktyg för en fullständig lista över alla tillgängliga konverteringspar.",
+    "q2": "Är FlipMyFiles verkligen gratis?",
+    "a2": "Ja. FlipMyFiles är gratis utan dolda avgifter, utan premiumplaner och utan vattenstämplar på konverterade filer. Tjänsten finansieras av reklam, vilket gör att vi kan hålla den tillgänglig för alla.",
+    "q3": "Behöver jag skapa ett konto?",
+    "a3": "Nej. FlipMyFiles kräver ingen registrering, e-postadress eller personuppgifter. Du kan börja konvertera filer direkt utan att registrera dig.",
+    "q4": "Vad händer med mina filer efter konverteringen?",
+    "a4": "Konverteringar på serversidan (bilder, dokument, arkiv) bearbetas i minnet och raderas omedelbart efter att resultatet returneras till din webbläsare. Video- och ljudfiler konverteras helt i din webbläsare och laddas aldrig upp till våra servrar.",
+    "q5": "Vad är den maximala filstorleken jag kan ladda upp?",
+    "a5": "Den nuvarande filstorleksgränsen är 250 MB per fil. Detta gäller alla filtyper. För video och ljud beror konverteringshastigheten på din enhet eftersom bearbetningen sker i webbläsaren.",
+    "q6": "Varför sker vissa konverteringar i webbläsaren?",
+    "a6": "Video- och ljudkonverteringar använder FFmpeg kompilerat till WebAssembly, som körs direkt i din webbläsare. Det innebär att dessa filer aldrig lämnar din enhet, vilket ger ett extra lager av integritetsskydd. Bild- och dokumentkonverteringar hanteras på serversidan för snabbare bearbetning."
+  },
+  "tools": {
+    "badge": "Gratis · Inget konto · Omedelbara resultat",
+    "title": "Alla",
+    "titleHighlight": "konverteringsverktyg",
+    "subtitle": "Bläddra bland över 100 filformatskonverterare för bilder, video, ljud, dokument och arkiv. Välj ett verktyg och konvertera din fil på några sekunder.",
+    "allCategory": "Alla",
+    "searchPlaceholder": "Sök konverteringar…",
+    "noResults": "Inga konverterare i den här kategorin.",
+    "clearSearch": "Rensa sökning",
+    "convertersAvailable": "{count} konverterare tillgängliga",
+    "stats": {
+      "formatsSupported": "Format som stöds",
+      "categories": "Filkategorier",
+      "signupRequired": "Registrering krävs",
+      "maxFileSize": "Max filstorlek"
+    },
+    "categories": {
+      "images": "Bilder",
+      "video": "Video",
+      "audio": "Ljud",
+      "documents": "Dokument",
+      "archives": "Arkiv"
+    },
+    "categoryPage": {
+      "converters": "Konverterare",
+      "noConversions": "Inga konverteringar tillgängliga i den här kategorin ännu. Kom tillbaka snart!"
+    }
+  },
+  "blog": {
+    "label": "Blogg",
+    "title": "Guider och tips",
+    "subtitle": "Tips, formatförklaringar och praktiska guider för att arbeta effektivare med filer.",
+    "readMore": "Läs mer",
+    "read": "Läs",
+    "noArticles": "Inga artiklar hittades",
+    "noArticlesSubtitle": "Prova att välja en annan kategori eller kom tillbaka senare.",
+    "viewAll": "Visa alla inlägg",
+    "page": "Sida",
+    "of": "av",
+    "previous": "← Föregående",
+    "next": "Nästa →",
+    "home": "Hem",
+    "faq": "Vanliga frågor",
+    "tableOfContents": "Innehållsförteckning",
+    "share": "Dela",
+    "relatedArticles": "Relaterade artiklar",
+    "allCategory": "Alla"
+  },
+  "about": {
+    "badge": "Gratis · Privat · Webbläsarbaserat",
+    "title": "Om",
+    "titleHighlight": "FlipMyFiles",
+    "subtitle": "Ett gratis, webbläsarbaserat filkonverteringsverktyg byggt för snabbhet, integritet och enkelhet. Inget konto. Ingen mjukvara. Inga begränsningar.",
+    "intro": "FlipMyFiles är ett webbläsarbaserat filkonverteringsverktyg utformat för att hjälpa användare att konvertera bilder, videor, ljudfiler och dokument mellan vanliga format. Tjänsten är gratis och kräver inget konto eller ingen registrering.",
+    "mission": {
+      "title": "Vårt uppdrag",
+      "text": "Vi skapade FlipMyFiles med ett enkelt mål: att tillhandahålla ett pålitligt filkonverteringsverktyg som respekterar användarnas integritet och fungerar direkt i webbläsaren. Många befintliga konverteringsverktyg kräver mjukvarunedladdningar, kontoskapande eller betalda prenumerationer för grundläggande funktioner. FlipMyFiles tar bort dessa hinder genom att erbjuda konverteringsverktyg som är tillgängliga för alla med en webbläsare."
+    },
+    "why": {
+      "title": "Varför FlipMyFiles skapades",
+      "p1": "Kompatibilitet mellan filformat är fortfarande en vanlig utmaning. Oavsett om du behöver konvertera ett foto taget med din telefon till ett format som ditt redigeringsprogram stöder, extrahera ljud från en video, eller omvandla ett kalkylblad till CSV för dataimport — dessa uppgifter dyker regelbundet upp både för privat och professionellt bruk.",
+      "p2": "FlipMyFiles byggdes för att möta dessa behov på ett enkelt och tillgängligt sätt. Istället för att installera skrivbordsprogram eller navigera komplexa inställningar kan användare ladda upp en fil, välja utdataformat och ladda ner resultatet inom några sekunder."
+    },
+    "whatWeSupport": {
+      "title": "Vad vi stöder",
+      "intro": "FlipMyFiles stöder konvertering i flera filkategorier:",
+      "images": "Bilder: JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, SVG, ICO och HEIC",
+      "video": "Video: MP4, AVI, MOV, MKV, WebM, FLV och WMV",
+      "audio": "Ljud: MP3, WAV, OGG, FLAC, AAC, WMA och M4A",
+      "documents": "Dokument: DOCX, PDF, TXT, CSV och XLSX",
+      "archives": "Arkiv: ZIP, TAR och GZ",
+      "processing": "Video- och ljudkonverteringar bearbetas helt i din webbläsare med WebAssembly-teknik, vilket innebär att dessa filer aldrig lämnar din enhet. Bild- och dokumentkonverteringar bearbetas på servern och data raderas omedelbart efter att konverteringen är klar."
+    },
+    "privacy": {
+      "title": "Integritet och filhantering",
+      "intro": "Vi tar filhantering på allvar. Så här fungerar tjänsten:",
+      "point1": "Filer som bearbetas på serversidan hanteras i minnet och skrivs inte till permanent lagring",
+      "point2": "Video- och ljudfiler konverteras helt i din webbläsare och laddas aldrig upp till våra servrar",
+      "point3": "Inga användarkonton eller personuppgifter samlas in",
+      "point4": "Alla filöverföringar krypteras via HTTPS",
+      "point5": "Vi analyserar, indexerar eller sparar inte innehållet i uppladdade filer",
+      "readMore": "För mer information, läs vår",
+      "privacyLink": "Integritetspolicy"
+    },
+    "limitations": {
+      "title": "Begränsningar",
+      "intro": "Vi tror på transparens om vad tjänsten kan och inte kan göra:",
+      "point1": "Den maximala uppladdningsstorleken är 250 MB per fil",
+      "point2": "Vissa formatkombinationer kan ge varierande resultat beroende på källfilens kodning eller komplexitet",
+      "point3": "Konverteringshastigheten för video och ljud beror på din enhets processorkraft eftersom konverteringarna körs i webbläsaren",
+      "point4": "Dokumentkonverteringar (som DOCX till PDF) hanterar textinnehåll väl men kanske inte bevarar komplex formatering, inbäddade objekt eller anpassade teckensnitt",
+      "point5": "Tjänsten kan uppleva tillfälliga avbrott vid underhåll eller uppdateringar",
+      "contact": "Vi arbetar kontinuerligt med att förbättra konverteringskvaliteten och lägga till stöd för fler format. Om du stöter på ett problem eller vill föreslå ett nytt format är du välkommen att kontakta oss via vår",
+      "contactLink": "kontaktsida"
+    },
+    "technology": {
+      "title": "Teknik",
+      "text": "FlipMyFiles använder en kombination av server- och klientsidig bearbetning för konverteringar. Bildkonverteringar använder Sharp-biblioteket, ett högpresterande bildbehandlingsverktyg. Video- och ljudkonverteringar använder FFmpeg kompilerat till WebAssembly, vilket gör att konverteringarna kan ske direkt i webbläsaren utan att skicka data till en server. Dokumentkonverteringar förlitar sig på specialiserade bibliotek för varje formattyp.",
+      "cardTitle": "Byggt med modern, beprövad teknik",
+      "cardText": "FlipMyFiles är byggt med Next.js, TypeScript och React i frontend, Sharp för högpresterande serversidig bildbehandling, och FFmpeg kompilerat till WebAssembly för video- och ljudkonvertering i webbläsaren. Dina filer hanteras av beprövade, allmänt använda bibliotek med öppen källkod.",
+      "howItWorksBtn": "Så här fungerar det",
+      "reportIssueBtn": "Rapportera ett problem",
+      "privacyBtn": "Integritetspolicy",
+      "builtWith": "Byggt med:"
+    }
+  },
+  "contact": {
+    "badge": "Hör av dig",
+    "title": "Kontakt",
+    "subtitle": "Har du en fråga, hittat en bugg eller vill föreslå ett nytt format? Vi vill gärna höra från dig.",
+    "email": {
+      "title": "Maila oss",
+      "address": "support@flipmyfiles.com"
+    },
+    "response": {
+      "title": "Snabbt svar",
+      "text": "Vi svarar inom 1–2 arbetsdagar"
+    },
+    "followUs": {
+      "title": "Följ oss"
+    },
+    "feedback": {
+      "title": "Vi värdesätter feedback",
+      "text": "Dina synpunkter hjälper oss att bli bättre"
+    }
+  },
+  "howItWorksPage": {
+    "badge": "Så här fungerar det",
+    "title": "Konvertera filer i tre steg",
+    "subtitle": "FlipMyFiles konverterar dina filer direkt i webbläsaren eller på våra servrar — inga nedladdningar, inget konto, inget väntande. Här är exakt hur processen fungerar.",
+    "steps": {
+      "step": "STEG",
+      "s1title": "Ladda upp din fil",
+      "s1desc": "Dra och släpp din fil i uppladdningsområdet, eller klicka för att bläddra på din enhet. Du kan ladda upp bilder, videor, ljudfiler, dokument och arkiv upp till 250 MB.",
+      "s2title": "Välj utdataformat",
+      "s2desc": "Välj det format du vill konvertera till från rullgardinsmenyn. Tillgängliga alternativ visas baserat på din indatafiltyp. Vissa konverterare erbjuder valfria kvalitets- eller kompressionsinställningar.",
+      "s3title": "Ladda ner resultatet",
+      "s3desc": "När konverteringen är klar är din fil redo att laddas ner direkt. Klicka på nedladdningsknappen så sparas den konverterade filen direkt på din enhet."
+    },
+    "processing": {
+      "title": "Hur filer bearbetas",
+      "subtitle": "Olika filtyper använder olika konverteringsmetoder för bästa resultat och integritet.",
+      "browser": {
+        "title": "I webbläsaren (video och ljud)",
+        "badge": "Din enhet",
+        "desc": "Video- och ljudkonverteringar körs helt i din webbläsare med FFmpeg kompilerat till WebAssembly (WASM). Dina filer laddas aldrig upp till våra servrar — hela konverteringen sker lokalt på din enhet.",
+        "p1": "Filer stannar på din enhet hela tiden",
+        "p2": "Fungerar offline när konverteraren väl är laddad",
+        "p3": "Konverteringshastigheten beror på din enhets hårdvara",
+        "p4": "Inga filstorleksbegränsningar från serverns bandbredd"
+      },
+      "server": {
+        "title": "På servern (bilder och dokument)",
+        "badge": "Våra servrar",
+        "desc": "Bild- och dokumentkonverteringar bearbetas på våra servrar med Sharp för bilder och specialiserade bibliotek för dokument. Filer hanteras i minnet och raderas omedelbart efter leverans av den konverterade filen.",
+        "p1": "Bearbetas i minnet — skrivs aldrig till disk",
+        "p2": "Alla överföringar krypterade med HTTPS",
+        "p3": "Fildata raderas efter nedladdning",
+        "p4": "Inga användardata eller filinnehåll sparas"
+      }
+    },
+    "faqs": {
+      "title": "Vanliga frågor",
+      "q1": "Behöver jag skapa ett konto?",
+      "a1": "Nej. FlipMyFiles kräver ingen registrering eller inloggning. Du kan börja konvertera filer direkt utan att skapa ett konto.",
+      "q2": "Vad är den maximala filstorleken?",
+      "a2": "Den maximala uppladdningsstorleken är 250 MB per fil. För video- och ljudfiler som bearbetas i webbläsaren bestäms denna gräns av det tillgängliga minnet på din enhet.",
+      "q3": "Hur lång tid tar konverteringen?",
+      "a3": "Bild- och dokumentkonverteringar är vanligtvis klara på några sekunder. Video- och ljudkonverteringar körs i din webbläsare och beror på filstorlek och din enhets processorkraft — större filer kan ta längre tid.",
+      "q4": "Lagras mina filer efter konverteringen?",
+      "a4": "Nej. Filer som bearbetas på serversidan hanteras helt i minnet och raderas så snart du laddar ner resultatet. Video- och ljudfiler lämnar aldrig din enhet överhuvudtaget.",
+      "q5": "Vad händer om en konvertering misslyckas?",
+      "a5": "Om en konvertering misslyckas visas ett felmeddelande. Vanliga orsaker inkluderar kodning som inte stöds, skadade filer eller filer som överskrider storleksgränsen. Du kan försöka igen eller kontakta oss om problemet kvarstår."
+    },
+    "cta": {
+      "title": "Redo att konvertera en fil?",
+      "subtitle": "Inget konto krävs. Ladda bara upp, välj format och ladda ner.",
+      "button": "Börja konvertera"
+    }
+  },
+  "privacy": {
+    "title": "Integritetspolicy",
+    "lastUpdated": "Senast uppdaterad: februari 2026"
+  },
+  "terms": {
+    "title": "Användarvillkor",
+    "lastUpdated": "Senast uppdaterad: februari 2026"
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "message": "Sidan du letar efter finns inte eller har flyttats.",
+    "goHome": "Gå till startsidan",
+    "browseTools": "Bläddra bland verktyg"
+  },
+  "common": {
+    "skipToContent": "Hoppa till innehåll",
+    "languageSwitcher": "Språk",
+    "readPct": "{pct}% läst"
+  }
+}

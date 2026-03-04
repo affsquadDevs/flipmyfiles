@@ -1,0 +1,349 @@
+{
+  "nav": {
+    "tools": "Narzędzia",
+    "blog": "Blog",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "allTools": "Wszystkie narzędzia",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu"
+  },
+  "footer": {
+    "description": "Darmowy internetowy konwerter plików obsługujący ponad 100 formatów. Bez rejestracji. Twoje pliki są przetwarzane bezpiecznie i nigdy nie są przechowywane.",
+    "links": "Linki",
+    "followUs": "Obserwuj nas",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "allTools": "Wszystkie narzędzia",
+    "imageConverter": "Konwerter obrazów",
+    "videoConverter": "Konwerter wideo",
+    "audioConverter": "Konwerter audio",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "privacyPolicy": "Polityka prywatności",
+    "termsOfService": "Warunki usługi"
+  },
+  "home": {
+    "badge": "100% darmowe · Bez rejestracji · Ponad 100 formatów",
+    "hero": {
+      "title": "Konwertuj dowolny plik,",
+      "titleHighlight": "natychmiast",
+      "subtitle": "Darmowy internetowy konwerter plików dla obrazów, wideo, audio i dokumentów. Nic do instalowania. Nie potrzeba konta."
+    },
+    "dropzone": {
+      "idle": "Przeciągnij i upuść plik tutaj",
+      "dragging": "Upuść plik tutaj",
+      "subtitle": "lub kliknij przycisk poniżej, aby przeglądać urządzenie",
+      "button": "Prześlij i konwertuj",
+      "aria": "Strefa upuszczania: przeciągnij i upuść plik tutaj lub naciśnij Enter, aby przeglądać",
+      "chooseFile": "Wybierz plik do konwersji",
+      "maxSize": "Maksymalny rozmiar pliku: 250 MB"
+    },
+    "chooseFormat": "Wybierz format wyjściowy",
+    "cta": {
+      "title": "Gotowy do konwersji plików?",
+      "subtitle": "Prześlij plik, aby zacząć. Bez rejestracji, bez instalowania oprogramowania i bez ukrytych opłat. Twój plik zostanie przekonwertowany i będzie gotowy do pobrania w kilka sekund.",
+      "button": "Prześlij i konwertuj"
+    }
+  },
+  "converter": {
+    "dropzone": {
+      "title": "Upuść plik {format} tutaj",
+      "subtitle": "lub kliknij, aby przeglądać z urządzenia",
+      "button": "Wybierz plik",
+      "supports": "Obsługuje {format} · Maks. 250 MB",
+      "aria": "Strefa upuszczania: przeciągnij i upuść plik {format} tutaj lub naciśnij Enter, aby przeglądać"
+    },
+    "convertBtn": "Konwertuj do {format}",
+    "home": "Strona główna",
+    "tools": "Narzędzia",
+    "privacy": {
+      "browser": "🔒 Konwersja odbywa się w całości w przeglądarce — plik nigdy nie opuszcza urządzenia.",
+      "server": "🔒 Pliki są przetwarzane bezpiecznie i usuwane natychmiast po konwersji."
+    },
+    "whatIs": "Czym jest {format}?",
+    "whyConvert": "Dlaczego konwertować {from} do {to}?",
+    "howToConvert": "Jak konwertować {from} do {to}",
+    "faqTitle": "Często zadawane pytania",
+    "relatedConversions": "Powiązane konwersje",
+    "securityTitle": "Prywatność i bezpieczeństwo",
+    "securityBrowser": "Ta konwersja jest przetwarzana w całości w przeglądarce przy użyciu WebAssembly. Plik nigdy nie jest przesyłany na nasze serwery — pełna prywatność gwarantowana.",
+    "securityServer": "Plik jest przesyłany przez HTTPS i przetwarzany wyłącznie w pamięci serwera. Nie jest nigdy zapisywany na dysku i jest usuwany natychmiast po zwróceniu przekonwertowanego pliku.",
+    "steps": {
+      "uploadTitle": "Prześlij plik {format}",
+      "uploadBody": "Przeciągnij i upuść plik {format} do obszaru przesyłania powyżej lub kliknij, aby otworzyć przeglądarkę plików.",
+      "convertTitle": "Rozpocznij konwersję",
+      "convertBody": "Kliknij przycisk „Konwertuj do {format}”. Konwersja rozpoczyna się natychmiast i możesz śledzić postęp.",
+      "downloadTitle": "Pobierz wynik",
+      "downloadBody": "Po zakończeniu kliknij przycisk pobierania, aby zapisać plik {format} na urządzeniu."
+    },
+    "trustBadges": {
+      "secure": "Bezpieczne",
+      "fast": "Szybkie",
+      "free": "Darmowe",
+      "noSignup": "Bez rejestracji",
+      "maxSize": "Maks. 250 MB"
+    },
+    "online": "Online",
+    "freeSecure": "Darmowe, szybkie i bez konta."
+  },
+  "howItWorks": {
+    "title": "Jak to działa",
+    "subtitle": "Konwertuj pliki w trzech prostych krokach",
+    "step1": {
+      "label": "Krok 1",
+      "title": "Prześlij plik",
+      "description": "Przeciągnij i upuść plik lub kliknij, aby przeglądać. Obsługujemy ponad 100 formatów plików."
+    },
+    "step2": {
+      "label": "Krok 2",
+      "title": "Wybierz format",
+      "description": "Wybierz żądany format wyjściowy i dostosuj opcjonalne ustawienia jakości."
+    },
+    "step3": {
+      "label": "Krok 3",
+      "title": "Pobierz wynik",
+      "description": "Przekonwertowany plik jest gotowy natychmiast. Pobierz go jednym kliknięciem."
+    }
+  },
+  "security": {
+    "title": "Bezpieczeństwo i prywatność",
+    "subtitle": "Twoje pliki są traktowane z należytą starannością. Nie przechowujemy, nie udostępniamy ani nie analizujemy zawartości żadnego pliku konwertowanego przez FlipMyFiles.",
+    "feature1": {
+      "title": "Szyfrowane przesyłanie",
+      "description": "Wszystkie przesyłania i pobierania są transmitowane przez HTTPS z szyfrowaniem TLS, chroniąc pliki podczas transferu."
+    },
+    "feature2": {
+      "title": "Brak przechowywania plików",
+      "description": "Konwersje po stronie serwera przetwarzają pliki wyłącznie w pamięci. Pliki nie są zapisywane na dysku i są usuwane po konwersji."
+    },
+    "feature3": {
+      "title": "Przetwarzanie w przeglądarce",
+      "description": "Konwersje wideo i audio działają w całości w przeglądarce przy użyciu WebAssembly. Te pliki nigdy nie opuszczają urządzenia."
+    },
+    "feature4": {
+      "title": "Bez wymaganego konta",
+      "description": "Korzystaj z pełnej usługi konwersji bez tworzenia konta, podawania danych osobowych ani rejestrowania się."
+    }
+  },
+  "stats": {
+    "formatsSupported": "Obsługiwanych formatów",
+    "freeForever": "Na zawsze darmowe",
+    "signupsRequired": "Wymaganych rejestracji",
+    "maxFileSize": "Maks. rozmiar pliku"
+  },
+  "faq": {
+    "title": "Często zadawane pytania",
+    "subtitle": "Najczęstsze pytania dotyczące FlipMyFiles i sposobu działania usługi.",
+    "q1": "Jakie formaty plików obsługuje FlipMyFiles?",
+    "a1": "FlipMyFiles obsługuje konwersję obrazów (JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, SVG, ICO, HEIC), wideo (MP4, AVI, MOV, MKV, WebM, FLV, WMV), audio (MP3, WAV, OGG, FLAC, AAC, WMA, M4A), dokumentów (DOCX, PDF, TXT, CSV, XLSX) i archiwów (ZIP, TAR, GZ). Odwiedź stronę Narzędzia, aby zobaczyć pełną listę dostępnych par konwersji.",
+    "q2": "Czy FlipMyFiles jest naprawdę darmowy?",
+    "a2": "Tak. FlipMyFiles jest darmowy bez ukrytych opłat, płatnych planów i znaków wodnych na przekonwertowanych plikach. Usługa jest wspierana przez reklamy, co pozwala nam udostępniać ją wszystkim.",
+    "q3": "Czy muszę tworzyć konto?",
+    "a3": "Nie. FlipMyFiles nie wymaga rejestracji, adresu e-mail ani żadnych danych osobowych. Możesz zacząć konwertować pliki natychmiast bez rejestracji.",
+    "q4": "Co dzieje się z plikami po konwersji?",
+    "a4": "Konwersje po stronie serwera (obrazy, dokumenty, archiwa) są przetwarzane w pamięci i usuwane natychmiast po zwróceniu wyniku do przeglądarki. Pliki wideo i audio są konwertowane w całości w przeglądarce i nigdy nie są przesyłane na nasze serwery.",
+    "q5": "Jaki jest maksymalny rozmiar pliku?",
+    "a5": "Aktualny limit rozmiaru pliku wynosi 250 MB na plik. Dotyczy to wszystkich typów plików. W przypadku wideo i audio szybkość konwersji zależy od urządzenia, ponieważ przetwarzanie odbywa się w przeglądarce.",
+    "q6": "Dlaczego niektóre konwersje odbywają się w przeglądarce?",
+    "a6": "Konwersje wideo i audio używają FFmpeg skompilowanego do WebAssembly, który działa bezpośrednio w przeglądarce. Oznacza to, że te pliki nigdy nie opuszczają urządzenia, zapewniając dodatkową warstwę prywatności. Konwersje obrazów i dokumentów są obsługiwane po stronie serwera dla szybszego przetwarzania."
+  },
+  "tools": {
+    "badge": "Darmowe · Bez konta · Natychmiastowe wyniki",
+    "title": "Wszystkie narzędzia",
+    "titleHighlight": "do konwersji",
+    "subtitle": "Przeglądaj ponad 100 konwerterów formatów plików dla obrazów, wideo, audio, dokumentów i archiwów. Wybierz narzędzie i konwertuj plik w kilka sekund.",
+    "allCategory": "Wszystkie",
+    "searchPlaceholder": "Szukaj konwersji…",
+    "noResults": "Brak konwerterów w tej kategorii.",
+    "clearSearch": "Wyczyść wyszukiwanie",
+    "convertersAvailable": "Dostępnych konwerterów: {count}",
+    "stats": {
+      "formatsSupported": "Obsługiwanych formatów",
+      "categories": "Kategorie plików",
+      "signupRequired": "Wymagana rejestracja",
+      "maxFileSize": "Maks. rozmiar pliku"
+    },
+    "categories": {
+      "images": "Obrazy",
+      "video": "Wideo",
+      "audio": "Audio",
+      "documents": "Dokumenty",
+      "archives": "Archiwa"
+    },
+    "categoryPage": {
+      "converters": "Konwertery",
+      "noConversions": "Brak dostępnych konwersji w tej kategorii. Sprawdź ponownie wkrótce!"
+    }
+  },
+  "blog": {
+    "label": "Blog",
+    "title": "Porady i przewodniki",
+    "subtitle": "Wskazówki, wyjaśnienia formatów i poradniki, które pomogą Ci sprawniej pracować z plikami.",
+    "readMore": "Czytaj więcej",
+    "read": "Czytaj",
+    "noArticles": "Nie znaleziono artykułów",
+    "noArticlesSubtitle": "Spróbuj wybrać inną kategorię lub sprawdź ponownie później.",
+    "viewAll": "Zobacz wszystkie posty",
+    "page": "Strona",
+    "of": "z",
+    "previous": "← Poprzednia",
+    "next": "Następna →",
+    "home": "Strona główna",
+    "faq": "Często zadawane pytania",
+    "tableOfContents": "Spis treści",
+    "share": "Udostępnij",
+    "relatedArticles": "Powiązane artykuły",
+    "allCategory": "Wszystkie"
+  },
+  "about": {
+    "badge": "Darmowe · Prywatne · Oparte na przeglądarce",
+    "title": "O",
+    "titleHighlight": "FlipMyFiles",
+    "subtitle": "Darmowe, oparte na przeglądarce narzędzie do konwersji plików stworzone z myślą o szybkości, prywatności i prostocie. Bez konta. Bez oprogramowania. Bez ograniczeń.",
+    "intro": "FlipMyFiles to oparte na przeglądarce narzędzie do konwersji plików, zaprojektowane, aby pomóc użytkownikom konwertować obrazy, filmy, pliki audio i dokumenty między popularnymi formatami. Usługa jest bezpłatna i nie wymaga konta ani rejestracji.",
+    "mission": {
+      "title": "Nasza misja",
+      "text": "Stworzyliśmy FlipMyFiles z prostym celem: zapewnić niezawodne narzędzie do konwersji plików, które szanuje prywatność użytkowników i działa bezpośrednio w przeglądarce. Wiele istniejących narzędzi do konwersji wymaga pobierania oprogramowania, tworzenia konta lub płatnych subskrypcji dla podstawowych funkcji. FlipMyFiles eliminuje te bariery, oferując narzędzia dostępne dla każdego z przeglądarką internetową."
+    },
+    "why": {
+      "title": "Dlaczego powstał FlipMyFiles",
+      "p1": "Kompatybilność formatów plików pozostaje częstym wyzwaniem. Niezależnie od tego, czy chcesz przekonwertować zdjęcie ze smartfona na format obsługiwany przez oprogramowanie do edycji, wyodrębnić audio z wideo lub zamienić arkusz kalkulacyjny w CSV do importu danych — te zadania pojawiają się regularnie zarówno w użytku osobistym, jak i zawodowym.",
+      "p2": "FlipMyFiles powstał, aby sprostać tym potrzebom w prosty i dostępny sposób. Zamiast instalować oprogramowanie desktopowe lub nawigować przez skomplikowane ustawienia, użytkownicy mogą przesłać plik, wybrać format wyjściowy i pobrać wynik w ciągu kilku sekund."
+    },
+    "whatWeSupport": {
+      "title": "Co obsługujemy",
+      "intro": "FlipMyFiles obsługuje konwersję w kilku kategoriach plików:",
+      "images": "Obrazy: JPG, PNG, WebP, GIF, BMP, TIFF, AVIF, SVG, ICO i HEIC",
+      "video": "Wideo: MP4, AVI, MOV, MKV, WebM, FLV i WMV",
+      "audio": "Audio: MP3, WAV, OGG, FLAC, AAC, WMA i M4A",
+      "documents": "Dokumenty: DOCX, PDF, TXT, CSV i XLSX",
+      "archives": "Archiwa: ZIP, TAR i GZ",
+      "processing": "Konwersje wideo i audio są przetwarzane w całości w przeglądarce przy użyciu technologii WebAssembly, co oznacza, że te pliki nigdy nie opuszczają urządzenia. Konwersje obrazów i dokumentów są przetwarzane na serwerze, a dane są usuwane natychmiast po zakończeniu konwersji."
+    },
+    "privacy": {
+      "title": "Prywatność i obsługa plików",
+      "intro": "Traktujemy obsługę plików poważnie. Oto jak działa usługa:",
+      "point1": "Pliki przetwarzane po stronie serwera są obsługiwane w pamięci i nie są zapisywane w stałym magazynie",
+      "point2": "Pliki wideo i audio są konwertowane w całości w przeglądarce i nigdy nie są przesyłane na nasze serwery",
+      "point3": "Nie zbieramy kont użytkowników ani danych osobowych",
+      "point4": "Wszystkie transfery plików są szyfrowane przy użyciu HTTPS",
+      "point5": "Nie analizujemy, nie indeksujemy ani nie przechowujemy zawartości przesłanych plików",
+      "readMore": "Aby uzyskać więcej informacji, zapoznaj się z naszą",
+      "privacyLink": "Polityką prywatności"
+    },
+    "limitations": {
+      "title": "Ograniczenia",
+      "intro": "Wierzymy w przejrzystość dotyczącą tego, co usługa może i czego nie może zrobić:",
+      "point1": "Maksymalny rozmiar przesyłanego pliku wynosi 250 MB",
+      "point2": "Niektóre kombinacje formatów mogą dawać różne wyniki w zależności od kodowania lub złożoności pliku źródłowego",
+      "point3": "Szybkość konwersji wideo i audio zależy od mocy obliczeniowej urządzenia, ponieważ te konwersje działają w przeglądarce",
+      "point4": "Konwersje dokumentów (np. DOCX do PDF) dobrze obsługują treść tekstową, ale mogą nie zachować złożonego formatowania, osadzonych obiektów ani niestandardowych czcionek",
+      "point5": "Usługa może doświadczać tymczasowych przerw podczas konserwacji lub aktualizacji",
+      "contact": "Ciągle pracujemy nad poprawą jakości konwersji i dodawaniem obsługi kolejnych formatów. Jeśli napotkasz problem lub chcesz zaproponować nowy format, skontaktuj się z nami przez naszą",
+      "contactLink": "stronę kontaktową"
+    },
+    "technology": {
+      "title": "Technologia",
+      "text": "FlipMyFiles wykorzystuje kombinację przetwarzania po stronie serwera i klienta do obsługi konwersji. Konwersje obrazów używają biblioteki Sharp, wydajnego narzędzia do przetwarzania obrazów. Konwersje wideo i audio używają FFmpeg skompilowanego do WebAssembly, co pozwala na konwersję bezpośrednio w przeglądarce bez przesyłania danych na serwer. Konwersje dokumentów opierają się na specjalistycznych bibliotekach dla każdego typu formatu.",
+      "cardTitle": "Zbudowane z nowoczesną, sprawdzoną technologią",
+      "cardText": "FlipMyFiles jest zbudowany z Next.js, TypeScript i React na frontendzie, Sharp do wydajnego przetwarzania obrazów po stronie serwera oraz FFmpeg skompilowanego do WebAssembly do konwersji wideo i audio w przeglądarce. Twoje pliki są obsługiwane przez sprawdzone, szeroko stosowane biblioteki open source.",
+      "howItWorksBtn": "Jak to działa",
+      "reportIssueBtn": "Zgłoś problem",
+      "privacyBtn": "Polityka prywatności",
+      "builtWith": "Zbudowane z:"
+    }
+  },
+  "contact": {
+    "badge": "Skontaktuj się z nami",
+    "title": "Kontakt",
+    "subtitle": "Masz pytanie, znalazłeś błąd lub chcesz zaproponować nowy format? Chętnie się odezwiemy.",
+    "email": {
+      "title": "Napisz do nas",
+      "address": "support@flipmyfiles.com"
+    },
+    "response": {
+      "title": "Szybka odpowiedź",
+      "text": "Odpowiadamy w ciągu 1–2 dni roboczych"
+    },
+    "followUs": {
+      "title": "Obserwuj nas"
+    },
+    "feedback": {
+      "title": "Cenimy opinie",
+      "text": "Twoje uwagi pomagają nam się rozwijać"
+    }
+  },
+  "howItWorksPage": {
+    "badge": "Jak to działa",
+    "title": "Konwertuj pliki w trzech krokach",
+    "subtitle": "FlipMyFiles konwertuje pliki bezpośrednio w przeglądarce lub na naszych serwerach — bez pobierania, bez konta, bez czekania. Oto dokładnie, jak działa ten proces.",
+    "steps": {
+      "step": "KROK",
+      "s1title": "Prześlij plik",
+      "s1desc": "Przeciągnij i upuść plik do obszaru przesyłania lub kliknij, aby przeglądać urządzenie. Możesz przesyłać obrazy, filmy, pliki audio, dokumenty i archiwa do 250 MB.",
+      "s2title": "Wybierz format wyjściowy",
+      "s2desc": "Wybierz format, do którego chcesz konwertować, z listy rozwijanej. Dostępne opcje są wyświetlane na podstawie typu przesłanego pliku. Niektóre konwertery oferują opcjonalne ustawienia jakości lub kompresji.",
+      "s3title": "Pobierz wynik",
+      "s3desc": "Po zakończeniu konwersji plik jest gotowy do natychmiastowego pobrania. Kliknij przycisk pobierania, a przekonwertowany plik zostanie zapisany bezpośrednio na urządzeniu."
+    },
+    "processing": {
+      "title": "Jak przetwarzane są pliki",
+      "subtitle": "Różne typy plików używają różnych metod konwersji, aby zapewnić najlepsze wyniki i prywatność.",
+      "browser": {
+        "title": "W przeglądarce (wideo i audio)",
+        "badge": "Twoje urządzenie",
+        "desc": "Konwersje wideo i audio działają w całości w przeglądarce przy użyciu FFmpeg skompilowanego do WebAssembly (WASM). Pliki nigdy nie są przesyłane na nasze serwery — cała konwersja odbywa się lokalnie na urządzeniu.",
+        "p1": "Pliki pozostają na urządzeniu przez cały czas",
+        "p2": "Działa offline po załadowaniu konwertera",
+        "p3": "Szybkość konwersji zależy od sprzętu urządzenia",
+        "p4": "Brak ograniczeń rozmiaru pliku wynikających z przepustowości serwera"
+      },
+      "server": {
+        "title": "Po stronie serwera (obrazy i dokumenty)",
+        "badge": "Nasze serwery",
+        "desc": "Konwersje obrazów i dokumentów są przetwarzane na naszych serwerach przy użyciu biblioteki Sharp dla obrazów i specjalistycznych bibliotek dla dokumentów. Pliki są obsługiwane w pamięci i usuwane natychmiast po dostarczeniu przekonwertowanego pliku.",
+        "p1": "Przetwarzane w pamięci — nigdy nie zapisywane na dysku",
+        "p2": "Wszystkie transfery szyfrowane przez HTTPS",
+        "p3": "Dane pliku usuwane po pobraniu",
+        "p4": "Żadne dane użytkownika ani zawartość pliku nie są przechowywane"
+      }
+    },
+    "faqs": {
+      "title": "Często zadawane pytania",
+      "q1": "Czy muszę tworzyć konto?",
+      "a1": "Nie. FlipMyFiles nie wymaga rejestracji ani logowania. Możesz zacząć konwertować pliki natychmiast bez tworzenia konta.",
+      "q2": "Jaki jest maksymalny rozmiar pliku?",
+      "a2": "Maksymalny rozmiar przesyłanego pliku wynosi 250 MB. W przypadku plików wideo i audio przetwarzanych w przeglądarce limit ten jest ograniczony dostępną pamięcią urządzenia.",
+      "q3": "Jak długo trwa konwersja?",
+      "a3": "Konwersje obrazów i dokumentów są zazwyczaj ukończone w ciągu kilku sekund. Konwersje wideo i audio działają w przeglądarce i zależą od rozmiaru pliku oraz mocy obliczeniowej urządzenia — większe pliki mogą trwać dłużej.",
+      "q4": "Czy pliki są przechowywane po konwersji?",
+      "a4": "Nie. Pliki przetwarzane po stronie serwera są obsługiwane w całości w pamięci i usuwane natychmiast po pobraniu wyniku. Pliki wideo i audio nigdy nie opuszczają urządzenia.",
+      "q5": "Co się dzieje, gdy konwersja się nie powiedzie?",
+      "a5": "Jeśli konwersja się nie powiedzie, zostanie wyświetlony komunikat o błędzie. Częste przyczyny to nieobsługiwane kodowanie źródłowe, uszkodzone pliki lub pliki przekraczające limit rozmiaru. Możesz spróbować ponownie lub skontaktować się z nami, jeśli problem persystuje."
+    },
+    "cta": {
+      "title": "Gotowy do konwersji pliku?",
+      "subtitle": "Bez wymaganego konta. Po prostu prześlij, wybierz format i pobierz.",
+      "button": "Rozpocznij konwersję"
+    }
+  },
+  "privacy": {
+    "title": "Polityka prywatności",
+    "lastUpdated": "Ostatnia aktualizacja: luty 2026"
+  },
+  "terms": {
+    "title": "Warunki usługi",
+    "lastUpdated": "Ostatnia aktualizacja: luty 2026"
+  },
+  "notFound": {
+    "title": "Strona nie znaleziona",
+    "message": "Strona, której szukasz, nie istnieje lub została przeniesiona.",
+    "goHome": "Strona główna",
+    "browseTools": "Przeglądaj narzędzia"
+  },
+  "common": {
+    "skipToContent": "Przejdź do treści",
+    "languageSwitcher": "Język",
+    "readPct": "Przeczytano {pct}%"
+  }
+}
