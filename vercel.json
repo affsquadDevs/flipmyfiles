@@ -2,7 +2,7 @@
   "redirects": [
     { "source": "/", "destination": "/en", "permanent": false },
     { "source": "/blog", "destination": "/en/blog", "permanent": false },
-    { "source": "/blog/:slug", "destination": "/en/blog/:slug", "permanent": false },
+    { "source": "/blog/:slug([^.]+)", "destination": "/en/blog/:slug", "permanent": false },
     { "source": "/tools", "destination": "/en/tools", "permanent": false },
     { "source": "/tools/:cat", "destination": "/en/tools/:cat", "permanent": false },
     { "source": "/convert", "destination": "/en/convert", "permanent": false },
