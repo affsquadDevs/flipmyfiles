@@ -8,11 +8,24 @@ interface BlogTranslation {
   metaDescription?: string;
 }
 
+const localeImports: Record<string, () => Promise<{ default: Record<string, BlogTranslation> }>> = {
+  pl: () => import('@/data/blog/pl.json'),
+  el: () => import('@/data/blog/el.json'),
+  es: () => import('@/data/blog/es.json'),
+  pt: () => import('@/data/blog/pt.json'),
+  de: () => import('@/data/blog/de.json'),
+  fr: () => import('@/data/blog/fr.json'),
+  se: () => import('@/data/blog/se.json'),
+  it: () => import('@/data/blog/it.json'),
+  ua: () => import('@/data/blog/ua.json'),
+  cz: () => import('@/data/blog/cz.json'),
+};
+
 async function loadLocaleTranslations(locale: string): Promise<Record<string, BlogTranslation>> {
-  if (locale === 'en') return {};
+  if (locale === 'en' || !localeImports[locale]) return {};
   try {
-    const data = await import(`@/data/blog/${locale}.json`);
-    return data.default as Record<string, BlogTranslation>;
+    const data = await localeImports[locale]();
+    return data.default;
   } catch {
     return {};
   }
