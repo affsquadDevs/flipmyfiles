@@ -1,15 +1,25 @@
-import createMiddleware from 'next-intl/middleware';
-import { routing } from './src/i18n/routing';
+import { NextRequest, NextResponse } from 'next/server';
 
-export default createMiddleware(routing);
+const locales = ['en', 'pl', 'el', 'es', 'pt', 'de', 'fr', 'se', 'it', 'ua', 'cz'];
+const defaultLocale = 'en';
+
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Check if the path already starts with a supported locale
+  const hasLocale = locales.some(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+  );
+
+  if (!hasLocale) {
+    return NextResponse.redirect(
+      new URL(`/${defaultLocale}${pathname}`, request.url)
+    );
+  }
+
+  return NextResponse.next();
+}
 
 export const config = {
-  matcher: [
-    // Match all pathnames except for:
-    // - /api (API routes)
-    // - /_next (Next.js internals)
-    // - /static (static files)
-    // - Files with extensions (e.g. /favicon.ico, /robots.txt)
-    '/((?!api|_next|_vercel|.*\\..*).*)',
-  ],
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)',],
 };
