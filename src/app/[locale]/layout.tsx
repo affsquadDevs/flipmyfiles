@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     description: 'Convert images, videos, audio, and documents for free. No signup required.',
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
   icons: {
     icon: [
