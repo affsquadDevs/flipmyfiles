@@ -40,6 +40,8 @@ export const ALLOWED_MIME_TYPES: Record<string, string[]> = {
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['xlsx'],
   'text/csv': ['csv'],
   'text/plain': ['txt'],
+  // eBooks
+  'application/epub+zip': ['epub'],
   // Archives
   'application/zip': ['zip'],
   'application/x-tar': ['tar'],

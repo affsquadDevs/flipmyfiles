@@ -66,25 +66,18 @@ export default function ToolsGrid() {
         </div>
       </div>
 
-      {/* Category cards */}
-      <div className="mb-10 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
-        {/* All */}
+      {/* Category filters */}
+      <div className="mb-10 flex flex-wrap gap-2 justify-center">
         <button
           onClick={() => setActiveCategory('all')}
-          className={`flex flex-col items-center gap-2 rounded-2xl border p-5 text-center transition-all hover:-translate-y-0.5 hover:shadow-md ${
+          className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition-all hover:shadow-sm ${
             activeCategory === 'all'
-              ? 'bg-primary/10 border-primary ring-2 ring-primary/30'
-              : 'bg-gray-50 border-gray-200 hover:border-gray-300 hover:shadow-gray-100'
+              ? 'bg-primary/10 border-primary text-primary ring-2 ring-primary/30'
+              : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-gray-300'
           }`}
         >
-          <span className={`flex h-10 w-10 items-center justify-center rounded-xl text-xl ${
-            activeCategory === 'all' ? 'bg-primary/20 text-primary' : 'bg-gray-100 text-gray-500'
-          }`}>
-            ✦
-          </span>
-          <p className={`text-sm font-semibold ${activeCategory === 'all' ? 'text-primary' : 'text-gray-700'}`}>
-            {t('allCategory')}
-          </p>
+          <span className="text-base">✦</span>
+          {t('allCategory')}
         </button>
 
         {categories.map(cat => {
@@ -94,15 +87,12 @@ export default function ToolsGrid() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`flex flex-col items-center gap-2 rounded-2xl border p-5 text-center transition-all hover:-translate-y-0.5 hover:shadow-md ${
+              className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition-all hover:shadow-sm ${
                 isActive ? style.activeCard : style.card
               }`}
             >
-              <span className={`flex h-10 w-10 items-center justify-center rounded-xl text-xl ${style.icon}`}>
-                {cat.icon}
-              </span>
-              <p className="text-sm font-semibold text-gray-800">{cat.name}</p>
-              <p className="text-xs text-text-muted">{categoryFormats[cat.id]}</p>
+              <span className="text-base">{cat.icon}</span>
+              <span className="text-gray-800">{t(`categoryNames.${cat.id}`)}</span>
             </button>
           );
         })}
@@ -117,8 +107,8 @@ export default function ToolsGrid() {
             className="group flex flex-col items-center rounded-2xl border border-border bg-white p-5 text-center shadow-sm transition-all hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5"
           >
             <ConversionAppIcon from={c.from} to={c.to} />
-            <p className="mt-3 text-sm font-bold text-gray-900">{c.from} to {c.to}</p>
-            <p className="mt-1 text-xs text-text-muted line-clamp-2">{c.description}</p>
+            <p className="mt-3 text-sm font-bold text-gray-900">{c.from} {t('to')} {c.to}</p>
+            <p className="mt-1 text-xs text-text-muted line-clamp-2">{t('convertGeneric', { from: c.from, to: c.to })}</p>
           </Link>
         ))}
       </div>

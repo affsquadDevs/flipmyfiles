@@ -173,6 +173,16 @@
     "categoryPage": {
       "converters": "Μετατροπείς",
       "noConversions": "Δεν υπάρχουν διαθέσιμες μετατροπές σε αυτή την κατηγορία ακόμα. Ελέγξτε ξανά σύντομα!"
+    },
+    "to": "σε",
+    "convertGeneric": "Μετατροπή {from} σε {to}",
+    "categoryNames": {
+      "image": "Εικόνα",
+      "video": "Βίντεο",
+      "audio": "Ήχος",
+      "document": "Έγγραφο",
+      "ebook": "eBook",
+      "archive": "Αρχείο"
     }
   },
   "blog": {
@@ -345,5 +355,10 @@
     "skipToContent": "Μετάβαση στο περιεχόμενο",
     "languageSwitcher": "Γλώσσα",
     "readPct": "Διαβάστηκε {pct}%"
+  },
+  "popularConversions": {
+    "title": "Δημοφιλείς Μετατροπές",
+    "subtitle": "Γρήγορη πρόσβαση στις πιο χρησιμοποιούμενες μετατροπές",
+    "viewAll": "Δείτε όλα τα εργαλεία"
   }
 }

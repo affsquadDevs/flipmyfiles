@@ -102,6 +102,9 @@ export const allConversions: ConversionPair[] = [
   { from: 'CSV', to: 'XLSX', slug: 'csv-to-xlsx', category: 'document', description: 'Convert CSV to Excel spreadsheet' },
   { from: 'XLSX', to: 'CSV', slug: 'xlsx-to-csv', category: 'document', description: 'Convert Excel to CSV format' },
   { from: 'TXT', to: 'PDF', slug: 'txt-to-pdf', category: 'document', description: 'Convert plain text to PDF document' },
+  // eBook conversions
+  { from: 'EPUB', to: 'PDF', slug: 'epub-to-pdf', category: 'ebook', description: 'Convert EPUB eBook to PDF document' },
+  { from: 'EPUB', to: 'TXT', slug: 'epub-to-txt', category: 'ebook', description: 'Extract plain text from EPUB eBook' },
   // Archive conversions
   { from: 'ZIP', to: 'TAR', slug: 'zip-to-tar', category: 'archive', description: 'Convert ZIP archive to TAR format' },
   { from: 'ZIP', to: 'GZ', slug: 'zip-to-gz', category: 'archive', description: 'Convert ZIP to compressed GZ archive' },

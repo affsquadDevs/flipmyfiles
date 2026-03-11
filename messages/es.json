@@ -173,6 +173,16 @@
     "categoryPage": {
       "converters": "Conversores",
       "noConversions": "No hay conversiones disponibles en esta categoría todavía. ¡Vuelve pronto!"
+    },
+    "to": "a",
+    "convertGeneric": "Convierte {from} a {to}",
+    "categoryNames": {
+      "image": "Imagen",
+      "video": "Vídeo",
+      "audio": "Audio",
+      "document": "Documento",
+      "ebook": "eBook",
+      "archive": "Archivo"
     }
   },
   "blog": {
@@ -345,5 +355,10 @@
     "skipToContent": "Ir al contenido",
     "languageSwitcher": "Idioma",
     "readPct": "{pct}% leído"
+  },
+  "popularConversions": {
+    "title": "Conversiones Populares",
+    "subtitle": "Acceso rápido a las conversiones más utilizadas",
+    "viewAll": "Ver todas las herramientas"
   }
 }

@@ -173,6 +173,16 @@
     "categoryPage": {
       "converters": "Konvertory",
       "noConversions": "V této kategorii zatím nejsou žádné převody. Brzy se vrátí!"
+    },
+    "to": "do",
+    "convertGeneric": "Převést {from} do {to}",
+    "categoryNames": {
+      "image": "Obrázek",
+      "video": "Video",
+      "audio": "Audio",
+      "document": "Dokument",
+      "ebook": "eBook",
+      "archive": "Archiv"
     }
   },
   "blog": {
@@ -345,5 +355,10 @@
     "skipToContent": "Přeskočit na obsah",
     "languageSwitcher": "Jazyk",
     "readPct": "{pct}% přečteno"
+  },
+  "popularConversions": {
+    "title": "Oblíbené Konverze",
+    "subtitle": "Rychlý přístup k nejpoužívanějším konverzím souborů",
+    "viewAll": "Zobrazit všechny nástroje"
   }
 }

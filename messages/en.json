@@ -173,6 +173,16 @@
     "categoryPage": {
       "converters": "Converters",
       "noConversions": "No conversions available in this category yet. Check back soon!"
+    },
+    "to": "to",
+    "convertGeneric": "Convert {from} to {to}",
+    "categoryNames": {
+      "image": "Image",
+      "video": "Video",
+      "audio": "Audio",
+      "document": "Document",
+      "ebook": "eBook",
+      "archive": "Archive"
     }
   },
   "blog": {
@@ -345,5 +355,10 @@
     "skipToContent": "Skip to content",
     "languageSwitcher": "Language",
     "readPct": "{pct}% read"
+  },
+  "popularConversions": {
+    "title": "Popular Conversions",
+    "subtitle": "Quick access to the most-used file conversions",
+    "viewAll": "View all conversion tools"
   }
 }

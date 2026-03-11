@@ -173,6 +173,16 @@
     "categoryPage": {
       "converters": "Конвертери",
       "noConversions": "У цій категорії поки немає доступних конвертацій. Завітайте пізніше!"
+    },
+    "to": "у",
+    "convertGeneric": "Конвертувати {from} у {to}",
+    "categoryNames": {
+      "image": "Зображення",
+      "video": "Відео",
+      "audio": "Аудіо",
+      "document": "Документ",
+      "ebook": "eBook",
+      "archive": "Архів"
     }
   },
   "blog": {
@@ -345,5 +355,10 @@
     "skipToContent": "Перейти до вмісту",
     "languageSwitcher": "Мова",
     "readPct": "{pct}% прочитано"
+  },
+  "popularConversions": {
+    "title": "Популярні Конвертації",
+    "subtitle": "Швидкий доступ до найпоширеніших конвертацій файлів",
+    "viewAll": "Переглянути всі інструменти"
   }
 }

@@ -88,6 +88,15 @@ export default function MobileNav() {
                   {link.label}
                 </Link>
               ))}
+              <div className="mt-2 px-2">
+                <Link
+                  href="/tools"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-primary-dark"
+                >
+                  {t('allTools')}
+                </Link>
+              </div>
             </div>
           </nav>
         </>

@@ -1,6 +1,7 @@
 import { convertImage, isImageFormat, getImageMimeType } from './image';
 import { convertDocument, isDocumentFormat, getDocumentMimeType } from './document';
 import { convertArchive, isArchiveFormat, getArchiveMimeType } from './archive';
+import { convertEbook, isEbookFormat, getEbookMimeType } from './ebook';
 import { ConversionOptions } from '@/types/formats';
 
 export interface ConversionResult {
@@ -38,6 +39,16 @@ export async function convertFile(
       buffer: result.buffer,
       mimeType: isArchiveFormat(outLower) ? getArchiveMimeType(outputFormat) : 'application/octet-stream',
       filename: result.filename,
+    };
+  }
+
+  // eBook conversion (server-side via JSZip + pdf-lib)
+  if (isEbookFormat(inLower)) {
+    const result = await convertEbook(buffer, inputFormat, outputFormat);
+    return {
+      buffer: result,
+      mimeType: getEbookMimeType(outputFormat),
+      filename: defaultFilename,
     };
   }
 

@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
-import DropZone from '@/components/upload/DropZone';
+import HomeHero from '@/components/pages/HomeHero';
 import PopularConversions from '@/components/pages/PopularConversions';
 import HowItWorks from '@/components/pages/HowItWorks';
 import SupportedFormats from '@/components/pages/SupportedFormats';
@@ -17,7 +17,7 @@ function HomeContent() {
   const t = useTranslations('home');
   return (
     <>
-      <DropZone />
+      <HomeHero />
       <HowItWorks />
       <SupportedFormats />
       <PopularConversions />

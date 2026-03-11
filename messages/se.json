@@ -173,6 +173,16 @@
     "categoryPage": {
       "converters": "Konverterare",
       "noConversions": "Inga konverteringar tillgängliga i den här kategorin ännu. Kom tillbaka snart!"
+    },
+    "to": "till",
+    "convertGeneric": "Konvertera {from} till {to}",
+    "categoryNames": {
+      "image": "Bild",
+      "video": "Video",
+      "audio": "Ljud",
+      "document": "Dokument",
+      "ebook": "eBook",
+      "archive": "Arkiv"
     }
   },
   "blog": {
@@ -345,5 +355,10 @@
     "skipToContent": "Hoppa till innehåll",
     "languageSwitcher": "Språk",
     "readPct": "{pct}% läst"
+  },
+  "popularConversions": {
+    "title": "Populära Konverteringar",
+    "subtitle": "Snabb åtkomst till de mest använda filkonverteringarna",
+    "viewAll": "Visa alla konverteringsverktyg"
   }
 }
