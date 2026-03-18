@@ -117,7 +117,7 @@ export default function VideoUniqualizerTool() {
       await ff.deleteFile(inputName).catch(() => {});
       await ff.deleteFile(outputName).catch(() => {});
 
-      const bytes = data instanceof Uint8Array ? data : new Uint8Array(data as ArrayBuffer);
+      const bytes = data instanceof Uint8Array ? data : new Uint8Array(data as unknown as ArrayBuffer);
       const blob = new Blob([bytes], { type: 'video/mp4' });
       const baseName = file.name.replace(/\.[^.]+$/, '');
       const filename = `${baseName}_unique.mp4`;

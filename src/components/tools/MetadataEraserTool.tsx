@@ -144,7 +144,7 @@ export default function MetadataEraserTool() {
           m4a: 'audio/mp4', wma: 'audio/x-ms-wma',
         };
 
-        const bytes = data instanceof Uint8Array ? data : new Uint8Array(data as ArrayBuffer);
+        const bytes = data instanceof Uint8Array ? data : new Uint8Array(data as unknown as ArrayBuffer);
         const blob = new Blob([bytes], { type: mimeMap[ext] || 'application/octet-stream' });
         const filename = `${file.name.replace(/\.[^.]+$/, '')}_clean.${ext}`;
 
