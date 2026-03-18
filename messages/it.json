@@ -43,7 +43,9 @@
       "title": "Pronto a convertire i tuoi file?",
       "subtitle": "Carica un file per iniziare. Nessuna registrazione, nessun software da installare e nessun costo nascosto. Il tuo file sarà convertito e pronto per il download in pochi secondi.",
       "button": "Carica e converti"
-    }
+    },
+    "ctaButton": "Inizia a convertire — È gratis",
+    "ctaSubtext": "Senza registrazione · Max 250 MB"
   },
   "converter": {
     "dropzone": {
@@ -360,5 +362,48 @@
     "title": "Conversioni Popolari",
     "subtitle": "Accesso rapido alle conversioni di file più usate",
     "viewAll": "Vedi tutti gli strumenti"
+  },
+  "trustBar": {
+    "secure": {
+      "title": "Elaborazione sicura",
+      "desc": "File crittografati in transito"
+    },
+    "autoDelete": {
+      "title": "Eliminazione automatica",
+      "desc": "File eliminati dopo la conversione"
+    },
+    "noSignup": {
+      "title": "Senza registrazione",
+      "desc": "Conversioni gratuite e anonime"
+    }
+  },
+  "supportedFormats": {
+    "title": "Tipi di file supportati",
+    "subtitle": "FlipMyFiles gestisce un'ampia gamma di formati di file per immagini, video, audio, documenti e archivi.",
+    "images": {
+      "title": "Immagini",
+      "desc": "Foto, grafica & icone",
+      "viewConversions": "Visualizza conversioni immagini"
+    },
+    "video": {
+      "title": "Video",
+      "desc": "Film, clip & animazioni",
+      "viewConversions": "Visualizza conversioni video"
+    },
+    "audio": {
+      "title": "Audio",
+      "desc": "Musica, podcast & registrazioni",
+      "viewConversions": "Visualizza conversioni audio"
+    },
+    "documents": {
+      "title": "Documenti",
+      "desc": "PDF, fogli di calcolo & testo",
+      "viewConversions": "Visualizza conversioni documenti"
+    },
+    "archives": {
+      "title": "Archivi",
+      "desc": "Pacchetti di file compressi",
+      "viewConversions": "Visualizza conversioni archivi"
+    }
   }
 }

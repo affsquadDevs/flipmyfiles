@@ -43,7 +43,9 @@
       "title": "Ready to Convert Your Files?",
       "subtitle": "Upload a file to get started. No registration, no software to install, and no hidden fees. Your file will be converted and ready to download in seconds.",
       "button": "Upload & Convert"
-    }
+    },
+    "ctaButton": "Start Converting — It's Free",
+    "ctaSubtext": "No signup required · Max 250 MB"
   },
   "converter": {
     "dropzone": {
@@ -360,5 +362,48 @@
     "title": "Popular Conversions",
     "subtitle": "Quick access to the most-used file conversions",
     "viewAll": "View all conversion tools"
+  },
+  "trustBar": {
+    "secure": {
+      "title": "Secure Processing",
+      "desc": "Files encrypted in transit"
+    },
+    "autoDelete": {
+      "title": "Auto-Delete",
+      "desc": "Files removed after conversion"
+    },
+    "noSignup": {
+      "title": "No Signup",
+      "desc": "Free, anonymous conversions"
+    }
+  },
+  "supportedFormats": {
+    "title": "Supported File Types",
+    "subtitle": "FlipMyFiles handles a wide range of file formats across images, video, audio, documents, and archives.",
+    "images": {
+      "title": "Images",
+      "desc": "Photos, graphics & icons",
+      "viewConversions": "View image conversions"
+    },
+    "video": {
+      "title": "Video",
+      "desc": "Movies, clips & animations",
+      "viewConversions": "View video conversions"
+    },
+    "audio": {
+      "title": "Audio",
+      "desc": "Music, podcasts & recordings",
+      "viewConversions": "View audio conversions"
+    },
+    "documents": {
+      "title": "Documents",
+      "desc": "PDFs, spreadsheets & text",
+      "viewConversions": "View document conversions"
+    },
+    "archives": {
+      "title": "Archives",
+      "desc": "Compressed file packages",
+      "viewConversions": "View archive conversions"
+    }
   }
 }

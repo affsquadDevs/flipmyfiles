@@ -43,7 +43,9 @@
       "title": "Připraveni převést soubory?",
       "subtitle": "Nahrajte soubor a začněte. Bez registrace, bez softwaru ke stažení a bez skrytých poplatků. Váš soubor bude převeden a připraven ke stažení během několika sekund.",
       "button": "Nahrát a převést"
-    }
+    },
+    "ctaButton": "Začít převádět — Je to zdarma",
+    "ctaSubtext": "Bez registrace · Max 250 MB"
   },
   "converter": {
     "dropzone": {
@@ -360,5 +362,48 @@
     "title": "Oblíbené Konverze",
     "subtitle": "Rychlý přístup k nejpoužívanějším konverzím souborů",
     "viewAll": "Zobrazit všechny nástroje"
+  },
+  "trustBar": {
+    "secure": {
+      "title": "Bezpečné zpracování",
+      "desc": "Soubory šifrované při přenosu"
+    },
+    "autoDelete": {
+      "title": "Automatické smazání",
+      "desc": "Soubory smazány po převodu"
+    },
+    "noSignup": {
+      "title": "Bez registrace",
+      "desc": "Bezplatné, anonymní převody"
+    }
+  },
+  "supportedFormats": {
+    "title": "Podporované typy souborů",
+    "subtitle": "FlipMyFiles zpracovává širokou škálu formátů souborů pro obrázky, video, zvuk, dokumenty a archivy.",
+    "images": {
+      "title": "Obrázky",
+      "desc": "Fotografie, grafika & ikony",
+      "viewConversions": "Zobrazit převody obrázků"
+    },
+    "video": {
+      "title": "Video",
+      "desc": "Filmy, klipy & animace",
+      "viewConversions": "Zobrazit převody videa"
+    },
+    "audio": {
+      "title": "Zvuk",
+      "desc": "Hudba, podcasty & nahrávky",
+      "viewConversions": "Zobrazit převody zvuku"
+    },
+    "documents": {
+      "title": "Dokumenty",
+      "desc": "PDF, tabulky & text",
+      "viewConversions": "Zobrazit převody dokumentů"
+    },
+    "archives": {
+      "title": "Archivy",
+      "desc": "Komprimované balíčky souborů",
+      "viewConversions": "Zobrazit převody archivů"
+    }
   }
 }

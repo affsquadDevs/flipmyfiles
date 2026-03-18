@@ -62,9 +62,9 @@ export default function HomeHero() {
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
             </svg>
-            Start Converting — It&apos;s Free
+            {t('ctaButton')}
           </Link>
-          <p className="mt-3 text-xs text-gray-500">No signup required · Max 250 MB</p>
+          <p className="mt-3 text-xs text-gray-500">{t('ctaSubtext')}</p>
         </div>
 
         {/* Trust bar */}

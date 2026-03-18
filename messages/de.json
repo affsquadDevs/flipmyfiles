@@ -43,7 +43,9 @@
       "title": "Bereit, deine Dateien zu konvertieren?",
       "subtitle": "Lade eine Datei hoch, um loszulegen. Keine Registrierung, keine Software, keine versteckten Kosten. Deine Datei wird konvertiert und ist in Sekunden zum Download bereit.",
       "button": "Hochladen & Konvertieren"
-    }
+    },
+    "ctaButton": "Konvertierung starten — Kostenlos",
+    "ctaSubtext": "Keine Anmeldung · Max. 250 MB"
   },
   "converter": {
     "dropzone": {
@@ -360,5 +362,48 @@
     "title": "Beliebte Konvertierungen",
     "subtitle": "Schneller Zugriff auf die meistgenutzten Dateikonvertierungen",
     "viewAll": "Alle Konvertierungstools anzeigen"
+  },
+  "trustBar": {
+    "secure": {
+      "title": "Sichere Verarbeitung",
+      "desc": "Dateien verschlüsselt bei der Übertragung"
+    },
+    "autoDelete": {
+      "title": "Auto-Löschen",
+      "desc": "Dateien nach Konvertierung gelöscht"
+    },
+    "noSignup": {
+      "title": "Keine Anmeldung",
+      "desc": "Kostenlose, anonyme Konvertierungen"
+    }
+  },
+  "supportedFormats": {
+    "title": "Unterstützte Dateitypen",
+    "subtitle": "FlipMyFiles verarbeitet eine Vielzahl von Dateiformaten für Bilder, Video, Audio, Dokumente und Archive.",
+    "images": {
+      "title": "Bilder",
+      "desc": "Fotos, Grafiken & Icons",
+      "viewConversions": "Bildkonvertierungen anzeigen"
+    },
+    "video": {
+      "title": "Video",
+      "desc": "Filme, Clips & Animationen",
+      "viewConversions": "Videokonvertierungen anzeigen"
+    },
+    "audio": {
+      "title": "Audio",
+      "desc": "Musik, Podcasts & Aufnahmen",
+      "viewConversions": "Audiokonvertierungen anzeigen"
+    },
+    "documents": {
+      "title": "Dokumente",
+      "desc": "PDFs, Tabellen & Text",
+      "viewConversions": "Dokumentkonvertierungen anzeigen"
+    },
+    "archives": {
+      "title": "Archive",
+      "desc": "Komprimierte Dateipakete",
+      "viewConversions": "Archivkonvertierungen anzeigen"
+    }
   }
 }

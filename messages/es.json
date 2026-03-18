@@ -43,7 +43,9 @@
       "title": "¿Listo para convertir tus archivos?",
       "subtitle": "Sube un archivo para empezar. Sin registro, sin software que instalar y sin tarifas ocultas. Tu archivo se convertirá y estará listo para descargar en segundos.",
       "button": "Subir y convertir"
-    }
+    },
+    "ctaButton": "Empezar a convertir — Es gratis",
+    "ctaSubtext": "Sin registro · Máx. 250 MB"
   },
   "converter": {
     "dropzone": {
@@ -360,5 +362,48 @@
     "title": "Conversiones Populares",
     "subtitle": "Acceso rápido a las conversiones más utilizadas",
     "viewAll": "Ver todas las herramientas"
+  },
+  "trustBar": {
+    "secure": {
+      "title": "Procesamiento seguro",
+      "desc": "Archivos cifrados en tránsito"
+    },
+    "autoDelete": {
+      "title": "Eliminación automática",
+      "desc": "Archivos eliminados tras la conversión"
+    },
+    "noSignup": {
+      "title": "Sin registro",
+      "desc": "Conversiones gratuitas y anónimas"
+    }
+  },
+  "supportedFormats": {
+    "title": "Tipos de archivos compatibles",
+    "subtitle": "FlipMyFiles admite una amplia gama de formatos de archivo para imágenes, vídeo, audio, documentos y archivos comprimidos.",
+    "images": {
+      "title": "Imágenes",
+      "desc": "Fotos, gráficos e iconos",
+      "viewConversions": "Ver conversiones de imágenes"
+    },
+    "video": {
+      "title": "Vídeo",
+      "desc": "Películas, clips y animaciones",
+      "viewConversions": "Ver conversiones de vídeo"
+    },
+    "audio": {
+      "title": "Audio",
+      "desc": "Música, podcasts y grabaciones",
+      "viewConversions": "Ver conversiones de audio"
+    },
+    "documents": {
+      "title": "Documentos",
+      "desc": "PDF, hojas de cálculo y texto",
+      "viewConversions": "Ver conversiones de documentos"
+    },
+    "archives": {
+      "title": "Archivos comprimidos",
+      "desc": "Paquetes de archivos comprimidos",
+      "viewConversions": "Ver conversiones de archivos"
+    }
   }
 }

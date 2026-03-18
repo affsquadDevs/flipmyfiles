@@ -43,7 +43,9 @@
       "title": "Redo att konvertera dina filer?",
       "subtitle": "Ladda upp en fil för att komma igång. Ingen registrering, ingen mjukvara att installera och inga dolda avgifter. Din fil konverteras och är redo att ladda ner på några sekunder.",
       "button": "Ladda upp och konvertera"
-    }
+    },
+    "ctaButton": "Börja konvertera — Det är gratis",
+    "ctaSubtext": "Ingen registrering · Max 250 MB"
   },
   "converter": {
     "dropzone": {
@@ -360,5 +362,48 @@
     "title": "Populära Konverteringar",
     "subtitle": "Snabb åtkomst till de mest använda filkonverteringarna",
     "viewAll": "Visa alla konverteringsverktyg"
+  },
+  "trustBar": {
+    "secure": {
+      "title": "Säker bearbetning",
+      "desc": "Filer krypterade under överföring"
+    },
+    "autoDelete": {
+      "title": "Automatisk radering",
+      "desc": "Filer raderas efter konvertering"
+    },
+    "noSignup": {
+      "title": "Ingen registrering",
+      "desc": "Gratis, anonyma konverteringar"
+    }
+  },
+  "supportedFormats": {
+    "title": "Filtyper som stöds",
+    "subtitle": "FlipMyFiles hanterar ett brett utbud av filformat för bilder, video, ljud, dokument och arkiv.",
+    "images": {
+      "title": "Bilder",
+      "desc": "Foton, grafik & ikoner",
+      "viewConversions": "Visa bildkonverteringar"
+    },
+    "video": {
+      "title": "Video",
+      "desc": "Filmer, klipp & animationer",
+      "viewConversions": "Visa videokonverteringar"
+    },
+    "audio": {
+      "title": "Ljud",
+      "desc": "Musik, poddar & inspelningar",
+      "viewConversions": "Visa ljudkonverteringar"
+    },
+    "documents": {
+      "title": "Dokument",
+      "desc": "PDF, kalkylblad & text",
+      "viewConversions": "Visa dokumentkonverteringar"
+    },
+    "archives": {
+      "title": "Arkiv",
+      "desc": "Komprimerade filpaket",
+      "viewConversions": "Visa arkivkonverteringar"
+    }
   }
 }

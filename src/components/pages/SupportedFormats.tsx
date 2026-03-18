@@ -1,9 +1,19 @@
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-const formatGroups = [
+type FormatKey = 'images' | 'video' | 'audio' | 'documents' | 'archives';
+
+const formatGroups: {
+  key: FormatKey;
+  formats: string[];
+  link: string;
+  iconColor: string;
+  accentBorder: string;
+  linkColor: string;
+  icon: React.ReactNode;
+}[] = [
   {
-    title: 'Images',
-    description: 'Photos, graphics & icons',
+    key: 'images',
     formats: ['JPG', 'PNG', 'WebP', 'GIF', 'BMP', 'TIFF', 'AVIF', 'SVG', 'ICO', 'HEIC'],
     link: '/tools/image',
     iconColor: 'bg-violet-100 text-violet-600',
@@ -16,8 +26,7 @@ const formatGroups = [
     ),
   },
   {
-    title: 'Video',
-    description: 'Movies, clips & animations',
+    key: 'video',
     formats: ['MP4', 'AVI', 'MOV', 'MKV', 'WebM', 'FLV', 'WMV'],
     link: '/tools/video',
     iconColor: 'bg-rose-100 text-rose-600',
@@ -30,8 +39,7 @@ const formatGroups = [
     ),
   },
   {
-    title: 'Audio',
-    description: 'Music, podcasts & recordings',
+    key: 'audio',
     formats: ['MP3', 'WAV', 'OGG', 'FLAC', 'AAC', 'WMA', 'M4A'],
     link: '/tools/audio',
     iconColor: 'bg-emerald-100 text-emerald-600',
@@ -44,8 +52,7 @@ const formatGroups = [
     ),
   },
   {
-    title: 'Documents',
-    description: 'PDFs, spreadsheets & text',
+    key: 'documents',
     formats: ['PDF', 'DOCX', 'TXT', 'CSV', 'XLSX'],
     link: '/tools/document',
     iconColor: 'bg-blue-100 text-blue-600',
@@ -58,8 +65,7 @@ const formatGroups = [
     ),
   },
   {
-    title: 'Archives',
-    description: 'Compressed file packages',
+    key: 'archives',
     formats: ['ZIP', 'TAR', 'GZ'],
     link: '/tools/archive',
     iconColor: 'bg-amber-100 text-amber-600',
@@ -74,23 +80,24 @@ const formatGroups = [
 ];
 
 export default function SupportedFormats() {
+  const t = useTranslations('supportedFormats');
+
   return (
     <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-            Supported File Types
+            {t('title')}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-text-muted">
-            FlipMyFiles handles a wide range of file formats across images, video, audio,
-            documents, and archives.
+            {t('subtitle')}
           </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {formatGroups.map((group) => (
             <Link
-              key={group.title}
+              key={group.key}
               href={group.link}
               className={`group flex flex-col rounded-2xl border border-border bg-white p-8 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md ${group.accentBorder}`}
             >
@@ -101,10 +108,10 @@ export default function SupportedFormats() {
                 </div>
                 <div>
                   <p className="text-xs font-medium uppercase tracking-widest text-text-muted">
-                    {group.description}
+                    {t(`${group.key}.desc`)}
                   </p>
                   <h3 className="text-lg font-bold text-gray-900">
-                    {group.title}
+                    {t(`${group.key}.title`)}
                   </h3>
                 </div>
               </div>
@@ -126,7 +133,7 @@ export default function SupportedFormats() {
 
               {/* Link */}
               <div className={`mt-6 flex items-center gap-1.5 text-sm font-medium ${group.linkColor} opacity-0 transition-all group-hover:opacity-100`}>
-                View {group.title.toLowerCase()} conversions
+                {t(`${group.key}.viewConversions`)}
                 <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

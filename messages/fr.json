@@ -43,7 +43,9 @@
       "title": "Prêt à convertir vos fichiers ?",
       "subtitle": "Téléversez un fichier pour commencer. Sans inscription, sans logiciel à installer et sans frais cachés. Votre fichier sera converti et prêt à télécharger en quelques secondes.",
       "button": "Téléverser et convertir"
-    }
+    },
+    "ctaButton": "Commencer la conversion — Gratuit",
+    "ctaSubtext": "Sans inscription · Max 250 Mo"
   },
   "converter": {
     "dropzone": {
@@ -360,5 +362,48 @@
     "title": "Conversions Populaires",
     "subtitle": "Accès rapide aux conversions de fichiers les plus utilisées",
     "viewAll": "Voir tous les outils"
+  },
+  "trustBar": {
+    "secure": {
+      "title": "Traitement sécurisé",
+      "desc": "Fichiers chiffrés en transit"
+    },
+    "autoDelete": {
+      "title": "Suppression automatique",
+      "desc": "Fichiers supprimés après conversion"
+    },
+    "noSignup": {
+      "title": "Sans inscription",
+      "desc": "Conversions gratuites et anonymes"
+    }
+  },
+  "supportedFormats": {
+    "title": "Types de fichiers pris en charge",
+    "subtitle": "FlipMyFiles prend en charge une large gamme de formats de fichiers pour les images, la vidéo, l'audio, les documents et les archives.",
+    "images": {
+      "title": "Images",
+      "desc": "Photos, graphiques & icônes",
+      "viewConversions": "Voir les conversions d'images"
+    },
+    "video": {
+      "title": "Vidéo",
+      "desc": "Films, clips & animations",
+      "viewConversions": "Voir les conversions vidéo"
+    },
+    "audio": {
+      "title": "Audio",
+      "desc": "Musique, podcasts & enregistrements",
+      "viewConversions": "Voir les conversions audio"
+    },
+    "documents": {
+      "title": "Documents",
+      "desc": "PDF, tableurs & texte",
+      "viewConversions": "Voir les conversions de documents"
+    },
+    "archives": {
+      "title": "Archives",
+      "desc": "Paquets de fichiers compressés",
+      "viewConversions": "Voir les conversions d'archives"
+    }
   }
 }

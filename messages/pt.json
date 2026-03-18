@@ -43,7 +43,9 @@
       "title": "Pronto para converter seus arquivos?",
       "subtitle": "Envie um arquivo para começar. Sem cadastro, sem software para instalar e sem taxas ocultas. Seu arquivo será convertido e estará pronto para download em segundos.",
       "button": "Enviar e converter"
-    }
+    },
+    "ctaButton": "Começar a converter — É grátis",
+    "ctaSubtext": "Sem cadastro · Máx. 250 MB"
   },
   "converter": {
     "dropzone": {
@@ -360,5 +362,48 @@
     "title": "Conversões Populares",
     "subtitle": "Acesso rápido às conversões mais utilizadas",
     "viewAll": "Ver todas as ferramentas"
+  },
+  "trustBar": {
+    "secure": {
+      "title": "Processamento seguro",
+      "desc": "Arquivos criptografados em trânsito"
+    },
+    "autoDelete": {
+      "title": "Exclusão automática",
+      "desc": "Arquivos removidos após a conversão"
+    },
+    "noSignup": {
+      "title": "Sem cadastro",
+      "desc": "Conversões gratuitas e anônimas"
+    }
+  },
+  "supportedFormats": {
+    "title": "Tipos de arquivo suportados",
+    "subtitle": "O FlipMyFiles suporta uma ampla gama de formatos de arquivo para imagens, vídeo, áudio, documentos e arquivos compactados.",
+    "images": {
+      "title": "Imagens",
+      "desc": "Fotos, gráficos & ícones",
+      "viewConversions": "Ver conversões de imagens"
+    },
+    "video": {
+      "title": "Vídeo",
+      "desc": "Filmes, clipes & animações",
+      "viewConversions": "Ver conversões de vídeo"
+    },
+    "audio": {
+      "title": "Áudio",
+      "desc": "Música, podcasts & gravações",
+      "viewConversions": "Ver conversões de áudio"
+    },
+    "documents": {
+      "title": "Documentos",
+      "desc": "PDFs, planilhas & texto",
+      "viewConversions": "Ver conversões de documentos"
+    },
+    "archives": {
+      "title": "Arquivos",
+      "desc": "Pacotes de arquivos compactados",
+      "viewConversions": "Ver conversões de arquivos"
+    }
   }
 }
