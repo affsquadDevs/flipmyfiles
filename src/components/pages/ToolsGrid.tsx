@@ -24,6 +24,25 @@ const categoryStyles: Record<string, { card: string; icon: string; activeCard: s
   archive:  { card: 'bg-rose-50 border-rose-100 hover:border-rose-300 hover:shadow-rose-100',            icon: 'bg-rose-100 text-rose-600',        activeCard: 'bg-rose-100 border-rose-400 ring-2 ring-rose-300' },
 };
 
+const specialTools = [
+  {
+    href: '/tools/metadata-eraser',
+    icon: '🛡️',
+    titleKey: 'specialTools.metadataEraser.title' as const,
+    descKey: 'specialTools.metadataEraser.desc' as const,
+    color: 'bg-violet-50 border-violet-100 hover:border-violet-300',
+    iconColor: 'bg-violet-100 text-violet-600',
+  },
+  {
+    href: '/tools/video-uniqualizer',
+    icon: '🎬',
+    titleKey: 'specialTools.videoUniqualizer.title' as const,
+    descKey: 'specialTools.videoUniqualizer.desc' as const,
+    color: 'bg-rose-50 border-rose-100 hover:border-rose-300',
+    iconColor: 'bg-rose-100 text-rose-600',
+  },
+];
+
 export default function ToolsGrid() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [search, setSearch] = useState('');
@@ -39,6 +58,28 @@ export default function ToolsGrid() {
 
   return (
     <div>
+      {/* Special / Privacy Tools */}
+      <div className="mb-10">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-text-muted">{t('specialTools.label')}</p>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {specialTools.map((tool) => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              className={`group flex items-center gap-4 rounded-2xl border p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md ${tool.color}`}
+            >
+              <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl ${tool.iconColor}`}>
+                {tool.icon}
+              </div>
+              <div className="min-w-0">
+                <p className="font-semibold text-gray-900">{t(tool.titleKey)}</p>
+                <p className="mt-0.5 text-xs text-text-muted line-clamp-2">{t(tool.descKey)}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
       {/* Search */}
       <div className="mb-8 flex justify-center">
         <div className="relative w-full max-w-md">
