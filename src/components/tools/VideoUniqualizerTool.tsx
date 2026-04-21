@@ -14,7 +14,7 @@ function formatSize(bytes: number): string {
 }
 
 function buildUniqualizerArgs(inputFile: string, outputFile: string, intensity: Intensity): string[] {
-  const baseArgs = ['-i', inputFile, '-map_metadata', '-1'];
+  const baseArgs = ['-i', inputFile, '-map_metadata', '-1', '-map', '0:v:0', '-map', '0:a?'];
 
   const crf = intensity === 'low' ? '22' : intensity === 'medium' ? '21' : '20';
 
@@ -29,6 +29,7 @@ function buildUniqualizerArgs(inputFile: string, outputFile: string, intensity: 
   if (vfFilter) args.push('-vf', vfFilter);
   args.push(
     '-c:v', 'libx264',
+    '-pix_fmt', 'yuv420p',
     '-crf', crf,
     '-preset', 'fast',
     '-movflags', '+faststart',
@@ -84,6 +85,8 @@ export default function VideoUniqualizerTool() {
     setError(null);
 
     const ext = file.name.split('.').pop()?.toLowerCase() || 'mp4';
+    const inputName = `input.${ext}`;
+    const outputName = `output_unique.mp4`;
 
     try {
       setLoadingMsg(t('loadingFFmpeg'));
@@ -93,40 +96,43 @@ export default function VideoUniqualizerTool() {
       const { fetchFile } = await import('@ffmpeg/util');
 
       const ff = await getFFmpeg();
-      ff.on('progress', ({ progress: p }) => {
+
+      const progressHandler = ({ progress: p }: { progress: number }) => {
         setProgress(10 + Math.round(p * 85));
-      });
+      };
+      ff.on('progress', progressHandler);
 
-      setLoadingMsg(t('processing'));
-      setProgress(10);
+      try {
+        setLoadingMsg(t('processing'));
+        setProgress(10);
 
-      const inputName = `input.${ext}`;
-      const outputName = `output_unique.mp4`;
+        const fileData = await fetchFile(file);
+        await ff.writeFile(inputName, fileData);
 
-      const fileData = await fetchFile(file);
-      await ff.writeFile(inputName, fileData);
+        const args = buildUniqualizerArgs(inputName, outputName, intensity);
+        const exitCode = await ff.exec(args);
 
-      const args = buildUniqualizerArgs(inputName, outputName, intensity);
-      const exitCode = await ff.exec(args);
+        if (exitCode !== 0) {
+          throw new Error('Processing failed. The video may be corrupted or use an unsupported codec.');
+        }
 
-      if (exitCode !== 0) {
-        throw new Error('Processing failed. The video may be corrupted or use an unsupported codec.');
+        const data = await ff.readFile(outputName);
+        const bytes = Uint8Array.from(data instanceof Uint8Array ? data : new Uint8Array(data as unknown as ArrayBuffer));
+        const blob = new Blob([bytes], { type: 'video/mp4' });
+        const baseName = file.name.replace(/\.[^.]+$/, '');
+        const filename = `${baseName}_unique.mp4`;
+
+        setProgress(100);
+        setResult({ blob, filename });
+        setState('done');
+      } finally {
+        ff.off('progress', progressHandler);
+        await ff.deleteFile(inputName).catch(() => {});
+        await ff.deleteFile(outputName).catch(() => {});
       }
-
-      const data = await ff.readFile(outputName);
-      await ff.deleteFile(inputName).catch(() => {});
-      await ff.deleteFile(outputName).catch(() => {});
-
-      const bytes = Uint8Array.from(data instanceof Uint8Array ? data : new Uint8Array(data as unknown as ArrayBuffer));
-      const blob = new Blob([bytes], { type: 'video/mp4' });
-      const baseName = file.name.replace(/\.[^.]+$/, '');
-      const filename = `${baseName}_unique.mp4`;
-
-      setProgress(100);
-      setResult({ blob, filename });
-      setState('done');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Processing failed');
+      console.error('[VideoUniqualizerTool] error:', err);
+      setError(err instanceof Error ? err.message : typeof err === 'string' ? err : 'Processing failed');
       setState('error');
     } finally {
       setLoadingMsg('');
