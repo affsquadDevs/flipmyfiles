@@ -8,6 +8,7 @@ import SecuritySection from '@/components/pages/SecuritySection';
 import HomeFAQ from '@/components/pages/HomeFAQ';
 import StatsBanner from '@/components/pages/StatsBanner';
 import { Link } from '@/i18n/navigation';
+import HomeProjectSpotlight from '@/components/pages/HomeProjectSpotlight';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -20,6 +21,7 @@ function HomeContent() {
       <HomeHero />
       <HowItWorks />
       <SupportedFormats />
+      <HomeProjectSpotlight />
       <PopularConversions />
       <SecuritySection />
       <StatsBanner />
