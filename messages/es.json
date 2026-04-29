@@ -45,7 +45,15 @@
       "button": "Subir y convertir"
     },
     "ctaButton": "Empezar a convertir — Es gratis",
-    "ctaSubtext": "Sin registro · Máx. 250 MB"
+    "ctaSubtext": "Sin registro · Máx. 250 MB",
+    "openSourceSpotlight": {
+      "badge": "FlipMyFiles · Código Abierto",
+      "title": "Totalmente Open Source. Sin procesamiento en servidor. 100% seguro.",
+      "description": "FlipMyFiles es un convertidor totalmente de código abierto, creado para flujos de trabajo centrados en la privacidad. Tus archivos se mantienen en tu dispositivo sin procesamiento del lado del servidor, dándote el máximo control y seguridad.",
+      "githubButton": "Ver en GitHub",
+      "reportButton": "Reportar problema",
+      "docsButton": "Documentación"
+    }
   },
   "converter": {
     "dropzone": {

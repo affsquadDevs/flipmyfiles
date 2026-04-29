@@ -45,7 +45,15 @@
       "button": "Ladda upp och konvertera"
     },
     "ctaButton": "Börja konvertera — Det är gratis",
-    "ctaSubtext": "Ingen registrering · Max 250 MB"
+    "ctaSubtext": "Ingen registrering · Max 250 MB",
+    "openSourceSpotlight": {
+      "badge": "FlipMyFiles · Open Source",
+      "title": "Helt Open Source. Ingen serverbearbetning. 100% säkert.",
+      "description": "FlipMyFiles är en helt öppen källkodskonverterare byggd för integritetsfokuserade arbetsflöden. Dina filer stannar på din enhet utan serverbearbetning, vilket ger dig maximal kontroll och säkerhet.",
+      "githubButton": "Visa på GitHub",
+      "reportButton": "Rapportera problem",
+      "docsButton": "Dokumentation"
+    }
   },
   "converter": {
     "dropzone": {

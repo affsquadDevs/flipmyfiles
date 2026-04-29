@@ -45,7 +45,15 @@
       "button": "Nahrát a převést"
     },
     "ctaButton": "Začít převádět — Je to zdarma",
-    "ctaSubtext": "Bez registrace · Max 250 MB"
+    "ctaSubtext": "Bez registrace · Max 250 MB",
+    "openSourceSpotlight": {
+      "badge": "FlipMyFiles · Open Source",
+      "title": "Plně Open Source. Bez zpracování na serveru. 100% bezpečné.",
+      "description": "FlipMyFiles je plně open-source převodník vytvořený pro pracovní postupy zaměřené na soukromí. Vaše soubory zůstávají na vašem zařízení bez zpracování na straně serveru, což vám dává maximální kontrolu a bezpečnost.",
+      "githubButton": "Zobrazit na GitHubu",
+      "reportButton": "Nahlásit problém",
+      "docsButton": "Dokumentace"
+    }
   },
   "converter": {
     "dropzone": {
