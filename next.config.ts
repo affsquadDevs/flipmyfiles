@@ -24,7 +24,9 @@ const nextConfig: NextConfig = {
       { source: '/terms',            destination: '/en/terms-of-service', permanent: true },
     ];
   },
-  // Required for FFmpeg WASM SharedArrayBuffer support
+  // Required for FFmpeg WASM SharedArrayBuffer support.
+  // `credentialless` keeps cross-origin isolation (SharedArrayBuffer still works)
+  // while letting third-party iframes (AdSense) load without CORP headers.
   async headers() {
     return [
       {
@@ -32,7 +34,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Cross-Origin-Embedder-Policy',
-            value: 'require-corp',
+            value: 'credentialless',
           },
           {
             key: 'Cross-Origin-Opener-Policy',
