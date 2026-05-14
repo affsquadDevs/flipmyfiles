@@ -24,24 +24,19 @@ const nextConfig: NextConfig = {
       { source: '/terms',            destination: '/en/terms-of-service', permanent: true },
     ];
   },
-  // Required for FFmpeg WASM SharedArrayBuffer support.
-  // `credentialless` keeps cross-origin isolation (SharedArrayBuffer still works)
-  // while letting third-party iframes (AdSense) load without CORP headers.
+  // COEP/COOP are required for FFmpeg WASM SharedArrayBuffer support, but
+  // they block AdSense iframes from loading. Scope them to ONLY the routes
+  // that actually need SharedArrayBuffer (conversion + media tools), so the
+  // rest of the site (home, blog, about, etc.) can display ads.
   async headers() {
+    const isolationHeaders = [
+      { key: 'Cross-Origin-Embedder-Policy', value: 'credentialless' },
+      { key: 'Cross-Origin-Opener-Policy',   value: 'same-origin'    },
+    ];
     return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Cross-Origin-Embedder-Policy',
-            value: 'credentialless',
-          },
-          {
-            key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin',
-          },
-        ],
-      },
+      { source: '/:locale/convert/:slug*',          headers: isolationHeaders },
+      { source: '/:locale/tools/metadata-eraser',   headers: isolationHeaders },
+      { source: '/:locale/tools/video-uniqualizer', headers: isolationHeaders },
     ];
   },
   // Externalize packages that have optional deps not available in browser/Vercel
