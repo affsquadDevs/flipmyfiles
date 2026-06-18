@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'home' });
   const title = 'FlipMyFiles — Free Online File Converter';
-  const description = t('hero.subtitle');
+  const description = `${t('hero.subtitle')} ${t('badge')}`;
 
   return {
     metadataBase: new URL(SITE_URL),
