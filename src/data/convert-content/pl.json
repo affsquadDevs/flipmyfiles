@@ -1,0 +1,544 @@
+{
+  "benefits": {
+    "sizeReduction": "Zmniejsz rozmiar pliku, konwertując z formatu {fromName} na bardziej kompaktowy {to}",
+    "compatibility": "Popraw zgodność, konwertując na {to}, który jest obsługiwany przez praktycznie wszystkie urządzenia i aplikacje",
+    "lossless": "Konwertuj na format bezstratny, który zachowuje dane bez dodatkowej kompresji",
+    "webOptimize": "Zoptymalizuj pod kątem publikacji w sieci dzięki nowoczesnemu formatowi {to}",
+    "transparency": "Zyskaj obsługę przezroczystości, której format źródłowy nie zapewnia",
+    "heic": "Udostępnij zdjęcia z urządzeń Apple na systemach Windows, Android i innych platformach",
+    "mov": "Konwertuj nagrania wideo z urządzeń Apple do użytku na urządzeniach innych producentów",
+    "audioExtract": "Wyodrębnij samą ścieżkę dźwiękową z pliku wideo bez potrzeby korzystania z oprogramowania do montażu wideo",
+    "pdf": "Utwórz przenośny dokument, który wygląda tak samo na każdym urządzeniu i w każdym systemie operacyjnym",
+    "csv": "Wyeksportuj dane do prostego, uniwersalnie czytelnego formatu tekstowego do wykorzystania w bazach danych, skryptach lub innych aplikacjach",
+    "xlsx": "Otwórz dane w programie Excel z sformatowanymi kolumnami, nagłówkami oraz możliwością dodawania formuł i wykresów",
+    "generic": "Konwertuj plik {from} na format {to} do użytku w aplikacjach, które tego wymagają",
+    "targetUses": "Wykorzystaj {toName} do takich zastosowań jak {toUses}",
+    "browser": "Konwertuj {from} na {to} bezpośrednio w przeglądarce — nic nie trzeba instalować ani zakładać konta"
+  },
+  "faqs": {
+    "howToQ": "Jak przekonwertować {from} na {to}?",
+    "howToA": "Aby przekonwertować plik {from} na {to}, skorzystaj z obszaru przesyłania na tej stronie. Przeciągnij i upuść plik {from} lub kliknij, aby przeglądać swoje pliki. Po przesłaniu kliknij przycisk „Convert to {to}”. Konwersja zostanie przetworzona, a powstały plik {to} będzie dostępny do pobrania.",
+    "freeQ": "Czy konwersja {from} na {to} jest darmowa?",
+    "freeA": "Tak. To narzędzie do konwersji jest całkowicie darmowe. Nie ma wersji premium, nie nakładamy znaków wodnych na pliki wynikowe ani nie ograniczamy liczby konwersji, które możesz wykonać. Usługa jest finansowana z reklam.",
+    "differenceQ": "Jaka jest różnica między {from} a {to}?",
+    "differenceA": "{fromName} {fromDescFirst}. {toName} {toDescFirst}. Konwersja między tymi formatami pozwala wykorzystać mocne strony każdego z nich w zależności od konkretnych potrzeb.",
+    "whenQ": "Kiedy warto konwertować {from} na {to}?",
+    "whenA": "Konwersja {from} na {to} ma sens, gdy potrzebujesz tego, w czym {toName} jest dobry: {toStrengths}. Format ten jest powszechnie używany do takich zastosowań jak {toUses}.",
+    "qualityQ": "Czy stracę jakość podczas konwersji {from} na {to}?",
+    "qualityMediaA": "Jakość pliku wynikowego zależy od użytych kodeków i ustawień. Podczas konwersji między formatami stratnymi należy spodziewać się pewnej korekty jakości. Konwersje wideo i audio w FlipMyFiles są przetwarzane w Twojej przeglądarce z użyciem standardowych ustawień kodowania zaprojektowanych tak, aby zachować dobrą jakość.",
+    "qualityNonMediaA": "Jakość pliku wynikowego zależy od zaangażowanych formatów. Konwersja z formatu stratnego na bezstratny nie przywraca utraconych danych, ale nie powoduje dodatkowej utraty jakości. Konwersja z formatu bezstratnego na stratny wiąże się z pewną redukcją danych w celu uzyskania mniejszych plików. Konwersje obrazów korzystają ze zoptymalizowanych ustawień, aby zachować jakość wizualną.",
+    "privacyQ": "Czy moje pliki są bezpieczne i prywatne?",
+    "privacyMediaA": "Tak. Konwersje wideo i audio są przetwarzane w całości w Twojej przeglądarce z wykorzystaniem technologii WebAssembly. Twój plik nigdy nie jest przesyłany na nasze serwery. Konwersja odbywa się lokalnie na Twoim urządzeniu, zapewniając pełną prywatność.",
+    "privacyNonMediaA": "Tak. Pliki przesłane do konwersji są przetwarzane w pamięci serwera i usuwane natychmiast po zwróceniu przekonwertowanego pliku do Twojej przeglądarki. Nie przechowujemy, nie kopiujemy ani nie analizujemy Twoich plików. Wszystkie transfery są szyfrowane za pomocą protokołu HTTPS.",
+    "maxSizeQ": "Jaki jest maksymalny rozmiar pliku do konwersji?",
+    "maxSizeMediaA": "Maksymalny rozmiar pliku to 250 MB na plik. Limit ten dotyczy wszystkich typów formatów. W przypadku plików wideo i audio szybkość konwersji zależy od mocy obliczeniowej Twojego urządzenia, ponieważ konwersja odbywa się w Twojej przeglądarce.",
+    "maxSizeNonMediaA": "Maksymalny rozmiar pliku to 250 MB na plik. Limit ten dotyczy wszystkich typów formatów. Większość konwersji kończy się w ciągu kilku sekund w przypadku typowych rozmiarów plików."
+  },
+  "introFallback": "Konwersja {from} na {to} zmienia Twój plik z formatu {fromName} na {toName}. Pliki {from} są powszechnie używane do takich zastosowań jak {fromUses}, podczas gdy {to} lepiej sprawdza się, gdy potrzebujesz {toStrength}. Konwertuj na {to}, gdy wymaga tego dana aplikacja lub platforma albo gdy jego mocne strony lepiej pasują do Twojego projektu niż {from}. Prześlij swój plik {from} powyżej, aby przekonwertować go w kilka sekund — bez instalowania oprogramowania i bez konieczności zakładania konta.",
+  "formats": {
+    "JPG": {
+      "description": "JPG to jeden z najczęściej używanych formatów obrazów w sieci. Wykorzystuje kompresję stratną, aby zmniejszyć rozmiar pliku, zachowując akceptowalną jakość wizualną w przypadku zdjęć i złożonych obrazów. Format obsługuje miliony kolorów, dzięki czemu nadaje się do treści fotograficznych.",
+      "strengths": [
+        "Małe rozmiary plików dzięki kompresji stratnej",
+        "Uniwersalna zgodność z urządzeniami i przeglądarkami",
+        "Obsługa milionów kolorów (24-bitowa głębia koloru)",
+        "Regulowany stosunek jakości do rozmiaru"
+      ],
+      "commonUses": [
+        "Obrazy i zdjęcia na stronach internetowych",
+        "Załączniki do wiadomości e-mail",
+        "Przesyłanie do mediów społecznościowych",
+        "Fotografia cyfrowa"
+      ],
+      "technicalNote": "JPG nie obsługuje przezroczystości ani animacji. Za każdym razem, gdy plik JPG jest edytowany i zapisywany ponownie, może utracić część jakości na skutek ponownej kompresji."
+    },
+    "PNG": {
+      "description": "PNG to format obrazu rastrowego wykorzystujący kompresję bezstratną, co oznacza, że zachowuje wszystkie oryginalne dane obrazu bez utraty jakości. Obsługuje przezroczystość (kanał alfa), co czyni go popularnym wyborem dla grafiki, ikon oraz obrazów, które mają być nakładane na inne treści.",
+      "strengths": [
+        "Kompresja bezstratna zachowuje pełną jakość",
+        "Obsługa przezroczystości (kanał alfa)",
+        "Ostre krawędzie tekstu i grafiki",
+        "Brak utraty jakości podczas edycji i ponownego zapisywania"
+      ],
+      "commonUses": [
+        "Grafika internetowa z przezroczystością",
+        "Zrzuty ekranu i elementy interfejsu",
+        "Logo i ikony",
+        "Obrazy wymagające ostrych szczegółów"
+      ],
+      "technicalNote": "Pliki PNG są zazwyczaj większe niż pliki JPG w przypadku treści fotograficznych, ponieważ kompresja bezstratna jest mniej wydajna dla złożonych, bogatych w kolory obrazów."
+    },
+    "WEBP": {
+      "description": "WebP to nowoczesny format obrazu opracowany przez Google. Obsługuje zarówno kompresję stratną, jak i bezstratną, a także przezroczystość oraz animację. Pliki WebP są zazwyczaj mniejsze niż odpowiadające im pliki JPG lub PNG przy podobnym poziomie jakości, co czyni go dobrze przystosowanym do zastosowań internetowych.",
+      "strengths": [
+        "Mniejsze rozmiary plików niż JPG i PNG przy porównywalnej jakości",
+        "Obsługa zarówno kompresji stratnej, jak i bezstratnej",
+        "Obsługa przezroczystości i animacji",
+        "Zaprojektowany pod kątem szybkiego dostarczania treści w sieci"
+      ],
+      "commonUses": [
+        "Optymalizacja stron internetowych",
+        "Zasoby aplikacji internetowych",
+        "Progresywne aplikacje webowe",
+        "Optymalizacja dostarczania treści"
+      ],
+      "technicalNote": "Choć WebP jest obsługiwany przez wszystkie nowoczesne przeglądarki, niektóre starsze aplikacje i systemy mogą nie otwierać plików WebP natywnie. W celu zapewnienia szerszej zgodności może być konieczna konwersja na JPG lub PNG."
+    },
+    "GIF": {
+      "description": "GIF to format obrazu obsługujący animację i przezroczystość. Wykorzystuje kompresję bezstratną, ale jest ograniczony do palety 256 kolorów, co sprawia, że najlepiej nadaje się do prostej grafiki, logo i krótkich animacji, a nie do zdjęć.",
+      "strengths": [
+        "Obsługa animacji (wiele klatek)",
+        "Obsługa podstawowej przezroczystości",
+        "Mały rozmiar pliku dla prostej grafiki",
+        "Uniwersalne wsparcie przeglądarek i urządzeń"
+      ],
+      "commonUses": [
+        "Animowane obrazy i krótkie klipy",
+        "Prosta grafika internetowa",
+        "Obrazy reakcji i memy",
+        "Wskaźniki ładowania interfejsu"
+      ],
+      "technicalNote": "GIF jest ograniczony do 256 kolorów na klatkę. W przypadku treści fotograficznych JPG lub PNG zapewnią lepsze efekty wizualne. W przypadku treści animowanych z większą liczbą kolorów warto rozważyć MP4 lub WebP."
+    },
+    "BMP": {
+      "description": "BMP to nieskompresowany format obrazu rastrowego, który przechowuje dane pikseli bezpośrednio, bez kompresji. Skutkuje to dużymi rozmiarami plików, ale zachowuje dokładne informacje o pikselach. Pliki BMP są często używane w środowiskach Windows oraz w specyficznych zastosowaniach technicznych.",
+      "strengths": [
+        "Dokładność na poziomie pojedynczych pikseli",
+        "Brak artefaktów kompresji",
+        "Prosta struktura formatu",
+        "Szerokie wsparcie w systemach Windows"
+      ],
+      "commonUses": [
+        "Grafika systemowa Windows",
+        "Obrazowanie techniczne i naukowe",
+        "Pliki źródłowe do dalszego przetwarzania",
+        "Zgodność z aplikacjami starszego typu"
+      ],
+      "technicalNote": "Pliki BMP są znacznie większe niż formaty skompresowane, takie jak JPG czy PNG. Konwersja BMP na PNG lub JPG jest zalecana, gdy istotny jest rozmiar pliku lub zastosowanie w sieci."
+    },
+    "TIFF": {
+      "description": "TIFF to elastyczny format obrazu używany głównie w profesjonalnej fotografii, druku i wydawnictwach. Obsługuje kompresję bezstratną, wiele warstw oraz dużą głębię koloru, co czyni go odpowiednim do obrazów archiwalnych i o jakości drukarskiej.",
+      "strengths": [
+        "Bezstratne zachowanie jakości",
+        "Obsługa dużej głębi koloru (16-bitowej, 32-bitowej)",
+        "Wiele stron i warstw",
+        "Standard branżowy w druku i wydawnictwach"
+      ],
+      "commonUses": [
+        "Fotografia profesjonalna",
+        "Procesy druku i wydawnicze",
+        "Archiwizacja obrazów",
+        "Obrazowanie medyczne i naukowe"
+      ],
+      "technicalNote": "Pliki TIFF zwykle są duże ze względu na swój bezstratny charakter. Do zastosowań internetowych konwersja TIFF na JPG, PNG lub WebP znacznie zmniejsza rozmiar pliku, zachowując jednocześnie jakość wizualną na potrzeby wyświetlania na ekranie."
+    },
+    "AVIF": {
+      "description": "AVIF to format obrazu nowej generacji oparty na kodeku wideo AV1. Oferuje znacznie lepszą kompresję niż JPG i WebP, tworząc mniejsze pliki przy równoważnej jakości. AVIF obsługuje HDR, szeroką gamę kolorów oraz przezroczystość.",
+      "strengths": [
+        "Wyższa wydajność kompresji",
+        "Obsługa HDR i szerokiej gamy kolorów",
+        "Obsługa przezroczystości i animacji",
+        "Otwarty format wolny od opłat licencyjnych"
+      ],
+      "commonUses": [
+        "Obrazy internetowe nowej generacji",
+        "Zastosowania wrażliwe na przepustowość łącza",
+        "Dostarczanie zdjęć o wysokiej jakości",
+        "Progresywne ładowanie obrazów"
+      ],
+      "technicalNote": "AVIF jest obsługiwany przez większość nowoczesnych przeglądarek, ale może nie być zgodny ze starszym oprogramowaniem. Konwersja na JPG lub PNG zapewnia szerszą zgodność w razie potrzeby."
+    },
+    "SVG": {
+      "description": "SVG to wektorowy format obrazu oparty na języku XML. W przeciwieństwie do formatów rastrowych obrazy SVG można skalować do dowolnego rozmiaru bez utraty jakości. Idealnie nadają się do logo, ikon, wykresów oraz wszelkiej grafiki, która musi wyglądać ostro w różnych rozmiarach.",
+      "strengths": [
+        "Nieograniczona skalowalność bez utraty jakości",
+        "Mały rozmiar pliku dla prostej grafiki",
+        "Możliwość edycji w edytorach tekstu i kodzie",
+        "Obsługa interaktywności i animacji"
+      ],
+      "commonUses": [
+        "Logo i ikony stron internetowych",
+        "Responsywna grafika internetowa",
+        "Wizualizacje danych i wykresy",
+        "Materiały drukowane w dowolnej rozdzielczości"
+      ],
+      "technicalNote": "SVG to format wektorowy i nie potrafi wydajnie przedstawiać treści fotograficznych. Konwersja SVG na PNG tworzy zrasteryzowaną wersję w stałej rozdzielczości."
+    },
+    "ICO": {
+      "description": "ICO to format pliku używany do ikon w systemie Microsoft Windows. Może zawierać wiele rozmiarów obrazu i głębi kolorów w pojedynczym pliku, co pozwala systemowi operacyjnemu wybrać odpowiednią wersję dla różnych kontekstów wyświetlania.",
+      "strengths": [
+        "Wiele rozmiarów w jednym pliku",
+        "Standardowy format ikon systemu Windows",
+        "Wykorzystywany do faviconów stron internetowych",
+        "Obsługa przezroczystości"
+      ],
+      "commonUses": [
+        "Favicony stron internetowych",
+        "Ikony aplikacji Windows",
+        "Skróty na pulpicie",
+        "Ikony kart przeglądarki"
+      ],
+      "technicalNote": "Pliki ICO zazwyczaj zawierają wersje w rozmiarach 16x16, 32x32, 48x48 oraz 256x256 pikseli. Podczas konwersji z innego formatu obraz jest skalowany tak, aby pasował do standardowych wymiarów ikon."
+    },
+    "HEIC": {
+      "description": "HEIC to format obrazu używany przez urządzenia Apple z systemem iOS 11 i nowszym. Wykorzystuje standard kompresji HEVC (H.265), aby tworzyć obrazy wysokiej jakości o rozmiarze pliku stanowiącym mniej więcej połowę rozmiaru JPG. Ma jednak ograniczone wsparcie poza ekosystemem Apple.",
+      "strengths": [
+        "Znacznie mniejsze rozmiary plików niż JPG",
+        "Wysoka jakość obrazu",
+        "Obsługa map głębi i zdjęć Live Photos",
+        "Domyślny format na nowoczesnych urządzeniach Apple"
+      ],
+      "commonUses": [
+        "Fotografia na iPhonie i iPadzie",
+        "Udostępnianie plików w ekosystemie Apple",
+        "Optymalizacja przestrzeni dyskowej na urządzeniach Apple"
+      ],
+      "technicalNote": "Pliki HEIC mogą nie otwierać się na urządzeniach z systemem Windows lub Android bez dodatkowego oprogramowania. Konwersja HEIC na JPG lub PNG zapewnia uniwersalną zgodność."
+    },
+    "MP4": {
+      "description": "MP4 to najczęściej używany format kontenera wideo. Obsługuje wideo, audio, napisy oraz obrazy nieruchome w pojedynczym pliku. MP4 zazwyczaj wykorzystuje kodeki wideo H.264 lub H.265 oraz dźwięk AAC, zapewniając dobrą równowagę między jakością a rozmiarem pliku.",
+      "strengths": [
+        "Uniwersalna zgodność odtwarzania",
+        "Wydajna kompresja dzięki H.264/H.265",
+        "Obsługa wielu ścieżek audio i napisów",
+        "Format przyjazny dla strumieniowania"
+      ],
+      "commonUses": [
+        "Udostępnianie i strumieniowanie wideo",
+        "Przesyłanie do mediów społecznościowych",
+        "Przechowywanie i archiwizacja wideo",
+        "Osadzanie wideo w sieci"
+      ],
+      "technicalNote": "MP4 to format kontenera, który może korzystać z różnych kodeków. Zgodność zależy od konkretnych kodeków użytych w pliku. H.264 z dźwiękiem AAC zapewnia najszersze wsparcie urządzeń."
+    },
+    "AVI": {
+      "description": "AVI to format kontenera multimedialnego wprowadzony przez Microsoft. Przechowuje dane wideo i audio w pojedynczym pliku oraz obsługuje różnorodne kodeki. Choć jest szeroko obsługiwany, pliki AVI zwykle są większe niż pliki MP4 przy równoważnej treści.",
+      "strengths": [
+        "Szerokie wsparcie kodeków",
+        "Dobra zgodność z systemem Windows",
+        "Ugruntowany, dobrze znany format",
+        "Obsługa wielu strumieni audio"
+      ],
+      "commonUses": [
+        "Odtwarzanie starszych materiałów wideo",
+        "Montaż wideo w środowisku Windows",
+        "Starsze aplikacje multimedialne"
+      ],
+      "technicalNote": "Pliki AVI są często większe niż MP4 ze względu na mniej wydajną kompresję. Konwersja AVI na MP4 zazwyczaj zmniejsza rozmiar pliku, zachowując przy tym jakość wizualną."
+    },
+    "MOV": {
+      "description": "MOV to format kontenera multimedialnego opracowany przez Apple do użytku z programem QuickTime. Obsługuje ścieżki wideo, audio i tekstu i jest powszechnie używany w procesach produkcji wideo opartych na środowisku Apple. Pliki MOV często wykorzystują kodeki wysokiej jakości.",
+      "strengths": [
+        "Obsługa wideo wysokiej jakości",
+        "Natywna zgodność z ekosystemem Apple",
+        "Wsparcie profesjonalnego montażu",
+        "Obsługa wielu ścieżek"
+      ],
+      "commonUses": [
+        "Montaż wideo w środowisku Apple",
+        "Nagrania wideo z iPhone'a i Maca",
+        "Profesjonalna produkcja wideo",
+        "Odtwarzanie w QuickTime"
+      ],
+      "technicalNote": "Pliki MOV nagrane na urządzeniach Apple często wykorzystują kodek HEVC. Konwersja MOV na MP4 zapewnia szerszą zgodność z urządzeniami i platformami innymi niż Apple."
+    },
+    "MKV": {
+      "description": "MKV to otwartoźródłowy format kontenera multimedialnego, który może przechowywać nieograniczoną liczbę ścieżek wideo, audio, napisów oraz metadanych. Jest popularny do przechowywania filmów i seriali ze względu na swoją elastyczność oraz obsługę kodeków wysokiej jakości.",
+      "strengths": [
+        "Obsługa nieograniczonej liczby ścieżek",
+        "Format otwartoźródłowy",
+        "Obsługa większości nowoczesnych kodeków",
+        "Obsługa rozdziałów i metadanych"
+      ],
+      "commonUses": [
+        "Przechowywanie filmów i seriali",
+        "Archiwizacja treści wideo",
+        "Osadzanie napisów",
+        "Dystrybucja wideo wysokiej jakości"
+      ],
+      "technicalNote": "MKV może nie być odtwarzany natywnie na wszystkich urządzeniach, zwłaszcza na telefonach komórkowych i niektórych telewizorach Smart TV. Konwersja MKV na MP4 poprawia zgodność odtwarzania."
+    },
+    "WEBM": {
+      "description": "WebM to otwarty format multimedialny opracowany przez Google z myślą o zastosowaniach internetowych. Wykorzystuje kodeki wideo VP8/VP9 oraz kodeki audio Vorbis/Opus. WebM został zaprojektowany pod kątem wydajnego strumieniowania w sieci i jest natywnie obsługiwany w większości przeglądarek.",
+      "strengths": [
+        "Zoptymalizowany pod kątem dostarczania treści w sieci",
+        "Otwarty i wolny od opłat licencyjnych",
+        "Obsługiwany we wszystkich nowoczesnych przeglądarkach",
+        "Dobra kompresja do strumieniowania"
+      ],
+      "commonUses": [
+        "Osadzanie wideo w sieci",
+        "Odtwarzanie wideo HTML5",
+        "Aplikacje wideo działające w przeglądarce",
+        "Strumieniowanie w sieci"
+      ],
+      "technicalNote": "WebM to przede wszystkim format internetowy. Do odtwarzania w odtwarzaczach multimedialnych na komputerze lub na urządzeniach mobilnych poza przeglądarką MP4 jest zazwyczaj bardziej zgodny."
+    },
+    "FLV": {
+      "description": "FLV to format kontenera wideo pierwotnie używany z odtwarzaczem Adobe Flash Player. Choć technologia Flash została wycofana, pliki FLV nadal istnieją jako pozostałość po starszych treściach wideo. Format ten obsługiwał wydajne strumieniowanie, ale został w dużej mierze zastąpiony przez MP4 i WebM.",
+      "strengths": [
+        "Małe rozmiary plików",
+        "Historycznie używany do wideo w sieci",
+        "Prosta struktura formatu"
+      ],
+      "commonUses": [
+        "Starsze treści wideo we Flashu",
+        "Archiwa starszych materiałów wideo z sieci"
+      ],
+      "technicalNote": "Odtwarzacz Flash Player został wycofany przez Adobe. Pliki FLV należy konwertować na MP4 lub WebM, aby umożliwić ich dalsze odtwarzanie w nowoczesnych przeglądarkach i odtwarzaczach multimedialnych."
+    },
+    "WMV": {
+      "description": "WMV to format wideo opracowany przez Microsoft jako część platformy Windows Media. Został zaprojektowany do strumieniowania i odtwarzania w systemach Windows. Choć nadal obsługiwany w niektórych aplikacjach, został w dużej mierze wyparty przez MP4.",
+      "strengths": [
+        "Dobra zgodność z systemem Windows",
+        "Zaprojektowany do strumieniowania",
+        "Obsługiwany przez Windows Media Player"
+      ],
+      "commonUses": [
+        "Odtwarzanie wideo w środowisku Windows",
+        "Starsze treści wideo",
+        "Strumieniowanie Windows Media"
+      ],
+      "technicalNote": "WMV ma ograniczone wsparcie na platformach innych niż Windows. Konwersja na MP4 zapewnia zgodność ze wszystkimi głównymi systemami operacyjnymi i urządzeniami."
+    },
+    "MP3": {
+      "description": "MP3 to najczęściej używany format audio dla muzyki i treści mówionych. Wykorzystuje kompresję stratną, aby znacznie zmniejszyć rozmiar pliku, zachowując akceptowalną jakość dźwięku. MP3 jest obsługiwany praktycznie przez każde urządzenie i każdą aplikację.",
+      "strengths": [
+        "Uniwersalne wsparcie urządzeń i oprogramowania",
+        "Dobry stosunek kompresji do jakości",
+        "Małe rozmiary plików",
+        "Obsługa metadanych (tagi ID3)"
+      ],
+      "commonUses": [
+        "Odtwarzanie i dystrybucja muzyki",
+        "Podcasty i audiobooki",
+        "Dźwięk w sieci",
+        "Przenośne odtwarzacze muzyki"
+      ],
+      "technicalNote": "MP3 wykorzystuje kompresję stratną, co oznacza, że część danych dźwiękowych jest odrzucana w celu zmniejszenia rozmiaru pliku. Do zastosowań archiwalnych lub profesjonalnych lepsze mogą być formaty bezstratne, takie jak FLAC lub WAV."
+    },
+    "WAV": {
+      "description": "WAV to nieskompresowany format audio, który przechowuje surowe dane dźwiękowe. Zachowuje pełną jakość oryginalnego nagrania bez żadnych artefaktów kompresji, co skutkuje większymi rozmiarami plików. WAV jest standardowym formatem w profesjonalnej produkcji dźwięku.",
+      "strengths": [
+        "Nieskompresowany dźwięk o pełnej jakości",
+        "Brak artefaktów kompresji",
+        "Standard branżowy w produkcji dźwięku",
+        "Prosty, dobrze obsługiwany format"
+      ],
+      "commonUses": [
+        "Profesjonalny montaż dźwięku",
+        "Produkcja muzyczna",
+        "Projektowanie dźwięku",
+        "Archiwizacja dźwięku"
+      ],
+      "technicalNote": "Pliki WAV są znacznie większe niż formaty skompresowane. 3-minutowy utwór w formacie WAV ma około 30 MB w porównaniu do około 3 MB w formacie MP3."
+    },
+    "OGG": {
+      "description": "OGG to darmowy, otwartoźródłowy format audio wykorzystujący kodek Vorbis do kompresji stratnej. Zazwyczaj zapewnia lepszą jakość dźwięku niż MP3 przy równoważnej przepływności. OGG jest powszechnie używany w aplikacjach internetowych, grach oraz oprogramowaniu otwartoźródłowym.",
+      "strengths": [
+        "Otwartoźródłowy i wolny od opłat licencyjnych",
+        "Lepsza jakość niż MP3 przy tej samej przepływności",
+        "Dobre wsparcie strumieniowania",
+        "Obsługiwany w większości przeglądarek internetowych"
+      ],
+      "commonUses": [
+        "Dźwięk w sieci i grach",
+        "Otwartoźródłowe projekty audio",
+        "Aplikacje strumieniowe",
+        "Dźwięk HTML5"
+      ],
+      "technicalNote": "OGG ma mniejsze wsparcie urządzeń niż MP3, zwłaszcza na urządzeniach Apple. Konwersja na MP3 zapewnia szerszą zgodność w razie potrzeby."
+    },
+    "FLAC": {
+      "description": "FLAC to bezstratny format audio, który kompresuje dźwięk bez utraty jakichkolwiek danych. Zazwyczaj zmniejsza rozmiar pliku o 50-70% w porównaniu do WAV, zachowując identyczną jakość dźwięku. FLAC jest szeroko używany przez audiofilów oraz do archiwizacji muzyki.",
+      "strengths": [
+        "Kompresja bezstratna zachowuje pełną jakość",
+        "Znaczne zmniejszenie rozmiaru w porównaniu do WAV",
+        "Otwartoźródłowy i wolny od opłat licencyjnych",
+        "Obsługa metadanych i okładek albumów"
+      ],
+      "commonUses": [
+        "Bezstratne przechowywanie muzyki",
+        "Archiwizacja dźwięku",
+        "Odtwarzanie dźwięku o wysokiej wierności",
+        "Zarządzanie biblioteką muzyczną"
+      ],
+      "technicalNote": "Choć FLAC zachowuje doskonałą jakość dźwięku, pliki są nadal kilkukrotnie większe niż MP3. Nie wszystkie przenośne urządzenia obsługują FLAC natywnie."
+    },
+    "AAC": {
+      "description": "AAC to stratny format audio zaprojektowany jako następca MP3. Zapewnia lepszą jakość dźwięku niż MP3 przy tej samej przepływności i jest domyślnym formatem audio dla produktów Apple, YouTube oraz wielu usług strumieniowych.",
+      "strengths": [
+        "Lepsza jakość niż MP3 przy tej samej przepływności",
+        "Domyślny format dla urządzeń Apple",
+        "Wydajna kompresja",
+        "Obsługa dźwięku wielokanałowego"
+      ],
+      "commonUses": [
+        "iTunes i Apple Music",
+        "Dźwięk w YouTube",
+        "Usługi strumieniowe",
+        "Odtwarzanie dźwięku na urządzeniach mobilnych"
+      ],
+      "technicalNote": "AAC jest szeroko obsługiwany, ale może wymagać konwersji na MP3 w celu zapewnienia zgodności ze starszymi urządzeniami lub oprogramowaniem, które nie obsługuje dekodowania AAC."
+    },
+    "WMA": {
+      "description": "WMA to format audio opracowany przez Microsoft. Został zaprojektowany jako konkurencja dla MP3 i oferuje zarówno tryb kompresji stratnej, jak i bezstratnej. WMA ma dobre wsparcie w systemach Windows, ale ograniczoną zgodność na innych platformach.",
+      "strengths": [
+        "Dobra kompresja w systemie Windows",
+        "Obsługa trybu bezstratnego",
+        "Obsługa DRM",
+        "Integracja z ekosystemem Windows"
+      ],
+      "commonUses": [
+        "Odtwarzanie w Windows Media Player",
+        "Starszy dźwięk w systemie Windows",
+        "Biblioteki multimediów oparte na systemie Windows"
+      ],
+      "technicalNote": "Wsparcie WMA jest ograniczone na platformach innych niż Windows. Konwersja WMA na MP3 zapewnia uniwersalną zgodność."
+    },
+    "M4A": {
+      "description": "M4A to kontener wyłącznie audio oparty na standardzie MPEG-4. Zazwyczaj wykorzystuje kodowanie AAC i jest domyślnym formatem audio dla produktów Apple. M4A zapewnia dobrą jakość dźwięku przy mniejszych rozmiarach plików w porównaniu do MP3.",
+      "strengths": [
+        "Lepsza jakość niż MP3 przy podobnych rozmiarach",
+        "Natywne wsparcie urządzeń Apple",
+        "Obsługa metadanych i okładek albumów",
+        "Dobra wydajność kompresji"
+      ],
+      "commonUses": [
+        "Apple Music i iTunes",
+        "Nagrania głosowe z iPhone'a",
+        "Podcasty",
+        "Dźwięk w ekosystemie Apple"
+      ],
+      "technicalNote": "M4A to w istocie dźwięk AAC umieszczony w kontenerze MPEG-4. Konwersja na MP3 może być potrzebna w celu zapewnienia zgodności z urządzeniami i oprogramowaniem, które nie obsługują M4A."
+    },
+    "DOCX": {
+      "description": "DOCX to domyślny format dokumentów programu Microsoft Word. Wykorzystuje formatowanie oparte na języku XML i obsługuje tekst sformatowany, obrazy, tabele, nagłówki, stopki oraz złożone układy dokumentów. DOCX stał się standardowym formatem wymiany dokumentów między platformami.",
+      "strengths": [
+        "Obsługa bogatego formatowania i układu",
+        "Standardowy format dokumentów w branży",
+        "Zgodność międzyplatformowa",
+        "Obsługa obrazów, tabel i osadzonych obiektów"
+      ],
+      "commonUses": [
+        "Dokumenty biznesowe i raporty",
+        "Prace naukowe",
+        "Umowy i oferty",
+        "Ogólne tworzenie dokumentów"
+      ],
+      "technicalNote": "Konwersja DOCX na inne formaty może skutkować pewnymi różnicami w formatowaniu, szczególnie w przypadku złożonych układów, niestandardowych czcionek lub osadzonych obiektów."
+    },
+    "PDF": {
+      "description": "PDF to format dokumentu stworzony przez Adobe, który zachowuje dokładny układ, czcionki i obrazy dokumentu niezależnie od urządzenia lub oprogramowania użytego do jego wyświetlenia. Pliki PDF są szeroko wykorzystywane do dokumentów, które muszą wyglądać tak samo wszędzie.",
+      "strengths": [
+        "Spójny wygląd na różnych urządzeniach",
+        "Zachowanie dokładnego układu i formatowania",
+        "Obsługa formularzy, adnotacji i podpisów",
+        "Format gotowy do druku"
+      ],
+      "commonUses": [
+        "Oficjalne dokumenty i raporty",
+        "Faktury i paragony",
+        "E-booki i instrukcje",
+        "Formularze i umowy"
+      ],
+      "technicalNote": "Konwersja na PDF zachowuje układ wizualny. Konwersja z PDF na formaty edytowalne może nie odtworzyć idealnie oryginalnego formatowania."
+    },
+    "TXT": {
+      "description": "TXT to prosty format pliku, który przechowuje niesformatowany tekst. Zawiera wyłącznie surowe znaki tekstowe, bez żadnego stylowania, obrazów czy informacji o układzie. Pliki TXT są uniwersalnie czytelne przez każdy edytor tekstu lub środowisko programistyczne.",
+      "strengths": [
+        "Uniwersalna zgodność",
+        "Bardzo małe rozmiary plików",
+        "Czytelne przez każdy edytor tekstu",
+        "Brak zależności od formatowania"
+      ],
+      "commonUses": [
+        "Pliki kodu i konfiguracji",
+        "Wymiana danych",
+        "Szybkie notatki i wersje robocze",
+        "Pliki dziennika"
+      ],
+      "technicalNote": "Pliki TXT zawierają wyłącznie zwykły tekst. Podczas konwersji ze sformatowanych dokumentów (takich jak DOCX) całe formatowanie, obrazy i informacje o układzie zostaną usunięte."
+    },
+    "CSV": {
+      "description": "CSV to prosty, oparty na tekście format do przechowywania danych tabelarycznych. Każdy wiersz reprezentuje rekord, a pola w obrębie wiersza są oddzielone przecinkami (lub innymi separatorami). CSV jest szeroko stosowany do importu i eksportu danych między różnymi aplikacjami.",
+      "strengths": [
+        "Prosta, czytelna dla człowieka struktura",
+        "Uniwersalny format wymiany danych",
+        "Obsługiwany przez wszystkie arkusze kalkulacyjne",
+        "Łatwy do przetwarzania programistycznego"
+      ],
+      "commonUses": [
+        "Import i eksport baz danych",
+        "Wymiana danych arkuszy kalkulacyjnych",
+        "Generowanie raportów",
+        "Migracja danych między aplikacjami"
+      ],
+      "technicalNote": "CSV przechowuje wyłącznie surowe dane, bez formuł, formatowania, wykresów czy wielu arkuszy. Konwersja z XLSX na CSV zachowa tylko wartości danych z pierwszego arkusza."
+    },
+    "XLSX": {
+      "description": "XLSX to domyślny format arkuszy kalkulacyjnych programu Microsoft Excel. Obsługuje wiele arkuszy, formuły, wykresy, formatowanie oraz walidację danych. XLSX to format oparty na języku XML, który stał się standardem dla danych w arkuszach kalkulacyjnych.",
+      "strengths": [
+        "Obsługa wielu arkuszy",
+        "Formuły i pola obliczeniowe",
+        "Bogate formatowanie i wykresy",
+        "Duża pojemność danych"
+      ],
+      "commonUses": [
+        "Arkusze finansowe",
+        "Analiza danych",
+        "Raportowanie biznesowe",
+        "Śledzenie projektów"
+      ],
+      "technicalNote": "Konwersja CSV na XLSX tworzy sformatowany arkusz kalkulacyjny z automatycznie dopasowanymi kolumnami i stylizowanymi nagłówkami. Konwersja XLSX na CSV wyodrębnia wyłącznie surowe wartości danych."
+    },
+    "ZIP": {
+      "description": "ZIP to najczęściej używany format archiwum. Kompresuje jeden lub więcej plików do pojedynczego kontenera, zmniejszając całkowity rozmiar plików i upraszczając ich przesyłanie. ZIP jest natywnie obsługiwany przez systemy Windows, macOS i Linux.",
+      "strengths": [
+        "Uniwersalne wsparcie systemów operacyjnych",
+        "Wbudowana kompresja",
+        "Obsługa wielu plików i folderów",
+        "Opcjonalna ochrona hasłem"
+      ],
+      "commonUses": [
+        "Kompresja i grupowanie plików",
+        "Załączniki do wiadomości e-mail",
+        "Dystrybucja oprogramowania",
+        "Archiwa kopii zapasowych"
+      ],
+      "technicalNote": "ZIP domyślnie korzysta z kompresji DEFLATE. Konwersja między formatami archiwów ponownie pakuje zawartość bez zmiany samych plików w środku."
+    },
+    "TAR": {
+      "description": "TAR to format archiwum, który łączy wiele plików w pojedynczy plik bez kompresji. Jest powszechnie używany w systemach Unix i Linux, często w połączeniu z gzip (.tar.gz) lub bzip2 (.tar.bz2) w celu kompresji.",
+      "strengths": [
+        "Zachowuje uprawnienia plików systemu Unix",
+        "Standard w systemach Linux/Unix",
+        "Często łączony z kompresją",
+        "Dobrze radzi sobie z dużą liczbą plików"
+      ],
+      "commonUses": [
+        "Dystrybucja oprogramowania dla systemu Linux",
+        "Kopie zapasowe serwerów",
+        "Pakowanie kodu źródłowego",
+        "Administracja systemem"
+      ],
+      "technicalNote": "Sam TAR nie kompresuje plików. W przypadku archiwów skompresowanych TAR jest zazwyczaj łączony z gzip (.tar.gz). Konwersja z ZIP na TAR tworzy nieskompresowane archiwum."
+    },
+    "GZ": {
+      "description": "GZ (gzip) to format kompresji wykorzystujący algorytm DEFLATE. Jest powszechnie używany w środowiskach Unix i Linux, często w połączeniu z TAR w celu utworzenia skompresowanych plików archiwum (.tar.gz). Gzip zapewnia dobre współczynniki kompresji.",
+      "strengths": [
+        "Wydajna kompresja",
+        "Standard w systemach Unix/Linux",
+        "Szybka kompresja i dekompresja",
+        "Szeroko obsługiwany"
+      ],
+      "commonUses": [
+        "Kompresja archiwów TAR",
+        "Kompresja treści serwerów internetowych",
+        "Kompresja plików dziennika",
+        "Optymalizacja transferu danych"
+      ],
+      "technicalNote": "GZ kompresuje pojedynczy plik lub strumień danych. Aby zarchiwizować wiele plików z kompresją gzip, pliki są najpierw łączone za pomocą TAR, a następnie kompresowane przy użyciu gzip."
+    }
+  }
+}

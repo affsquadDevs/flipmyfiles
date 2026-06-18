@@ -1,17 +1,8 @@
 import type { ReactNode } from 'react';
-import { Inter } from 'next/font/google';
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-});
-
+// The <html>/<body> tags (and lang attribute) are rendered by the locale layout
+// at src/app/[locale]/layout.tsx so that each locale serves the correct lang.
+// This root layout only needs to pass children through.
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <html suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased bg-white text-gray-900`}>
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }

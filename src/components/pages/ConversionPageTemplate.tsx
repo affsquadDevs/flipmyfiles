@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { useFileUpload } from '@/hooks/useFileUpload';
 import { useConversion } from '@/hooks/useConversion';
@@ -13,7 +13,8 @@ import ConversionError from '@/components/conversion/ConversionError';
 import FAQAccordion from '@/components/pages/FAQAccordion';
 import RelatedConversions from '@/components/pages/RelatedConversions';
 import type { ConversionPair } from '@/config/formats.config';
-import { getFormatInfo, getConversionBenefits, getDetailedFaqs } from '@/lib/content';
+import { getFormatInfo, getConversionBenefits, getDetailedFaqs, getConversionIntro } from '@/lib/content';
+import { localeUrl, toBcp47 } from '@/lib/seo';
 
 interface Props {
   conversion: ConversionPair;
@@ -23,6 +24,7 @@ interface Props {
 export default function ConversionPageTemplate({ conversion, related }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const t = useTranslations('converter');
+  const locale = useLocale();
 
   const {
     state: uploadState,
@@ -61,10 +63,11 @@ export default function ConversionPageTemplate({ conversion, related }: Props) {
     if (inputRef.current) inputRef.current.value = '';
   };
 
-  const fromInfo = getFormatInfo(conversion.from);
-  const toInfo = getFormatInfo(conversion.to);
-  const benefits = getConversionBenefits(conversion.from, conversion.to);
-  const faqs = getDetailedFaqs(conversion.from, conversion.to);
+  const fromInfo = getFormatInfo(conversion.from, locale);
+  const toInfo = getFormatInfo(conversion.to, locale);
+  const intro = getConversionIntro(conversion.from, conversion.to, locale);
+  const benefits = getConversionBenefits(conversion.from, conversion.to, locale);
+  const faqs = getDetailedFaqs(conversion.from, conversion.to, locale);
 
   const isClientSide = ['MP4', 'AVI', 'MOV', 'MKV', 'WEBM', 'FLV', 'WMV', 'MP3', 'WAV', 'OGG', 'FLAC', 'AAC', 'WMA', 'M4A'].includes(conversion.from.toUpperCase()) ||
     ['MP4', 'AVI', 'MOV', 'MKV', 'WEBM', 'FLV', 'WMV', 'MP3', 'WAV', 'OGG', 'FLAC', 'AAC', 'WMA', 'M4A', 'GIF'].includes(conversion.to.toUpperCase());
@@ -247,6 +250,11 @@ export default function ConversionPageTemplate({ conversion, related }: Props) {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-14">
 
+            {/* Overview — pair-specific lead copy */}
+            <section>
+              <p className="text-base leading-relaxed text-text-muted sm:text-lg">{intro}</p>
+            </section>
+
             {/* What is FROM + What is TO */}
             <div className="grid gap-8 sm:grid-cols-2">
               <section className="rounded-2xl border border-border bg-gray-50 p-6">
@@ -373,32 +381,44 @@ export default function ConversionPageTemplate({ conversion, related }: Props) {
         </div>
       </div>
 
-      {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'WebApplication',
-        name: `${conversion.from} to ${conversion.to} Converter — FlipMyFiles`,
-        description: conversion.description,
-        url: `https://flipmyfiles.com/convert/${conversion.slug}`,
-        applicationCategory: 'UtilityApplication', operatingSystem: 'Any',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'HowTo',
-        name: `How to Convert ${conversion.from} to ${conversion.to}`,
-        description: `Convert your ${conversion.from} file to ${conversion.to} format online using FlipMyFiles.`,
-        step: [
-          { '@type': 'HowToStep', name: `Upload your ${conversion.from} file`, text: `Drag and drop your ${conversion.from} file into the upload area, or click to browse.` },
-          { '@type': 'HowToStep', name: 'Start the conversion', text: `Click "Convert to ${conversion.to}" to begin processing.` },
-          { '@type': 'HowToStep', name: 'Download the result', text: `Click the download button to save your ${conversion.to} file.` },
-        ],
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'FAQPage',
-        mainEntity: faqs.map(faq => ({
-          '@type': 'Question', name: faq.question,
-          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-        })),
-      })}} />
+      {/* JSON-LD — locale-aware (URL, inLanguage, and HowTo steps follow the page locale) */}
+      {(() => {
+        const lang = toBcp47(locale);
+        const url = localeUrl(locale, `/convert/${conversion.slug}`);
+        const shortDesc = `${t('howToConvert', { from: conversion.from, to: conversion.to })} ${t('online')}. ${t('freeSecure')}`;
+        return (
+          <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              '@context': 'https://schema.org', '@type': 'WebApplication',
+              name: `${conversion.from} to ${conversion.to} Converter — FlipMyFiles`,
+              description: shortDesc,
+              url,
+              inLanguage: lang,
+              applicationCategory: 'UtilityApplication', operatingSystem: 'Any',
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            })}} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              '@context': 'https://schema.org', '@type': 'HowTo',
+              name: t('howToConvert', { from: conversion.from, to: conversion.to }),
+              description: shortDesc,
+              inLanguage: lang,
+              step: [
+                { '@type': 'HowToStep', name: t('steps.uploadTitle', { format: conversion.from }), text: t('steps.uploadBody', { format: conversion.from }) },
+                { '@type': 'HowToStep', name: t('steps.convertTitle'), text: t('steps.convertBody', { format: conversion.to }) },
+                { '@type': 'HowToStep', name: t('steps.downloadTitle'), text: t('steps.downloadBody', { format: conversion.to }) },
+              ],
+            })}} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              '@context': 'https://schema.org', '@type': 'FAQPage',
+              inLanguage: lang,
+              mainEntity: faqs.map(faq => ({
+                '@type': 'Question', name: faq.question,
+                acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+              })),
+            })}} />
+          </>
+        );
+      })()}
     </div>
   );
 }

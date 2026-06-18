@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { categories, getConversionsByCategory } from '@/config/formats.config';
 import { ConversionAppIcon } from '@/components/shared/ConversionAppIcon';
 import { routing } from '@/i18n/routing';
+import { buildAlternates, localeUrl, OG_IMAGE } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string; category: string }>;
@@ -18,13 +19,38 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { category } = await params;
+  const { locale, category } = await params;
   const cat = categories.find(c => c.id === category);
   if (!cat) return { title: 'Not Found' };
 
+  // English keeps its existing copy; other locales use the already-translated
+  // category name + "Converters" label + the free/no-account badge.
+  let title: string;
+  let description: string;
+  if (locale === routing.defaultLocale) {
+    title = `${cat.name} Conversion Tools — FlipMyFiles`;
+    description = `${cat.description}. Free online ${cat.name.toLowerCase()} converter with no signup required.`;
+  } else {
+    const t = await getTranslations({ locale, namespace: 'tools' });
+    const name = t(`categoryNames.${category}`);
+    const converters = t('categoryPage.converters');
+    title = `${name} ${converters} — FlipMyFiles`;
+    description = `${name} ${converters}. ${t('badge')}`;
+  }
+  const path = `/tools/${category}`;
+
   return {
-    title: `${cat.name} Conversion Tools — FlipMyFiles`,
-    description: `${cat.description}. Free online ${cat.name.toLowerCase()} converter with no signup required.`,
+    title,
+    description,
+    alternates: buildAlternates(locale, path),
+    openGraph: {
+      title,
+      description,
+      url: localeUrl(locale, path),
+      siteName: 'FlipMyFiles',
+      type: 'website',
+      images: [OG_IMAGE],
+    },
   };
 }
 
@@ -113,5 +139,23 @@ export default async function CategoryPage({ params }: Props) {
   const cat = categories.find(c => c.id === category);
   if (!cat) notFound();
 
-  return <CategoryContent category={category} />;
+  // BreadcrumbList matching the on-page trail (Home > Tools > Category).
+  const tConv = await getTranslations({ locale, namespace: 'converter' });
+  const tTools = await getTranslations({ locale, namespace: 'tools' });
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: tConv('home'), item: localeUrl(locale, '') },
+      { '@type': 'ListItem', position: 2, name: tConv('tools'), item: localeUrl(locale, '/tools') },
+      { '@type': 'ListItem', position: 3, name: tTools(`categoryNames.${category}`), item: localeUrl(locale, `/tools/${category}`) },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <CategoryContent category={category} />
+    </>
+  );
 }

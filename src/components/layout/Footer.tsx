@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { categories, popularConversions } from '@/config/formats.config';
 
 const socialLinks = [
   {
@@ -42,12 +43,17 @@ const socialLinks = [
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const tt = useTranslations('tools');
+  const tp = useTranslations('popularConversions');
 
-  const siteLinks = [
+  // All 6 categories (was only 3) — links to every /tools/[category] hub.
+  const categoryLinks = categories.map((cat) => ({
+    href: `/tools/${cat.id}`,
+    label: tt(`categoryNames.${cat.id}`),
+  }));
+
+  const pageLinks = [
     { href: '/tools' as const, label: t('allTools') },
-    { href: '/tools/image' as const, label: t('imageConverter') },
-    { href: '/tools/video' as const, label: t('videoConverter') },
-    { href: '/tools/audio' as const, label: t('audioConverter') },
     { href: '/about' as const, label: t('about') },
     { href: '/contact' as const, label: t('contact') },
     { href: '/privacy-policy' as const, label: t('privacyPolicy') },
@@ -63,9 +69,9 @@ export default function Footer() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full bg-primary/5 blur-[100px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 lg:grid-cols-5">
           {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1a2235]">
                 <span className="text-xl font-extrabold text-cta">F</span>
@@ -79,16 +85,13 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links */}
-          <div className="lg:col-span-2">
-            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">{t('links')}</h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:gap-x-8 sm:gap-y-2.5">
-              {siteLinks.map((link) => (
+          {/* Converters (all categories) */}
+          <div>
+            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">{tt('categoryPage.converters')}</h4>
+            <ul className="space-y-2.5">
+              {categoryLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                  >
+                  <Link href={link.href} className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -96,9 +99,33 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social */}
+          {/* Popular conversions — direct links to the money pages */}
           <div>
-            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">{t('followUs')}</h4>
+            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">{tp('title')}</h4>
+            <ul className="space-y-2.5">
+              {popularConversions.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/convert/${c.slug}`} className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
+                    {c.from} → {c.to}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Pages */}
+          <div>
+            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">{t('links')}</h4>
+            <ul className="space-y-2.5">
+              {pageLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4 mt-8">{t('followUs')}</h4>
             <div className="flex items-center gap-3">
               {socialLinks.map((link) => (
                 <a
