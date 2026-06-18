@@ -11,6 +11,8 @@ export default function robots(): MetadataRoute.Robots {
       disallow: '/api/',
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
-    host: new URL(SITE_URL).host,
+    // No `Host:` directive — it's non-standard (only legacy Yandex used it),
+    // Google/Bing reject it as an unknown directive. Host preference is handled
+    // by self-referencing canonicals + the www→apex 301 redirect.
   };
 }
