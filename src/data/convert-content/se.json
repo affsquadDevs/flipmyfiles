@@ -1,0 +1,544 @@
+{
+  "formats": {
+    "JPG": {
+      "description": "JPG är ett av de mest använda bildformaten på webben. Det använder destruktiv komprimering för att minska filstorleken samtidigt som det bibehåller en acceptabel visuell kvalitet för fotografier och komplexa bilder. Formatet stöder miljontals färger, vilket gör det lämpligt för fotografiskt innehåll.",
+      "strengths": [
+        "Små filstorlekar tack vare destruktiv komprimering",
+        "Universell kompatibilitet mellan enheter och webbläsare",
+        "Stöder miljontals färger (24-bitars färgdjup)",
+        "Justerbart förhållande mellan kvalitet och storlek"
+      ],
+      "commonUses": [
+        "Webbplatsbilder och fotografier",
+        "E-postbilagor",
+        "Uppladdningar till sociala medier",
+        "Digital fotografering"
+      ],
+      "technicalNote": "JPG stöder varken transparens eller animering. Varje gång en JPG-fil redigeras och sparas på nytt kan den förlora viss kvalitet på grund av omkomprimering."
+    },
+    "PNG": {
+      "description": "PNG är ett rasterbildformat som använder icke-destruktiv komprimering, vilket innebär att all ursprunglig bilddata bevaras utan kvalitetsförlust. Det stöder transparens (alfakanal), vilket gör det till ett populärt val för grafik, ikoner och bilder som behöver läggas i lager ovanpå annat innehåll.",
+      "strengths": [
+        "Icke-destruktiv komprimering bevarar full kvalitet",
+        "Stöder transparens (alfakanal)",
+        "Skarpa kanter för text och grafik",
+        "Ingen kvalitetsförlust vid redigering och omsparning"
+      ],
+      "commonUses": [
+        "Webbgrafik med transparens",
+        "Skärmdumpar och gränssnittselement",
+        "Logotyper och ikoner",
+        "Bilder som kräver skarpa detaljer"
+      ],
+      "technicalNote": "PNG-filer är vanligtvis större än JPG-filer för fotografiskt innehåll eftersom icke-destruktiv komprimering är mindre effektiv för komplexa, färgrika bilder."
+    },
+    "WEBP": {
+      "description": "WebP är ett modernt bildformat utvecklat av Google. Det stöder både destruktiv och icke-destruktiv komprimering, samt transparens och animering. WebP-filer är i allmänhet mindre än motsvarande JPG- eller PNG-filer vid liknande kvalitetsnivåer, vilket gör det väl lämpat för webbanvändning.",
+      "strengths": [
+        "Mindre filstorlekar än JPG och PNG vid jämförbar kvalitet",
+        "Stöder både destruktiv och icke-destruktiv komprimering",
+        "Stöder transparens och animering",
+        "Utformat för snabb webbleverans"
+      ],
+      "commonUses": [
+        "Optimering av webbplatser",
+        "Resurser för webbapplikationer",
+        "Progressiva webbappar",
+        "Optimering av innehållsleverans"
+      ],
+      "technicalNote": "Även om WebP stöds av alla moderna webbläsare kan vissa äldre applikationer och system inte öppna WebP-filer direkt. Konvertering till JPG eller PNG kan behövas för bredare kompatibilitet."
+    },
+    "GIF": {
+      "description": "GIF är ett bildformat som stöder animering och transparens. Det använder icke-destruktiv komprimering men är begränsat till en palett på 256 färger, vilket gör det bäst lämpat för enkel grafik, logotyper och korta animeringar snarare än fotografier.",
+      "strengths": [
+        "Stöder animering (flera bildrutor)",
+        "Stöder grundläggande transparens",
+        "Liten filstorlek för enkel grafik",
+        "Universellt stöd i webbläsare och på enheter"
+      ],
+      "commonUses": [
+        "Animerade bilder och korta klipp",
+        "Enkel webbgrafik",
+        "Reaktionsbilder och memes",
+        "Laddningsindikatorer i gränssnitt"
+      ],
+      "technicalNote": "GIF är begränsat till 256 färger per bildruta. För fotografiskt innehåll ger JPG eller PNG bättre visuella resultat. För animerat innehåll med fler färger kan du överväga MP4 eller WebP."
+    },
+    "BMP": {
+      "description": "BMP är ett okomprimerat rasterbildformat som lagrar pixeldata direkt utan komprimering. Detta resulterar i stora filstorlekar men bevarar exakt pixelinformation. BMP-filer används ofta i Windows-miljöer och för specifika tekniska tillämpningar.",
+      "strengths": [
+        "Exakt noggrannhet på pixelnivå",
+        "Inga komprimeringsartefakter",
+        "Enkel formatstruktur",
+        "Brett stöd på Windows-system"
+      ],
+      "commonUses": [
+        "Systemgrafik i Windows",
+        "Teknisk och vetenskaplig bildhantering",
+        "Källfiler för vidare bearbetning",
+        "Kompatibilitet med äldre applikationer"
+      ],
+      "technicalNote": "BMP-filer är betydligt större än komprimerade format som JPG eller PNG. Konvertering av BMP till PNG eller JPG rekommenderas när filstorlek eller webbanvändning är en faktor att ta hänsyn till."
+    },
+    "TIFF": {
+      "description": "TIFF är ett flexibelt bildformat som främst används inom professionell fotografering, tryck och publicering. Det stöder icke-destruktiv komprimering, flera lager och högt färgdjup, vilket gör det lämpligt för arkivering och bilder med tryckkvalitet.",
+      "strengths": [
+        "Bevarande av icke-destruktiv kvalitet",
+        "Stöder högt färgdjup (16-bitars, 32-bitars)",
+        "Flera sidor och lager",
+        "Branschstandard för tryck och publicering"
+      ],
+      "commonUses": [
+        "Professionell fotografering",
+        "Arbetsflöden inom tryck och publicering",
+        "Arkivering av bilder",
+        "Medicinsk och vetenskaplig bildhantering"
+      ],
+      "technicalNote": "TIFF-filer tenderar att vara stora på grund av sin icke-destruktiva natur. För webbanvändning minskar konvertering av TIFF till JPG, PNG eller WebP filstorleken avsevärt samtidigt som den visuella kvaliteten för skärmvisning bibehålls."
+    },
+    "AVIF": {
+      "description": "AVIF är ett bildformat av nästa generation baserat på videokodeken AV1. Det erbjuder betydligt bättre komprimering än JPG och WebP och ger mindre filer vid motsvarande kvalitet. AVIF stöder HDR, brett färgomfång och transparens.",
+      "strengths": [
+        "Överlägsen komprimeringseffektivitet",
+        "Stöder HDR och brett färgomfång",
+        "Stöder transparens och animering",
+        "Öppet, royaltyfritt format"
+      ],
+      "commonUses": [
+        "Webbbilder av nästa generation",
+        "Bandbreddskänsliga applikationer",
+        "Leverans av fotografier med hög kvalitet",
+        "Progressiv bildladdning"
+      ],
+      "technicalNote": "AVIF stöds av de flesta moderna webbläsare men kanske inte är kompatibelt med äldre programvara. Konvertering till JPG eller PNG säkerställer bredare kompatibilitet vid behov."
+    },
+    "SVG": {
+      "description": "SVG är ett vektorbildformat baserat på XML. Till skillnad från rasterformat kan SVG-bilder skalas till valfri storlek utan att förlora kvalitet. De är idealiska för logotyper, ikoner, diagram och all grafik som behöver se skarp ut i olika storlekar.",
+      "strengths": [
+        "Obegränsad skalbarhet utan kvalitetsförlust",
+        "Liten filstorlek för enkel grafik",
+        "Redigerbar med textredigerare och kod",
+        "Stöder interaktivitet och animering"
+      ],
+      "commonUses": [
+        "Logotyper och ikoner på webbplatser",
+        "Responsiv webbgrafik",
+        "Datavisualiseringar och diagram",
+        "Tryckmaterial i valfri upplösning"
+      ],
+      "technicalNote": "SVG är ett vektorformat och kan inte återge fotografiskt innehåll på ett effektivt sätt. Konvertering av SVG till PNG ger en rastrerad version i en fast upplösning."
+    },
+    "ICO": {
+      "description": "ICO är ett filformat som används för ikoner i Microsoft Windows. Det kan innehålla flera bildstorlekar och färgdjup i en enda fil, vilket gör att operativsystemet kan välja lämplig version för olika visningssammanhang.",
+      "strengths": [
+        "Flera storlekar i en fil",
+        "Standardformat för Windows-ikoner",
+        "Används för favoritikoner på webbplatser",
+        "Stöder transparens"
+      ],
+      "commonUses": [
+        "Favoritikoner på webbplatser",
+        "Ikoner för Windows-applikationer",
+        "Skrivbordsgenvägar",
+        "Ikoner för webbläsarflikar"
+      ],
+      "technicalNote": "ICO-filer innehåller vanligtvis versioner i 16x16, 32x32, 48x48 och 256x256 pixlar. Vid konvertering från ett annat format ändras bildens storlek så att den passar standardmått för ikoner."
+    },
+    "HEIC": {
+      "description": "HEIC är bildformatet som används av Apple-enheter med iOS 11 och senare. Det använder komprimeringsstandarden HEVC (H.265) för att producera bilder med hög kvalitet i ungefär halva filstorleken jämfört med JPG. Det har dock begränsat stöd utanför Apples ekosystem.",
+      "strengths": [
+        "Betydligt mindre filstorlekar än JPG",
+        "Hög bildkvalitet",
+        "Stöder djupkartor och live-foton",
+        "Standardformat på moderna Apple-enheter"
+      ],
+      "commonUses": [
+        "Fotografering med iPhone och iPad",
+        "Fildelning inom Apples ekosystem",
+        "Lagringsoptimering på Apple-enheter"
+      ],
+      "technicalNote": "HEIC-filer kanske inte går att öppna på Windows- eller Android-enheter utan ytterligare programvara. Konvertering av HEIC till JPG eller PNG ger universell kompatibilitet."
+    },
+    "MP4": {
+      "description": "MP4 är det mest använda behållarformatet för video. Det stöder video, ljud, undertexter och stillbilder i en enda fil. MP4 använder vanligtvis videokodekarna H.264 eller H.265 och AAC-ljud, vilket ger en bra balans mellan kvalitet och filstorlek.",
+      "strengths": [
+        "Universell uppspelningskompatibilitet",
+        "Effektiv komprimering med H.264/H.265",
+        "Stöder flera ljud- och undertextspår",
+        "Strömningsvänligt format"
+      ],
+      "commonUses": [
+        "Videodelning och strömning",
+        "Uppladdningar till sociala medier",
+        "Lagring och arkivering av video",
+        "Inbäddning av webbvideo"
+      ],
+      "technicalNote": "MP4 är ett behållarformat som kan använda olika kodekar. Kompatibiliteten beror på vilka specifika kodekar som används i filen. H.264 med AAC-ljud erbjuder bredast stöd på enheter."
+    },
+    "AVI": {
+      "description": "AVI är ett multimediabehållarformat som introducerades av Microsoft. Det lagrar video- och ljuddata i en enda fil och stöder en mängd olika kodekar. Även om det har brett stöd tenderar AVI-filer att vara större än MP4-filer för motsvarande innehåll.",
+      "strengths": [
+        "Brett stöd för kodekar",
+        "Bra Windows-kompatibilitet",
+        "Etablerat, välkänt format",
+        "Stöder flera ljudströmmar"
+      ],
+      "commonUses": [
+        "Uppspelning av äldre video",
+        "Windows-baserad videoredigering",
+        "Äldre multimediaapplikationer"
+      ],
+      "technicalNote": "AVI-filer är ofta större än MP4 på grund av mindre effektiv komprimering. Konvertering av AVI till MP4 minskar vanligtvis filstorleken samtidigt som den visuella kvaliteten bibehålls."
+    },
+    "MOV": {
+      "description": "MOV är ett multimediabehållarformat utvecklat av Apple för användning med QuickTime. Det stöder video-, ljud- och textspår och används ofta i Apple-baserade arbetsflöden för videoproduktion. MOV-filer använder ofta kodekar med hög kvalitet.",
+      "strengths": [
+        "Stöd för video med hög kvalitet",
+        "Inbyggd kompatibilitet med Apples ekosystem",
+        "Stöd för professionell redigering",
+        "Stöd för flera spår"
+      ],
+      "commonUses": [
+        "Apple-baserad videoredigering",
+        "Videoinspelningar med iPhone och Mac",
+        "Professionell videoproduktion",
+        "QuickTime-uppspelning"
+      ],
+      "technicalNote": "MOV-filer som spelas in på Apple-enheter använder ofta HEVC-kodeken. Konvertering av MOV till MP4 ger bredare kompatibilitet med enheter och plattformar som inte är från Apple."
+    },
+    "MKV": {
+      "description": "MKV är ett öppen källkod-multimediabehållarformat som kan innehålla ett obegränsat antal video-, ljud-, undertext- och metadataspår. Det är populärt för att lagra filmer och TV-serier på grund av sin flexibilitet och sitt stöd för kodekar med hög kvalitet.",
+      "strengths": [
+        "Stöder obegränsat antal spår",
+        "Format med öppen källkod",
+        "Hanterar de flesta moderna kodekar",
+        "Stöd för kapitel och metadata"
+      ],
+      "commonUses": [
+        "Lagring av filmer och TV-serier",
+        "Arkivering av videoinnehåll",
+        "Inbäddning av undertexter",
+        "Distribution av video med hög kvalitet"
+      ],
+      "technicalNote": "MKV kanske inte spelas upp direkt på alla enheter, särskilt mobiltelefoner och vissa smart-TV-apparater. Konvertering av MKV till MP4 förbättrar kompatibiliteten för uppspelning."
+    },
+    "WEBM": {
+      "description": "WebM är ett öppet multimediaformat utvecklat av Google för användning på webben. Det använder videokodekarna VP8/VP9 och ljudkodekarna Vorbis/Opus. WebM är utformat för effektiv webbströmning och stöds direkt i de flesta webbläsare.",
+      "strengths": [
+        "Optimerat för webbleverans",
+        "Öppet och royaltyfritt",
+        "Stöds i alla moderna webbläsare",
+        "Bra komprimering för strömning"
+      ],
+      "commonUses": [
+        "Inbäddning av webbvideo",
+        "HTML5-videouppspelning",
+        "Webbläsarbaserade videoapplikationer",
+        "Webbströmning"
+      ],
+      "technicalNote": "WebM är främst ett webbformat. För uppspelning i skrivbordsmediaspelare eller på mobila enheter utanför webbläsare är MP4 i allmänhet mer kompatibelt."
+    },
+    "FLV": {
+      "description": "FLV är ett videobehållarformat som ursprungligen användes med Adobe Flash Player. Även om Flash har utgått finns FLV-filer fortfarande kvar från äldre videoinnehåll. Formatet stödde effektiv strömning men har till stor del ersatts av MP4 och WebM.",
+      "strengths": [
+        "Små filstorlekar",
+        "Historiskt använt för webbvideo",
+        "Enkel formatstruktur"
+      ],
+      "commonUses": [
+        "Äldre Flash-videoinnehåll",
+        "Äldre webbvideoarkiv"
+      ],
+      "technicalNote": "Flash Player har avvecklats av Adobe. FLV-filer bör konverteras till MP4 eller WebM för fortsatt uppspelning i moderna webbläsare och mediaspelare."
+    },
+    "WMV": {
+      "description": "WMV är ett videoformat utvecklat av Microsoft som en del av Windows Media-ramverket. Det utformades för strömning och uppspelning på Windows-system. Även om det fortfarande stöds i vissa applikationer har det till stor del ersatts av MP4.",
+      "strengths": [
+        "Bra Windows-kompatibilitet",
+        "Utformat för strömning",
+        "Stöds av Windows Media Player"
+      ],
+      "commonUses": [
+        "Windows-baserad videouppspelning",
+        "Äldre videoinnehåll",
+        "Windows Media-strömning"
+      ],
+      "technicalNote": "WMV har begränsat stöd på plattformar som inte är Windows. Konvertering till MP4 säkerställer kompatibilitet med alla större operativsystem och enheter."
+    },
+    "MP3": {
+      "description": "MP3 är det vanligaste ljudformatet för musik och talat innehåll. Det använder destruktiv komprimering för att minska filstorleken avsevärt samtidigt som det bibehåller en acceptabel ljudkvalitet. MP3 stöds av praktiskt taget alla enheter och programvaror.",
+      "strengths": [
+        "Universellt stöd på enheter och i programvaror",
+        "Bra förhållande mellan komprimering och kvalitet",
+        "Små filstorlekar",
+        "Stöd för metadata (ID3-taggar)"
+      ],
+      "commonUses": [
+        "Uppspelning och distribution av musik",
+        "Poddar och ljudböcker",
+        "Webbljud",
+        "Bärbara musikspelare"
+      ],
+      "technicalNote": "MP3 använder destruktiv komprimering, vilket innebär att en del ljuddata kasseras för att minska filstorleken. För arkivering eller professionell användning kan icke-destruktiva format som FLAC eller WAV vara att föredra."
+    },
+    "WAV": {
+      "description": "WAV är ett okomprimerat ljudformat som lagrar rå ljuddata. Det bevarar den ursprungliga inspelningens fulla kvalitet utan några komprimeringsartefakter, vilket resulterar i större filstorlekar. WAV är ett standardformat för professionell ljudproduktion.",
+      "strengths": [
+        "Okomprimerat ljud i full kvalitet",
+        "Inga komprimeringsartefakter",
+        "Branschstandard för ljudproduktion",
+        "Enkelt, väl understött format"
+      ],
+      "commonUses": [
+        "Professionell ljudredigering",
+        "Musikproduktion",
+        "Ljuddesign",
+        "Arkivering av ljud"
+      ],
+      "technicalNote": "WAV-filer är väsentligt större än komprimerade format. En 3 minuter lång låt i WAV-format är ungefär 30 MB, jämfört med cirka 3 MB i MP3."
+    },
+    "OGG": {
+      "description": "OGG är ett kostnadsfritt ljudformat med öppen källkod som använder Vorbis-kodeken för destruktiv komprimering. Det ger i allmänhet bättre ljudkvalitet än MP3 vid motsvarande bithastigheter. OGG används ofta i webbapplikationer, spel och programvara med öppen källkod.",
+      "strengths": [
+        "Öppen källkod och royaltyfritt",
+        "Bättre kvalitet än MP3 vid samma bithastigheter",
+        "Bra stöd för strömning",
+        "Stöds i de flesta webbläsare"
+      ],
+      "commonUses": [
+        "Webbljud och spel",
+        "Ljudprojekt med öppen källkod",
+        "Strömningsapplikationer",
+        "HTML5-ljud"
+      ],
+      "technicalNote": "OGG har mindre stöd på enheter än MP3, särskilt på Apple-enheter. Konvertering till MP3 ger bredare kompatibilitet vid behov."
+    },
+    "FLAC": {
+      "description": "FLAC är ett icke-destruktivt ljudformat som komprimerar ljud utan att förlora någon data. Det minskar vanligtvis filstorleken med 50–70 % jämfört med WAV samtidigt som identisk ljudkvalitet bevaras. FLAC används ofta av audiofiler och för musikarkivering.",
+      "strengths": [
+        "Icke-destruktiv komprimering bevarar full kvalitet",
+        "Betydande storleksminskning jämfört med WAV",
+        "Öppen källkod och royaltyfritt",
+        "Stöd för metadata och albumomslag"
+      ],
+      "commonUses": [
+        "Icke-destruktiv musiklagring",
+        "Arkivering av ljud",
+        "Ljuduppspelning med hög trohet",
+        "Hantering av musikbibliotek"
+      ],
+      "technicalNote": "Även om FLAC bevarar perfekt ljudkvalitet är filerna fortfarande flera gånger större än MP3. Inte alla bärbara enheter stöder FLAC direkt."
+    },
+    "AAC": {
+      "description": "AAC är ett destruktivt ljudformat utformat som efterföljare till MP3. Det ger bättre ljudkvalitet än MP3 vid samma bithastighet och är standardljudformatet för Apple-produkter, YouTube och många strömningstjänster.",
+      "strengths": [
+        "Bättre kvalitet än MP3 vid samma bithastighet",
+        "Standardformat för Apple-enheter",
+        "Effektiv komprimering",
+        "Stöder flerkanaligt ljud"
+      ],
+      "commonUses": [
+        "iTunes och Apple Music",
+        "YouTube-ljud",
+        "Strömningstjänster",
+        "Ljuduppspelning på mobila enheter"
+      ],
+      "technicalNote": "AAC har brett stöd men kan kräva konvertering till MP3 för kompatibilitet med äldre enheter eller programvara som inte stöder AAC-avkodning."
+    },
+    "WMA": {
+      "description": "WMA är ett ljudformat utvecklat av Microsoft. Det utformades för att konkurrera med MP3 och erbjuder både destruktiva och icke-destruktiva komprimeringslägen. WMA har bra stöd på Windows-system men begränsad kompatibilitet i övrigt.",
+      "strengths": [
+        "Bra komprimering på Windows",
+        "Stöder icke-destruktivt läge",
+        "Stöd för DRM",
+        "Integration med Windows-ekosystemet"
+      ],
+      "commonUses": [
+        "Uppspelning i Windows Media Player",
+        "Äldre Windows-ljud",
+        "Windows-baserade mediebibliotek"
+      ],
+      "technicalNote": "WMA-stödet är begränsat på plattformar som inte är Windows. Konvertering av WMA till MP3 ger universell kompatibilitet."
+    },
+    "M4A": {
+      "description": "M4A är en behållare för enbart ljud baserad på MPEG-4-standarden. Den använder vanligtvis AAC-kodning och är standardljudformatet för Apple-produkter. M4A ger bra ljudkvalitet i mindre filstorlekar jämfört med MP3.",
+      "strengths": [
+        "Bättre kvalitet än MP3 vid liknande storlekar",
+        "Inbyggt stöd på Apple-enheter",
+        "Stöd för metadata och albumomslag",
+        "Bra komprimeringseffektivitet"
+      ],
+      "commonUses": [
+        "Apple Music och iTunes",
+        "Röstinspelningar på iPhone",
+        "Poddar",
+        "Ljud inom Apples ekosystem"
+      ],
+      "technicalNote": "M4A är i grunden AAC-ljud i en MPEG-4-behållare. Konvertering till MP3 kan behövas för kompatibilitet med enheter och programvara som inte stöder M4A."
+    },
+    "DOCX": {
+      "description": "DOCX är standardformatet för dokument i Microsoft Word. Det använder XML-baserad formatering och stöder formaterad text, bilder, tabeller, sidhuvuden, sidfötter och komplexa dokumentlayouter. DOCX har blivit ett standardformat för dokumentutbyte mellan plattformar.",
+      "strengths": [
+        "Stöd för rik formatering och layout",
+        "Branschstandard för dokumentformat",
+        "Plattformsoberoende kompatibilitet",
+        "Stöder bilder, tabeller och inbäddade objekt"
+      ],
+      "commonUses": [
+        "Affärsdokument och rapporter",
+        "Akademiska uppsatser",
+        "Avtal och offerter",
+        "Allmän dokumentskapande"
+      ],
+      "technicalNote": "Konvertering av DOCX till andra format kan resultera i vissa formateringsskillnader, särskilt för komplexa layouter, anpassade teckensnitt eller inbäddade objekt."
+    },
+    "PDF": {
+      "description": "PDF är ett dokumentformat skapat av Adobe som bevarar ett dokuments exakta layout, teckensnitt och bilder oavsett vilken enhet eller programvara som används för att visa det. PDF-filer används ofta för dokument som behöver se likadana ut överallt.",
+      "strengths": [
+        "Konsekvent utseende på olika enheter",
+        "Bevarar exakt layout och formatering",
+        "Stöder formulär, anteckningar och signaturer",
+        "Tryckfärdigt format"
+      ],
+      "commonUses": [
+        "Officiella dokument och rapporter",
+        "Fakturor och kvitton",
+        "E-böcker och manualer",
+        "Formulär och avtal"
+      ],
+      "technicalNote": "Konvertering till PDF bevarar den visuella layouten. Konvertering från PDF till redigerbara format kanske inte återskapar den ursprungliga formateringen perfekt."
+    },
+    "TXT": {
+      "description": "TXT är ett enkelt filformat som lagrar oformaterad text. Det innehåller endast råa texttecken utan någon styling, bilder eller layoutinformation. TXT-filer kan läsas universellt av alla textredigerare eller programmeringsmiljöer.",
+      "strengths": [
+        "Universell kompatibilitet",
+        "Extremt små filstorlekar",
+        "Läsbar av alla textredigerare",
+        "Inga formateringsberoenden"
+      ],
+      "commonUses": [
+        "Kod- och konfigurationsfiler",
+        "Datautbyte",
+        "Snabba anteckningar och utkast",
+        "Loggfiler"
+      ],
+      "technicalNote": "TXT-filer innehåller endast oformaterad text. Vid konvertering från formaterade dokument (som DOCX) tas all formatering, alla bilder och all layoutinformation bort."
+    },
+    "CSV": {
+      "description": "CSV är ett enkelt textbaserat format för att lagra tabelldata. Varje rad representerar en post, och fälten inom en rad separeras med kommatecken (eller andra avgränsare). CSV används ofta för import och export av data mellan olika applikationer.",
+      "strengths": [
+        "Enkel, läsbar struktur",
+        "Universellt format för datautbyte",
+        "Stöds av alla kalkylprogram",
+        "Lätt att tolka programmatiskt"
+      ],
+      "commonUses": [
+        "Import och export av databaser",
+        "Utbyte av kalkylbladsdata",
+        "Generering av rapporter",
+        "Datamigrering mellan applikationer"
+      ],
+      "technicalNote": "CSV lagrar endast rådata utan formler, formatering, diagram eller flera blad. Konvertering från XLSX till CSV bevarar endast datavärdena från det första bladet."
+    },
+    "XLSX": {
+      "description": "XLSX är standardformatet för kalkylblad i Microsoft Excel. Det stöder flera kalkylblad, formler, diagram, formatering och datavalidering. XLSX är ett XML-baserat format som har blivit standarden för kalkylbladsdata.",
+      "strengths": [
+        "Stöd för flera kalkylblad",
+        "Formler och beräknade fält",
+        "Rik formatering och diagram",
+        "Stor datakapacitet"
+      ],
+      "commonUses": [
+        "Ekonomiska kalkylblad",
+        "Dataanalys",
+        "Affärsrapportering",
+        "Projektuppföljning"
+      ],
+      "technicalNote": "Konvertering av CSV till XLSX skapar ett formaterat kalkylblad med automatiskt anpassade kolumner och formaterade rubriker. Konvertering av XLSX till CSV extraherar endast rådatavärden."
+    },
+    "ZIP": {
+      "description": "ZIP är det mest använda arkivformatet. Det komprimerar en eller flera filer till en enda behållare, vilket minskar den totala filstorleken och förenklar filöverföring. ZIP stöds direkt av Windows, macOS och Linux.",
+      "strengths": [
+        "Universellt stöd i operativsystem",
+        "Inbyggd komprimering",
+        "Stöder flera filer och mappar",
+        "Valfritt lösenordsskydd"
+      ],
+      "commonUses": [
+        "Komprimering och paketering av filer",
+        "E-postbilagor",
+        "Distribution av programvara",
+        "Säkerhetskopieringsarkiv"
+      ],
+      "technicalNote": "ZIP använder DEFLATE-komprimering som standard. Konvertering mellan arkivformat ompaketerar innehållet utan att ändra filerna inuti."
+    },
+    "TAR": {
+      "description": "TAR är ett arkivformat som buntar ihop flera filer till en enda fil utan komprimering. Det används ofta i Unix- och Linux-system, ofta i kombination med gzip (.tar.gz) eller bzip2 (.tar.bz2) för komprimering.",
+      "strengths": [
+        "Bevarar Unix-filrättigheter",
+        "Standard på Linux/Unix-system",
+        "Kombineras ofta med komprimering",
+        "Hanterar stora mängder filer väl"
+      ],
+      "commonUses": [
+        "Distribution av Linux-programvara",
+        "Säkerhetskopiering av servrar",
+        "Paketering av källkod",
+        "Systemadministration"
+      ],
+      "technicalNote": "TAR komprimerar inte filer i sig självt. För komprimerade arkiv kombineras TAR vanligtvis med gzip (.tar.gz). Konvertering från ZIP till TAR skapar ett okomprimerat arkiv."
+    },
+    "GZ": {
+      "description": "GZ (gzip) är ett komprimeringsformat som använder DEFLATE-algoritmen. Det används ofta i Unix- och Linux-miljöer, ofta i kombination med TAR för att skapa komprimerade arkivfiler (.tar.gz). Gzip ger bra komprimeringsförhållanden.",
+      "strengths": [
+        "Effektiv komprimering",
+        "Standard på Unix/Linux-system",
+        "Snabb komprimering och dekomprimering",
+        "Brett stöd"
+      ],
+      "commonUses": [
+        "Komprimering av TAR-arkiv",
+        "Komprimering av webbserverinnehåll",
+        "Komprimering av loggfiler",
+        "Optimering av dataöverföring"
+      ],
+      "technicalNote": "GZ komprimerar en enskild fil eller dataström. För att arkivera flera filer med gzip-komprimering kombineras filerna först med TAR och komprimeras sedan med gzip."
+    }
+  },
+  "benefits": {
+    "sizeReduction": "Minska filstorleken genom att konvertera från {fromName} till det mer kompakta {to}-formatet",
+    "compatibility": "Förbättra kompatibiliteten genom att konvertera till {to}, som stöds av praktiskt taget alla enheter och applikationer",
+    "lossless": "Konvertera till ett icke-destruktivt format som bevarar data utan ytterligare komprimering",
+    "webOptimize": "Optimera för webbleverans med det moderna {to}-formatet",
+    "transparency": "Få stöd för transparens som källformatet inte erbjuder",
+    "heic": "Gör foton från Apple-enheter tillgängliga på Windows, Android och andra plattformar",
+    "mov": "Konvertera Apple-videoinspelningar för användning på enheter som inte är från Apple",
+    "audioExtract": "Extrahera enbart ljudspåret från en videofil utan att behöva videoredigeringsprogram",
+    "pdf": "Skapa ett portabelt dokument som ser likadant ut på alla enheter och operativsystem",
+    "csv": "Exportera data till ett enkelt, universellt läsbart textformat för användning i databaser, skript eller andra applikationer",
+    "xlsx": "Öppna data i Excel med formaterade kolumner, rubriker och möjligheten att lägga till formler och diagram",
+    "generic": "Konvertera din {from}-fil till {to}-format för användning i applikationer som kräver det",
+    "targetUses": "Sätt {toName} i arbete för {toUses}",
+    "browser": "Konvertera {from} till {to} direkt i din webbläsare – inget att installera och inget konto att skapa"
+  },
+  "faqs": {
+    "howToQ": "Hur konverterar jag {from} till {to}?",
+    "howToA": "För att konvertera en {from}-fil till {to} använder du uppladdningsytan på den här sidan. Dra och släpp din {from}-fil eller klicka för att bläddra bland dina filer. När den har laddats upp klickar du på knappen \"Convert to {to}\". Konverteringen bearbetas och den resulterande {to}-filen blir tillgänglig för nedladdning.",
+    "freeQ": "Är konverteringen från {from} till {to} gratis?",
+    "freeA": "Ja. Det här konverteringsverktyget är helt gratis att använda. Det finns inga premiumnivåer, inga vattenstämplar på ditt resultat och ingen gräns för hur många konverteringar du kan göra. Tjänsten finansieras av annonser.",
+    "differenceQ": "Vad är skillnaden mellan {from} och {to}?",
+    "differenceA": "{fromName} {fromDescFirst}. {toName} {toDescFirst}. Att konvertera mellan dessa format gör att du kan dra nytta av styrkorna hos varje format beroende på dina specifika behov.",
+    "whenQ": "När bör jag konvertera {from} till {to}?",
+    "whenA": "Att konvertera {from} till {to} är logiskt när du behöver det som {toName} är bra på: {toStrengths}. Det används ofta för {toUses}.",
+    "qualityQ": "Förlorar jag kvalitet när jag konverterar {from} till {to}?",
+    "qualityMediaA": "Resultatets kvalitet beror på vilka kodekar och inställningar som används. Vid konvertering mellan destruktiva format är en viss kvalitetsjustering att vänta. Video- och ljudkonverteringar i FlipMyFiles bearbetas i din webbläsare med standardinställningar för kodning som är utformade för att bibehålla god kvalitet.",
+    "qualityNonMediaA": "Resultatets kvalitet beror på vilka format som är inblandade. Att konvertera från ett destruktivt format till ett icke-destruktivt format återställer inte förlorad data, men ingen ytterligare kvalitet går förlorad. Att konvertera från icke-destruktivt till destruktivt innebär en viss dataminskning för att uppnå mindre filstorlekar. Bildkonverteringar använder optimerade inställningar för att bibehålla visuell kvalitet.",
+    "privacyQ": "Är mina filer säkra och privata?",
+    "privacyMediaA": "Ja. Video- och ljudkonverteringar bearbetas helt och hållet i din webbläsare med WebAssembly-teknik. Din fil laddas aldrig upp till våra servrar. Konverteringen sker lokalt på din enhet, vilket ger full integritet.",
+    "privacyNonMediaA": "Ja. Filer som laddas upp för konvertering bearbetas i serverns minne och raderas omedelbart efter att den konverterade filen har returnerats till din webbläsare. Vi lagrar, kopierar eller analyserar inte dina filer. Alla överföringar krypteras med HTTPS.",
+    "maxSizeQ": "Vad är den maximala filstorleken för konvertering?",
+    "maxSizeMediaA": "Den maximala filstorleken är 250 MB per fil. Denna gräns gäller alla formattyper. För video- och ljudfiler beror konverteringshastigheten på din enhets processorkraft eftersom konverteringen körs i din webbläsare.",
+    "maxSizeNonMediaA": "Den maximala filstorleken är 250 MB per fil. Denna gräns gäller alla formattyper. De flesta konverteringar slutförs inom några sekunder för typiska filstorlekar."
+  },
+  "introFallback": "Att konvertera {from} till {to} ändrar din fil från {fromName} till {toName}. {from}-filer används ofta för {fromUses}, medan {to} passar bättre när du behöver {toStrength}. Konvertera till {to} när en applikation eller plattform kräver det, eller när dess styrkor passar ditt projekt bättre än {from}. Ladda upp din {from}-fil ovan för att konvertera den på några sekunder – ingen programvara att installera och inget konto krävs."
+}

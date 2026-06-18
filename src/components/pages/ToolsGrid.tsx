@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { categories, allConversions } from '@/config/formats.config';
@@ -47,6 +47,15 @@ export default function ToolsGrid() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [search, setSearch] = useState('');
   const t = useTranslations('tools');
+
+  // Honour a ?q= query (the target of the schema.org SearchAction / sitelinks
+  // search box) so landing on /tools?q=png pre-filters the conversion list.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get('q');
+    // One-time read after hydration (a lazy initializer would mismatch SSR).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (q) setSearch(q);
+  }, []);
 
   const filtered = allConversions.filter(c => {
     const matchesCategory = activeCategory === 'all' || c.category === activeCategory;

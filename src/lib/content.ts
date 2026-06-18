@@ -2,7 +2,12 @@
  * Content generation helpers for conversion pages.
  * Provides format descriptions, conversion benefits, and FAQ content
  * so each /convert/[slug] page has substantial, unique, informational text.
+ *
+ * English is the source (this file). Translated bundles live in
+ * src/data/convert-content/<locale>.json and are merged in per locale.
  */
+import type { ConvertContent, FormatText } from '@/data/convert-content/types';
+import { localeBundles } from '@/data/convert-content';
 
 interface FormatInfo {
   fullName: string;
@@ -239,141 +244,190 @@ const formatDatabase: Record<string, FormatInfo> = {
   },
 };
 
-export function getFormatInfo(format: string): FormatInfo {
+// ── Localized content layer ──────────────────────────────────────────────
+
+// Full format names (acronym expansions) — not translated; shared across locales.
+const FULL_NAMES: Record<string, string> = Object.fromEntries(
+  Object.entries(formatDatabase).map(([k, v]) => [k.toUpperCase(), v.fullName]),
+);
+
+// English benefit/FAQ/intro templates (the source for the translated bundles).
+// Placeholders in {curly braces} are filled at render time. These MUST stay in
+// sync with the strings translated into src/data/convert-content/<locale>.json.
+const EN_BENEFITS: ConvertContent['benefits'] = {
+  sizeReduction: 'Reduce file size by converting from {fromName} to the more compact {to} format',
+  compatibility: 'Improve compatibility by converting to {to}, which is supported by virtually all devices and applications',
+  lossless: 'Convert to a lossless format that preserves data without additional compression',
+  webOptimize: 'Optimize for web delivery with the modern {to} format',
+  transparency: 'Gain transparency support that the source format does not provide',
+  heic: 'Make Apple device photos accessible on Windows, Android, and other platforms',
+  mov: 'Convert Apple video recordings for use on non-Apple devices',
+  audioExtract: 'Extract just the audio track from a video file without needing video editing software',
+  pdf: 'Create a portable document that looks the same on any device or operating system',
+  csv: 'Export data to a simple, universally readable text format for use in databases, scripts, or other applications',
+  xlsx: 'Open data in Excel with formatted columns, headers, and the ability to add formulas and charts',
+  generic: 'Convert your {from} file to {to} format for use in applications that require it',
+  targetUses: 'Put {toName} to work for {toUses}',
+  browser: 'Convert {from} to {to} right in your browser — nothing to install and no account to create',
+};
+
+const EN_FAQS: ConvertContent['faqs'] = {
+  howToQ: 'How do I convert {from} to {to}?',
+  howToA: 'To convert a {from} file to {to}, use the upload area on this page. Drag and drop your {from} file or click to browse your files. Once uploaded, click the "Convert to {to}" button. The conversion will be processed and the resulting {to} file will be available for download.',
+  freeQ: 'Is the {from} to {to} conversion free?',
+  freeA: 'Yes. This conversion tool is completely free to use. There are no premium tiers, no watermarks applied to your output, and no limit on the number of conversions you can perform. The service is supported by advertising.',
+  differenceQ: 'What is the difference between {from} and {to}?',
+  differenceA: '{fromName} {fromDescFirst}. {toName} {toDescFirst}. Converting between these formats allows you to take advantage of the strengths of each format depending on your specific needs.',
+  whenQ: 'When should I convert {from} to {to}?',
+  whenA: 'Converting {from} to {to} makes sense when you need what {toName} is good at: {toStrengths}. It is commonly used for {toUses}.',
+  qualityQ: 'Will I lose quality when converting {from} to {to}?',
+  qualityMediaA: 'The output quality depends on the codecs and settings involved. When converting between lossy formats, some quality adjustment is expected. Video and audio conversions in FlipMyFiles are processed in your browser using standard encoding settings designed to maintain good quality.',
+  qualityNonMediaA: 'The output quality depends on the formats involved. Converting from a lossy format to a lossless format does not recover lost data, but no additional quality is lost. Converting from lossless to lossy involves some data reduction to achieve smaller file sizes. Image conversions use optimized settings to maintain visual quality.',
+  privacyQ: 'Are my files safe and private?',
+  privacyMediaA: 'Yes. Video and audio conversions are processed entirely in your browser using WebAssembly technology. Your file is never uploaded to our servers. The conversion happens locally on your device, providing full privacy.',
+  privacyNonMediaA: 'Yes. Files uploaded for conversion are processed in server memory and discarded immediately after the converted file is returned to your browser. We do not store, copy, or analyze your files. All transfers are encrypted using HTTPS.',
+  maxSizeQ: 'What is the maximum file size for conversion?',
+  maxSizeMediaA: "The maximum file size is 250 MB per file. This limit applies to all format types. For video and audio files, conversion speed depends on your device's processing power since the conversion runs in your browser.",
+  maxSizeNonMediaA: 'The maximum file size is 250 MB per file. This limit applies to all format types. Most conversions complete within a few seconds for typical file sizes.',
+};
+
+const EN_INTRO_FALLBACK =
+  'Converting {from} to {to} changes your file from {fromName} to {toName}. {from} files are commonly used for {fromUses}, while {to} is a better fit when you need {toStrength}. Convert to {to} when an application or platform requires it, or when its strengths suit your project better than {from}. Upload your {from} file above to convert it in seconds — no software to install and no account required.';
+
+// English content bundle. Format text is keyed UPPERCASE — this also fixes the
+// WebP/WebM entries, whose mixed-case keys never matched the uppercase lookup.
+const EN_CONTENT: ConvertContent = {
+  formats: Object.fromEntries(
+    Object.entries(formatDatabase).map(([k, v]) => [k.toUpperCase(), {
+      description: v.description,
+      strengths: v.strengths,
+      commonUses: v.commonUses,
+      technicalNote: v.technicalNote,
+    }]),
+  ),
+  benefits: EN_BENEFITS,
+  faqs: EN_FAQS,
+  introFallback: EN_INTRO_FALLBACK,
+};
+
+const LOCALE_CONTENT: Record<string, ConvertContent> = { en: EN_CONTENT, ...localeBundles };
+
+function getContent(locale: string): ConvertContent {
+  return LOCALE_CONTENT[locale] ?? EN_CONTENT;
+}
+
+function interp(template: string, vars: Record<string, string>): string {
+  return template.replace(/\{(\w+)\}/g, (_, k) => (k in vars ? vars[k] : `{${k}}`));
+}
+
+// Localized "and" so two-item lists joined into prose read naturally per locale.
+const CONJ: Record<string, string> = {
+  en: 'and', de: 'und', fr: 'et', es: 'y', pt: 'e', it: 'e',
+  pl: 'i', se: 'och', ua: 'та', cz: 'a', el: 'και',
+};
+
+function joinAnd(items: string[], locale: string): string {
+  return items.join(` ${CONJ[locale] ?? 'and'} `);
+}
+
+function formatText(format: string, locale: string): FormatText {
   const key = format.toUpperCase();
-  return formatDatabase[key] || {
-    fullName: format.toUpperCase(),
-    description: `${format.toUpperCase()} is a file format used for storing and exchanging data.`,
+  return getContent(locale).formats[key] ?? EN_CONTENT.formats[key] ?? {
+    description: `${key} is a file format used for storing and exchanging data.`,
     strengths: ['Standard file format'],
     commonUses: ['General file exchange'],
     technicalNote: '',
   };
 }
 
-export function getConversionBenefits(from: string, to: string): string[] {
-  const fromInfo = getFormatInfo(from);
-  const toInfo = getFormatInfo(to);
+export function getFormatInfo(format: string, locale: string = 'en'): FormatInfo {
+  const key = format.toUpperCase();
+  return { fullName: FULL_NAMES[key] ?? key, ...formatText(format, locale) };
+}
+
+export function getConversionBenefits(from: string, to: string, locale: string = 'en'): string[] {
+  const f = from.toUpperCase();
+  const t = to.toUpperCase();
+  const b = getContent(locale).benefits;
+  const fromInfo = getFormatInfo(from, locale);
+  const toInfo = getFormatInfo(to, locale);
+  const vars: Record<string, string> = {
+    from: f,
+    to: t,
+    fromName: fromInfo.fullName,
+    toName: toInfo.fullName,
+    toUses: joinAnd(toInfo.commonUses.slice(0, 2), locale),
+  };
   const benefits: string[] = [];
 
-  // Size-related benefits
   const smallFormats = ['JPG', 'WEBP', 'AVIF', 'MP3', 'AAC', 'OGG', 'M4A', 'MP4', 'GZ'];
   const largeFormats = ['BMP', 'TIFF', 'WAV', 'FLAC', 'AVI', 'MOV'];
-  if (largeFormats.includes(from.toUpperCase()) && smallFormats.includes(to.toUpperCase())) {
-    benefits.push(`Reduce file size by converting from ${fromInfo.fullName} to the more compact ${to.toUpperCase()} format`);
-  }
+  if (largeFormats.includes(f) && smallFormats.includes(t)) benefits.push(interp(b.sizeReduction, vars));
 
-  // Compatibility benefits
   const universalFormats = ['JPG', 'PNG', 'MP4', 'MP3', 'PDF'];
-  if (universalFormats.includes(to.toUpperCase()) && !universalFormats.includes(from.toUpperCase())) {
-    benefits.push(`Improve compatibility by converting to ${to.toUpperCase()}, which is supported by virtually all devices and applications`);
-  }
+  if (universalFormats.includes(t) && !universalFormats.includes(f)) benefits.push(interp(b.compatibility, vars));
 
-  // Quality benefits
   const losslessFormats = ['PNG', 'TIFF', 'WAV', 'FLAC', 'BMP'];
-  if (losslessFormats.includes(to.toUpperCase()) && !losslessFormats.includes(from.toUpperCase())) {
-    benefits.push(`Convert to a lossless format that preserves data without additional compression`);
-  }
+  if (losslessFormats.includes(t) && !losslessFormats.includes(f)) benefits.push(interp(b.lossless, vars));
 
-  // Web optimization
   const webFormats = ['WEBP', 'AVIF', 'WEBM', 'SVG'];
-  if (webFormats.includes(to.toUpperCase())) {
-    benefits.push(`Optimize for web delivery with the modern ${to.toUpperCase()} format`);
-  }
+  if (webFormats.includes(t)) benefits.push(interp(b.webOptimize, vars));
 
-  // Transparency
-  if (['PNG', 'WEBP', 'AVIF'].includes(to.toUpperCase()) && ['JPG', 'BMP'].includes(from.toUpperCase())) {
-    benefits.push('Gain transparency support that the source format does not provide');
-  }
+  if (['PNG', 'WEBP', 'AVIF'].includes(t) && ['JPG', 'BMP'].includes(f)) benefits.push(interp(b.transparency, vars));
 
-  // Apple/cross-platform
-  if (from.toUpperCase() === 'HEIC') {
-    benefits.push('Make Apple device photos accessible on Windows, Android, and other platforms');
-  }
-  if (from.toUpperCase() === 'MOV') {
-    benefits.push('Convert Apple video recordings for use on non-Apple devices');
-  }
+  if (f === 'HEIC') benefits.push(interp(b.heic, vars));
+  if (f === 'MOV') benefits.push(interp(b.mov, vars));
 
-  // Audio extraction
   const videoFormats = ['MP4', 'AVI', 'MOV', 'MKV', 'WEBM', 'FLV', 'WMV'];
   const audioFormats = ['MP3', 'WAV', 'OGG', 'FLAC', 'AAC', 'WMA', 'M4A'];
-  if (videoFormats.includes(from.toUpperCase()) && audioFormats.includes(to.toUpperCase())) {
-    benefits.push('Extract just the audio track from a video file without needing video editing software');
-  }
+  if (videoFormats.includes(f) && audioFormats.includes(t)) benefits.push(interp(b.audioExtract, vars));
 
-  // Document portability
-  if (to.toUpperCase() === 'PDF') {
-    benefits.push('Create a portable document that looks the same on any device or operating system');
-  }
+  if (t === 'PDF') benefits.push(interp(b.pdf, vars));
+  if (t === 'CSV') benefits.push(interp(b.csv, vars));
+  if (t === 'XLSX') benefits.push(interp(b.xlsx, vars));
 
-  // Data interchange
-  if (to.toUpperCase() === 'CSV') {
-    benefits.push('Export data to a simple, universally readable text format for use in databases, scripts, or other applications');
-  }
-  if (to.toUpperCase() === 'XLSX') {
-    benefits.push('Open data in Excel with formatted columns, headers, and the ability to add formulas and charts');
-  }
+  if (benefits.length === 0) benefits.push(interp(b.generic, vars));
 
-  // Generic benefit
-  if (benefits.length === 0) {
-    benefits.push(`Convert your ${from.toUpperCase()} file to ${to.toUpperCase()} format for use in applications that require it`);
-  }
-
-  // Target-format strength — pulls real per-format data so this bullet varies
-  // per conversion instead of being identical boilerplate on every page.
-  if (toInfo.commonUses.length > 0) {
-    benefits.push(`Put ${toInfo.fullName} to work for ${toInfo.commonUses.slice(0, 2).join(' and ')}`);
-  }
-  benefits.push(`Convert ${from.toUpperCase()} to ${to.toUpperCase()} right in your browser — nothing to install and no account to create`);
+  // Target-format strength — varies per conversion instead of being boilerplate.
+  if (toInfo.commonUses.length > 0) benefits.push(interp(b.targetUses, vars));
+  benefits.push(interp(b.browser, vars));
 
   return benefits;
 }
 
-export function getDetailedFaqs(from: string, to: string): { question: string; answer: string }[] {
-  const fromInfo = getFormatInfo(from);
-  const toInfo = getFormatInfo(to);
+export function getDetailedFaqs(from: string, to: string, locale: string = 'en'): { question: string; answer: string }[] {
   const f = from.toUpperCase();
   const t = to.toUpperCase();
+  const q = getContent(locale).faqs;
+  const fromInfo = getFormatInfo(from, locale);
+  const toInfo = getFormatInfo(to, locale);
 
   const videoFormats = ['MP4', 'AVI', 'MOV', 'MKV', 'WEBM', 'FLV', 'WMV'];
   const audioFormats = ['MP3', 'WAV', 'OGG', 'FLAC', 'AAC', 'WMA', 'M4A'];
-  const isMediaConversion = videoFormats.includes(f) || videoFormats.includes(t) || audioFormats.includes(f) || audioFormats.includes(t);
+  const isMedia = videoFormats.includes(f) || videoFormats.includes(t) || audioFormats.includes(f) || audioFormats.includes(t);
 
-  const faqs = [
-    {
-      question: `How do I convert ${f} to ${t}?`,
-      answer: `To convert a ${f} file to ${t}, use the upload area on this page. Drag and drop your ${f} file or click to browse your files. Once uploaded, click the "Convert to ${t}" button. The conversion will be processed and the resulting ${t} file will be available for download.`,
-    },
-    {
-      question: `Is the ${f} to ${t} conversion free?`,
-      answer: `Yes. This conversion tool is completely free to use. There are no premium tiers, no watermarks applied to your output, and no limit on the number of conversions you can perform. The service is supported by advertising.`,
-    },
-    {
-      question: `What is the difference between ${f} and ${t}?`,
-      answer: `${fromInfo.fullName} ${fromInfo.description.split('. ').slice(0, 1).join('. ')}. ${toInfo.fullName} ${toInfo.description.split('. ').slice(0, 1).join('. ')}. Converting between these formats allows you to take advantage of the strengths of each format depending on your specific needs.`,
-    },
-    {
-      question: `When should I convert ${f} to ${t}?`,
-      answer: `Converting ${f} to ${t} makes sense when you need what ${toInfo.fullName} is good at${toInfo.strengths.length ? `: ${toInfo.strengths.slice(0, 3).join(', ')}` : ''}. It is commonly used for ${toInfo.commonUses.slice(0, 3).join(', ')}.${toInfo.technicalNote ? ` ${toInfo.technicalNote}` : ''}`,
-    },
-    {
-      question: `Will I lose quality when converting ${f} to ${t}?`,
-      answer: isMediaConversion
-        ? `The output quality depends on the codecs and settings involved. When converting between lossy formats, some quality adjustment is expected. Video and audio conversions in FlipMyFiles are processed in your browser using standard encoding settings designed to maintain good quality.`
-        : `The output quality depends on the formats involved. Converting from a lossy format to a lossless format does not recover lost data, but no additional quality is lost. Converting from lossless to lossy involves some data reduction to achieve smaller file sizes. Image conversions use optimized settings to maintain visual quality.`,
-    },
-    {
-      question: 'Are my files safe and private?',
-      answer: isMediaConversion
-        ? `Yes. Video and audio conversions are processed entirely in your browser using WebAssembly technology. Your file is never uploaded to our servers. The conversion happens locally on your device, providing full privacy.`
-        : `Yes. Files uploaded for conversion are processed in server memory and discarded immediately after the converted file is returned to your browser. We do not store, copy, or analyze your files. All transfers are encrypted using HTTPS.`,
-    },
-    {
-      question: 'What is the maximum file size for conversion?',
-      answer: `The maximum file size is 250 MB per file. This limit applies to all format types. ${isMediaConversion ? 'For video and audio files, conversion speed depends on your device\'s processing power since the conversion runs in your browser.' : 'Most conversions complete within a few seconds for typical file sizes.'}`,
-    },
+  const vars: Record<string, string> = {
+    from: f,
+    to: t,
+    fromName: fromInfo.fullName,
+    toName: toInfo.fullName,
+    fromDescFirst: fromInfo.description.split('. ').slice(0, 1).join('. '),
+    toDescFirst: toInfo.description.split('. ').slice(0, 1).join('. '),
+    toStrengths: toInfo.strengths.slice(0, 3).join(', '),
+    toUses: toInfo.commonUses.slice(0, 3).join(', '),
+  };
+
+  const whenAnswer = interp(q.whenA, vars) + (toInfo.technicalNote ? ` ${toInfo.technicalNote}` : '');
+
+  return [
+    { question: interp(q.howToQ, vars), answer: interp(q.howToA, vars) },
+    { question: interp(q.freeQ, vars), answer: interp(q.freeA, vars) },
+    { question: interp(q.differenceQ, vars), answer: interp(q.differenceA, vars) },
+    { question: interp(q.whenQ, vars), answer: whenAnswer },
+    { question: interp(q.qualityQ, vars), answer: isMedia ? interp(q.qualityMediaA, vars) : interp(q.qualityNonMediaA, vars) },
+    { question: interp(q.privacyQ, vars), answer: isMedia ? interp(q.privacyMediaA, vars) : interp(q.privacyNonMediaA, vars) },
+    { question: interp(q.maxSizeQ, vars), answer: isMedia ? interp(q.maxSizeMediaA, vars) : interp(q.maxSizeNonMediaA, vars) },
   ];
-
-  return faqs;
 }
 
 /**
@@ -414,24 +468,20 @@ const conversionIntros: Record<string, string> = {
  * per-format database (descriptions + common uses), so every page carries
  * substantive, non-duplicate lead copy.
  */
-export function getConversionIntro(from: string, to: string): string {
+export function getConversionIntro(from: string, to: string, locale: string = 'en'): string {
   const key = `${from.toUpperCase()}_${to.toUpperCase()}`;
-  if (conversionIntros[key]) return conversionIntros[key];
+  // English popular pairs use their hand-written intro; everything else (and all
+  // non-English locales) uses the localized, composed fallback template.
+  if (locale === 'en' && conversionIntros[key]) return conversionIntros[key];
 
-  const fromInfo = getFormatInfo(from);
-  const toInfo = getFormatInfo(to);
-  const f = from.toUpperCase();
-  const t = to.toUpperCase();
-  // Compose from strengths/uses (phrased as prose) rather than repeating each
-  // format's description verbatim — those sentences already appear in the
-  // "What is …" cards lower on the page.
-  const fromUses = fromInfo.commonUses.slice(0, 2).join(' and ');
-  const toStrength = toInfo.strengths.slice(0, 2).join(' and ');
-
-  return (
-    `Converting ${f} to ${t} changes your file from ${fromInfo.fullName} to ${toInfo.fullName}. ` +
-    `${f} files are commonly used for ${fromUses}, while ${t} is a better fit when you need ${toStrength}. ` +
-    `Convert to ${t} when an application or platform requires it, or when its strengths suit your project better than ${f}. ` +
-    `Upload your ${f} file above to convert it in seconds — no software to install and no account required.`
-  );
+  const fromInfo = getFormatInfo(from, locale);
+  const toInfo = getFormatInfo(to, locale);
+  return interp(getContent(locale).introFallback, {
+    from: from.toUpperCase(),
+    to: to.toUpperCase(),
+    fromName: fromInfo.fullName,
+    toName: toInfo.fullName,
+    fromUses: joinAnd(fromInfo.commonUses.slice(0, 2), locale),
+    toStrength: joinAnd(toInfo.strengths.slice(0, 2), locale),
+  });
 }

@@ -175,6 +175,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             "name": "FlipMyFiles",
             "inLanguage": toBcp47(locale),
             "publisher": { "@id": "https://flipmyfiles.com/#organization" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": `${localeUrl(locale, '/tools')}?q={search_term_string}`,
+              },
+              "query-input": "required name=search_term_string",
+            },
           }),
         }}
       />

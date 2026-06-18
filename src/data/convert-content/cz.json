@@ -1,0 +1,544 @@
+{
+  "formats": {
+    "JPG": {
+      "description": "JPG je jeden z nejpoužívanějších obrazových formátů na webu. Využívá ztrátovou kompresi, která snižuje velikost souboru při zachování přijatelné vizuální kvality pro fotografie a složité obrázky. Formát podporuje miliony barev, takže je vhodný pro fotografický obsah.",
+      "strengths": [
+        "Malá velikost souborů díky ztrátové kompresi",
+        "Univerzální kompatibilita napříč zařízeními a prohlížeči",
+        "Podpora milionů barev (24bitová barevná hloubka)",
+        "Nastavitelný poměr kvality a velikosti"
+      ],
+      "commonUses": [
+        "Webové obrázky a fotografie",
+        "Přílohy e-mailů",
+        "Nahrávání na sociální sítě",
+        "Digitální fotografie"
+      ],
+      "technicalNote": "JPG nepodporuje průhlednost ani animaci. Při každém upravení a opětovném uložení JPG souboru může dojít ke ztrátě určité kvality kvůli opětovné kompresi."
+    },
+    "PNG": {
+      "description": "PNG je rastrový obrazový formát, který využívá bezztrátovou kompresi, což znamená, že zachovává veškerá původní obrazová data bez ztráty kvality. Podporuje průhlednost (alfa kanál), díky čemuž je oblíbenou volbou pro grafiku, ikony a obrázky, které je třeba vrstvit na jiný obsah.",
+      "strengths": [
+        "Bezztrátová komprese zachovává plnou kvalitu",
+        "Podpora průhlednosti (alfa kanál)",
+        "Ostré hrany u textu a grafiky",
+        "Žádná ztráta kvality při úpravách a opětovném ukládání"
+      ],
+      "commonUses": [
+        "Webová grafika s průhledností",
+        "Snímky obrazovky a prvky rozhraní",
+        "Loga a ikony",
+        "Obrázky vyžadující ostré detaily"
+      ],
+      "technicalNote": "PNG soubory jsou u fotografického obsahu obvykle větší než JPG soubory, protože bezztrátová komprese je méně efektivní u složitých obrázků s velkým počtem barev."
+    },
+    "WEBP": {
+      "description": "WebP je moderní obrazový formát vyvinutý společností Google. Podporuje jak ztrátovou, tak bezztrátovou kompresi, a navíc průhlednost a animaci. WebP soubory jsou obecně menší než srovnatelné JPG nebo PNG soubory při podobné úrovni kvality, díky čemuž se dobře hodí pro webové použití.",
+      "strengths": [
+        "Menší velikost souborů než JPG a PNG při srovnatelné kvalitě",
+        "Podpora ztrátové i bezztrátové komprese",
+        "Podpora průhlednosti a animace",
+        "Navržen pro rychlé doručování na web"
+      ],
+      "commonUses": [
+        "Optimalizace webových stránek",
+        "Prostředky webových aplikací",
+        "Progresivní webové aplikace",
+        "Optimalizace doručování obsahu"
+      ],
+      "technicalNote": "Přestože je WebP podporován všemi moderními prohlížeči, některé starší aplikace a systémy nemusí WebP soubory otevírat nativně. Pro širší kompatibilitu může být nutný převod do JPG nebo PNG."
+    },
+    "GIF": {
+      "description": "GIF je obrazový formát, který podporuje animaci a průhlednost. Využívá bezztrátovou kompresi, ale je omezen na paletu 256 barev, díky čemuž se nejlépe hodí pro jednoduchou grafiku, loga a krátké animace spíše než pro fotografie.",
+      "strengths": [
+        "Podpora animace (více snímků)",
+        "Podpora základní průhlednosti",
+        "Malá velikost souborů u jednoduché grafiky",
+        "Univerzální podpora v prohlížečích a zařízeních"
+      ],
+      "commonUses": [
+        "Animované obrázky a krátké klipy",
+        "Jednoduchá webová grafika",
+        "Reakční obrázky a memy",
+        "Indikátory načítání v uživatelském rozhraní"
+      ],
+      "technicalNote": "GIF je omezen na 256 barev na snímek. U fotografického obsahu poskytnou JPG nebo PNG lepší vizuální výsledky. U animovaného obsahu s více barvami zvažte MP4 nebo WebP."
+    },
+    "BMP": {
+      "description": "BMP je nekomprimovaný rastrový obrazový formát, který ukládá data pixelů přímo bez komprese. To vede k velkým souborům, ale zachovává přesné informace o pixelech. BMP soubory se běžně používají v prostředí Windows a pro specifické technické aplikace.",
+      "strengths": [
+        "Přesnost na úrovni jednotlivých pixelů",
+        "Žádné kompresní artefakty",
+        "Jednoduchá struktura formátu",
+        "Široká podpora v systémech Windows"
+      ],
+      "commonUses": [
+        "Systémová grafika Windows",
+        "Technické a vědecké zobrazování",
+        "Zdrojové soubory pro další zpracování",
+        "Kompatibilita se staršími aplikacemi"
+      ],
+      "technicalNote": "BMP soubory jsou výrazně větší než komprimované formáty jako JPG nebo PNG. Převod BMP do PNG nebo JPG se doporučuje, pokud je rozhodující velikost souboru nebo webové použití."
+    },
+    "TIFF": {
+      "description": "TIFF je flexibilní obrazový formát používaný především v profesionální fotografii, tisku a publikování. Podporuje bezztrátovou kompresi, více vrstev a vysokou barevnou hloubku, díky čemuž je vhodný pro archivní a tiskové obrázky v kvalitě pro tisk.",
+      "strengths": [
+        "Bezztrátové zachování kvality",
+        "Podpora vysoké barevné hloubky (16bitová, 32bitová)",
+        "Více stránek a vrstev",
+        "Průmyslový standard pro tisk a publikování"
+      ],
+      "commonUses": [
+        "Profesionální fotografie",
+        "Pracovní postupy tisku a publikování",
+        "Archivní ukládání obrázků",
+        "Lékařské a vědecké zobrazování"
+      ],
+      "technicalNote": "TIFF soubory bývají kvůli své bezztrátové povaze velké. Pro webové použití převod TIFF do JPG, PNG nebo WebP výrazně sníží velikost souboru při zachování vizuální kvality pro zobrazení na obrazovce."
+    },
+    "AVIF": {
+      "description": "AVIF je obrazový formát nové generace založený na video kodeku AV1. Nabízí výrazně lepší kompresi než JPG a WebP, čímž vytváří menší soubory při srovnatelné kvalitě. AVIF podporuje HDR, široký barevný gamut a průhlednost.",
+      "strengths": [
+        "Vynikající účinnost komprese",
+        "Podpora HDR a širokého barevného gamutu",
+        "Podpora průhlednosti a animace",
+        "Otevřený formát bez licenčních poplatků"
+      ],
+      "commonUses": [
+        "Webové obrázky nové generace",
+        "Aplikace citlivé na šířku pásma",
+        "Doručování vysoce kvalitních fotografií",
+        "Progresivní načítání obrázků"
+      ],
+      "technicalNote": "AVIF je podporován většinou moderních prohlížečů, ale nemusí být kompatibilní se starším softwarem. Převod do JPG nebo PNG zajistí v případě potřeby širší kompatibilitu."
+    },
+    "SVG": {
+      "description": "SVG je vektorový obrazový formát založený na XML. Na rozdíl od rastrových formátů lze SVG obrázky škálovat do libovolné velikosti bez ztráty kvality. Jsou ideální pro loga, ikony, grafy a jakoukoli grafiku, která musí vypadat ostře v různých velikostech.",
+      "strengths": [
+        "Nekonečná škálovatelnost bez ztráty kvality",
+        "Malá velikost souborů u jednoduché grafiky",
+        "Upravitelný v textových editorech a kódu",
+        "Podpora interaktivity a animace"
+      ],
+      "commonUses": [
+        "Webová loga a ikony",
+        "Responzivní webová grafika",
+        "Vizualizace dat a grafy",
+        "Tiskové materiály v libovolném rozlišení"
+      ],
+      "technicalNote": "SVG je vektorový formát a nedokáže efektivně reprezentovat fotografický obsah. Převod SVG do PNG vytvoří rasterizovanou verzi ve fixním rozlišení."
+    },
+    "ICO": {
+      "description": "ICO je souborový formát používaný pro ikony v systému Microsoft Windows. Může obsahovat více velikostí obrázků a barevných hloubek v jediném souboru, což umožňuje operačnímu systému vybrat vhodnou verzi pro různé kontexty zobrazení.",
+      "strengths": [
+        "Více velikostí v jednom souboru",
+        "Standardní formát pro ikony Windows",
+        "Používá se pro favikony webových stránek",
+        "Podpora průhlednosti"
+      ],
+      "commonUses": [
+        "Favikony webových stránek",
+        "Ikony aplikací Windows",
+        "Zástupci na ploše",
+        "Ikony karet prohlížeče"
+      ],
+      "technicalNote": "ICO soubory obvykle obsahují verze ve velikostech 16x16, 32x32, 48x48 a 256x256 pixelů. Při převodu z jiného formátu se obrázek změní na standardní rozměry ikony."
+    },
+    "HEIC": {
+      "description": "HEIC je obrazový formát používaný zařízeními Apple se systémem iOS 11 a novějším. Využívá kompresní standard HEVC (H.265), který vytváří vysoce kvalitní obrázky o přibližně poloviční velikosti souboru oproti JPG. Mimo ekosystém Apple má však omezenou podporu.",
+      "strengths": [
+        "Výrazně menší velikost souborů než JPG",
+        "Vysoká kvalita obrazu",
+        "Podpora hloubkových map a živých fotografií",
+        "Výchozí formát na moderních zařízeních Apple"
+      ],
+      "commonUses": [
+        "Fotografie z iPhonu a iPadu",
+        "Sdílení souborů v ekosystému Apple",
+        "Optimalizace úložiště na zařízeních Apple"
+      ],
+      "technicalNote": "HEIC soubory se nemusí otevřít na zařízeních Windows nebo Android bez dodatečného softwaru. Převod HEIC do JPG nebo PNG zajistí univerzální kompatibilitu."
+    },
+    "MP4": {
+      "description": "MP4 je nejpoužívanější kontejnerový video formát. Podporuje video, zvuk, titulky a statické obrázky v rámci jediného souboru. MP4 obvykle využívá video kodeky H.264 nebo H.265 a zvuk AAC, čímž poskytuje dobrou rovnováhu mezi kvalitou a velikostí souboru.",
+      "strengths": [
+        "Univerzální kompatibilita přehrávání",
+        "Efektivní komprese pomocí H.264/H.265",
+        "Podpora více zvukových stop a titulků",
+        "Formát vhodný pro streamování"
+      ],
+      "commonUses": [
+        "Sdílení a streamování videa",
+        "Nahrávání na sociální sítě",
+        "Ukládání a archivace videa",
+        "Vkládání videa na web"
+      ],
+      "technicalNote": "MP4 je kontejnerový formát, který může používat různé kodeky. Kompatibilita závisí na konkrétních kodecích použitých uvnitř souboru. H.264 se zvukem AAC nabízí nejširší podporu zařízení."
+    },
+    "AVI": {
+      "description": "AVI je multimediální kontejnerový formát představený společností Microsoft. Ukládá video a zvuková data v jediném souboru a podporuje řadu kodeků. Přestože je široce podporován, AVI soubory bývají větší než MP4 soubory u srovnatelného obsahu.",
+      "strengths": [
+        "Široká podpora kodeků",
+        "Dobrá kompatibilita s Windows",
+        "Zavedený a dobře známý formát",
+        "Podpora více zvukových stop"
+      ],
+      "commonUses": [
+        "Přehrávání staršího videa",
+        "Střih videa ve Windows",
+        "Starší multimediální aplikace"
+      ],
+      "technicalNote": "AVI soubory jsou často větší než MP4 kvůli méně efektivní kompresi. Převod AVI do MP4 obvykle sníží velikost souboru při zachování vizuální kvality."
+    },
+    "MOV": {
+      "description": "MOV je multimediální kontejnerový formát vyvinutý společností Apple pro použití s QuickTime. Podporuje video, zvukové a textové stopy a běžně se používá v pracovních postupech video produkce založených na Apple. MOV soubory často využívají vysoce kvalitní kodeky.",
+      "strengths": [
+        "Podpora vysoce kvalitního videa",
+        "Nativní kompatibilita s ekosystémem Apple",
+        "Podpora profesionálního střihu",
+        "Podpora více stop"
+      ],
+      "commonUses": [
+        "Střih videa na zařízeních Apple",
+        "Videozáznamy z iPhonu a Macu",
+        "Profesionální video produkce",
+        "Přehrávání v QuickTime"
+      ],
+      "technicalNote": "MOV soubory nahrané na zařízeních Apple často využívají kodek HEVC. Převod MOV do MP4 zajistí širší kompatibilitu napříč zařízeními a platformami, které nepocházejí od Apple."
+    },
+    "MKV": {
+      "description": "MKV je multimediální kontejnerový formát s otevřeným zdrojovým kódem, který může obsahovat neomezený počet video, zvukových, titulkových a metadatových stop. Je oblíbený pro ukládání filmů a televizních pořadů díky své flexibilitě a podpoře vysoce kvalitních kodeků.",
+      "strengths": [
+        "Podpora neomezeného počtu stop",
+        "Formát s otevřeným zdrojovým kódem",
+        "Zvládá většinu moderních kodeků",
+        "Podpora kapitol a metadat"
+      ],
+      "commonUses": [
+        "Ukládání filmů a televizních pořadů",
+        "Archivace videoobsahu",
+        "Vkládání titulků",
+        "Distribuce vysoce kvalitního videa"
+      ],
+      "technicalNote": "MKV se nemusí nativně přehrávat na všech zařízeních, zejména na mobilních telefonech a některých chytrých televizorech. Převod MKV do MP4 zlepšuje kompatibilitu při přehrávání."
+    },
+    "WEBM": {
+      "description": "WebM je otevřený multimediální formát vyvinutý společností Google pro použití na webu. Využívá video kodeky VP8/VP9 a zvukové kodeky Vorbis/Opus. WebM je navržen pro efektivní webové streamování a je nativně podporován ve většině prohlížečů.",
+      "strengths": [
+        "Optimalizovaný pro doručování na web",
+        "Otevřený a bez licenčních poplatků",
+        "Podporovaný ve všech moderních prohlížečích",
+        "Dobrá komprese pro streamování"
+      ],
+      "commonUses": [
+        "Vkládání videa na web",
+        "Přehrávání videa v HTML5",
+        "Video aplikace v prohlížeči",
+        "Webové streamování"
+      ],
+      "technicalNote": "WebM je primárně webový formát. Pro přehrávání v desktopových přehrávačích médií nebo na mobilních zařízeních mimo prohlížeče je obecně kompatibilnější MP4."
+    },
+    "FLV": {
+      "description": "FLV je kontejnerový video formát původně používaný s přehrávačem Adobe Flash. Přestože byl Flash ukončen, FLV soubory ze staršího videoobsahu stále existují. Formát podporoval efektivní streamování, ale byl z velké části nahrazen formáty MP4 a WebM.",
+      "strengths": [
+        "Malá velikost souborů",
+        "Historicky používaný pro webové video",
+        "Jednoduchá struktura formátu"
+      ],
+      "commonUses": [
+        "Starší videoobsah ve Flashi",
+        "Starší archivy webového videa"
+      ],
+      "technicalNote": "Přehrávač Flash byl společností Adobe ukončen. FLV soubory by měly být převedeny do MP4 nebo WebM pro další přehrávání v moderních prohlížečích a přehrávačích médií."
+    },
+    "WMV": {
+      "description": "WMV je video formát vyvinutý společností Microsoft jako součást frameworku Windows Media. Byl navržen pro streamování a přehrávání v systémech Windows. Přestože je stále v některých aplikacích podporován, byl z velké části nahrazen formátem MP4.",
+      "strengths": [
+        "Dobrá kompatibilita s Windows",
+        "Navržen pro streamování",
+        "Podporovaný přehrávačem Windows Media Player"
+      ],
+      "commonUses": [
+        "Přehrávání videa ve Windows",
+        "Starší videoobsah",
+        "Streamování Windows Media"
+      ],
+      "technicalNote": "WMV má na platformách jiných než Windows omezenou podporu. Převod do MP4 zajistí kompatibilitu napříč všemi hlavními operačními systémy a zařízeními."
+    },
+    "MP3": {
+      "description": "MP3 je nejpoužívanější zvukový formát pro hudbu a mluvené slovo. Využívá ztrátovou kompresi, která výrazně snižuje velikost souboru při zachování přijatelné kvality zvuku. MP3 je podporován prakticky každým zařízením a softwarovou aplikací.",
+      "strengths": [
+        "Univerzální podpora zařízení a softwaru",
+        "Dobrý poměr komprese a kvality",
+        "Malá velikost souborů",
+        "Podpora metadat (ID3 tagy)"
+      ],
+      "commonUses": [
+        "Přehrávání a distribuce hudby",
+        "Podcasty a audioknihy",
+        "Webový zvuk",
+        "Přenosné hudební přehrávače"
+      ],
+      "technicalNote": "MP3 využívá ztrátovou kompresi, což znamená, že některá zvuková data jsou zahozena za účelem snížení velikosti souboru. Pro archivní nebo profesionální použití mohou být vhodnější bezztrátové formáty jako FLAC nebo WAV."
+    },
+    "WAV": {
+      "description": "WAV je nekomprimovaný zvukový formát, který ukládá surová zvuková data. Zachovává plnou kvalitu původní nahrávky bez jakýchkoli kompresních artefaktů, což vede k větší velikosti souborů. WAV je standardní formát pro profesionální zvukovou produkci.",
+      "strengths": [
+        "Nekomprimovaný zvuk v plné kvalitě",
+        "Žádné kompresní artefakty",
+        "Průmyslový standard pro zvukovou produkci",
+        "Jednoduchý a dobře podporovaný formát"
+      ],
+      "commonUses": [
+        "Profesionální střih zvuku",
+        "Hudební produkce",
+        "Návrh zvuku",
+        "Archivace zvuku"
+      ],
+      "technicalNote": "WAV soubory jsou podstatně větší než komprimované formáty. Tříminutová skladba ve formátu WAV má přibližně 30 MB, ve srovnání s asi 3 MB ve formátu MP3."
+    },
+    "OGG": {
+      "description": "OGG je bezplatný zvukový formát s otevřeným zdrojovým kódem, který využívá kodek Vorbis pro ztrátovou kompresi. Obecně poskytuje lepší kvalitu zvuku než MP3 při srovnatelných datových tocích. OGG se běžně používá ve webových aplikacích, hrách a softwaru s otevřeným zdrojovým kódem.",
+      "strengths": [
+        "Otevřený zdrojový kód a bez licenčních poplatků",
+        "Lepší kvalita než MP3 při stejných datových tocích",
+        "Dobrá podpora streamování",
+        "Podporovaný ve většině webových prohlížečů"
+      ],
+      "commonUses": [
+        "Webový zvuk a hry",
+        "Zvukové projekty s otevřeným zdrojovým kódem",
+        "Streamovací aplikace",
+        "Zvuk v HTML5"
+      ],
+      "technicalNote": "OGG má menší podporu zařízení než MP3, zejména na zařízeních Apple. Převod do MP3 v případě potřeby poskytne širší kompatibilitu."
+    },
+    "FLAC": {
+      "description": "FLAC je bezztrátový zvukový formát, který komprimuje zvuk bez ztráty jakýchkoli dat. Obvykle snižuje velikost souboru o 50–70 % oproti WAV při zachování identické kvality zvuku. FLAC je široce používán audiofily a pro archivaci hudby.",
+      "strengths": [
+        "Bezztrátová komprese zachovává plnou kvalitu",
+        "Výrazné snížení velikosti oproti WAV",
+        "Otevřený zdrojový kód a bez licenčních poplatků",
+        "Podpora metadat a obalů alb"
+      ],
+      "commonUses": [
+        "Bezztrátové ukládání hudby",
+        "Archivace zvuku",
+        "Přehrávání zvuku ve vysoké kvalitě",
+        "Správa hudební knihovny"
+      ],
+      "technicalNote": "Přestože FLAC zachovává dokonalou kvalitu zvuku, soubory jsou stále několikanásobně větší než MP3. Ne všechna přenosná zařízení podporují FLAC nativně."
+    },
+    "AAC": {
+      "description": "AAC je ztrátový zvukový formát navržený jako nástupce MP3. Poskytuje lepší kvalitu zvuku než MP3 při stejném datovém toku a je výchozím zvukovým formátem pro produkty Apple, YouTube a mnoho streamovacích služeb.",
+      "strengths": [
+        "Lepší kvalita než MP3 při stejném datovém toku",
+        "Výchozí formát pro zařízení Apple",
+        "Efektivní komprese",
+        "Podpora vícekanálového zvuku"
+      ],
+      "commonUses": [
+        "iTunes a Apple Music",
+        "Zvuk z YouTube",
+        "Streamovací služby",
+        "Přehrávání zvuku na mobilních zařízeních"
+      ],
+      "technicalNote": "AAC je široce podporován, ale může vyžadovat převod do MP3 pro kompatibilitu se staršími zařízeními nebo softwarem, který nepodporuje dekódování AAC."
+    },
+    "WMA": {
+      "description": "WMA je zvukový formát vyvinutý společností Microsoft. Byl navržen jako konkurence MP3 a nabízí jak ztrátové, tak bezztrátové režimy komprese. WMA má dobrou podporu v systémech Windows, ale jinde omezenou kompatibilitu.",
+      "strengths": [
+        "Dobrá komprese ve Windows",
+        "Podpora bezztrátového režimu",
+        "Podpora DRM",
+        "Integrace s ekosystémem Windows"
+      ],
+      "commonUses": [
+        "Přehrávání v Windows Media Player",
+        "Starší zvuk z Windows",
+        "Mediální knihovny založené na Windows"
+      ],
+      "technicalNote": "Podpora WMA je na platformách jiných než Windows omezená. Převod WMA do MP3 poskytne univerzální kompatibilitu."
+    },
+    "M4A": {
+      "description": "M4A je čistě zvukový kontejner založený na standardu MPEG-4. Obvykle využívá kódování AAC a je výchozím zvukovým formátem pro produkty Apple. M4A poskytuje dobrou kvalitu zvuku při menší velikosti souborů ve srovnání s MP3.",
+      "strengths": [
+        "Lepší kvalita než MP3 při podobné velikosti",
+        "Nativní podpora zařízení Apple",
+        "Podpora metadat a obalů alb",
+        "Dobrá účinnost komprese"
+      ],
+      "commonUses": [
+        "Apple Music a iTunes",
+        "Hlasové nahrávky z iPhonu",
+        "Podcasty",
+        "Zvuk v ekosystému Apple"
+      ],
+      "technicalNote": "M4A je v podstatě zvuk AAC v kontejneru MPEG-4. Pro kompatibilitu se zařízeními a softwarem, který nepodporuje M4A, může být nutný převod do MP3."
+    },
+    "DOCX": {
+      "description": "DOCX je výchozí formát dokumentů pro Microsoft Word. Využívá formátování založené na XML a podporuje formátovaný text, obrázky, tabulky, záhlaví, zápatí a složitá rozvržení dokumentů. DOCX se stal standardním formátem pro výměnu dokumentů napříč platformami.",
+      "strengths": [
+        "Podpora bohatého formátování a rozvržení",
+        "Standardní formát dokumentů v oboru",
+        "Multiplatformní kompatibilita",
+        "Podpora obrázků, tabulek a vložených objektů"
+      ],
+      "commonUses": [
+        "Obchodní dokumenty a zprávy",
+        "Akademické práce",
+        "Smlouvy a nabídky",
+        "Obecné vytváření dokumentů"
+      ],
+      "technicalNote": "Převod DOCX do jiných formátů může vést k určitým rozdílům ve formátování, zejména u složitých rozvržení, vlastních písem nebo vložených objektů."
+    },
+    "PDF": {
+      "description": "PDF je formát dokumentů vytvořený společností Adobe, který zachovává přesné rozvržení, písma a obrázky dokumentu bez ohledu na zařízení nebo software použitý k jeho zobrazení. PDF se široce používá pro dokumenty, které musí vypadat všude stejně.",
+      "strengths": [
+        "Konzistentní vzhled napříč zařízeními",
+        "Zachovává přesné rozvržení a formátování",
+        "Podpora formulářů, anotací a podpisů",
+        "Formát připravený k tisku"
+      ],
+      "commonUses": [
+        "Oficiální dokumenty a zprávy",
+        "Faktury a účtenky",
+        "E-knihy a příručky",
+        "Formuláře a smlouvy"
+      ],
+      "technicalNote": "Převod do PDF zachovává vizuální rozvržení. Převod z PDF do upravitelných formátů nemusí dokonale obnovit původní formátování."
+    },
+    "TXT": {
+      "description": "TXT je jednoduchý souborový formát, který ukládá neformátovaný text. Obsahuje pouze surové textové znaky bez jakéhokoli stylování, obrázků nebo informací o rozvržení. TXT soubory jsou univerzálně čitelné jakýmkoli textovým editorem nebo programovacím prostředím.",
+      "strengths": [
+        "Univerzální kompatibilita",
+        "Extrémně malá velikost souborů",
+        "Čitelný jakýmkoli textovým editorem",
+        "Žádné závislosti na formátování"
+      ],
+      "commonUses": [
+        "Soubory s kódem a konfigurací",
+        "Výměna dat",
+        "Rychlé poznámky a koncepty",
+        "Soubory protokolů"
+      ],
+      "technicalNote": "TXT soubory obsahují pouze prostý text. Při převodu z formátovaných dokumentů (jako DOCX) bude veškeré formátování, obrázky a informace o rozvržení odstraněny."
+    },
+    "CSV": {
+      "description": "CSV je jednoduchý textový formát pro ukládání tabulkových dat. Každý řádek představuje jeden záznam a pole v rámci řádku jsou oddělena čárkami (nebo jinými oddělovači). CSV se široce používá pro import a export dat mezi různými aplikacemi.",
+      "strengths": [
+        "Jednoduchá, lidsky čitelná struktura",
+        "Univerzální formát pro výměnu dat",
+        "Podporovaný všemi tabulkovými aplikacemi",
+        "Snadné programové zpracování"
+      ],
+      "commonUses": [
+        "Import a export databází",
+        "Výměna tabulkových dat",
+        "Generování zpráv",
+        "Migrace dat mezi aplikacemi"
+      ],
+      "technicalNote": "CSV ukládá pouze surová data bez vzorců, formátování, grafů nebo více listů. Převod z XLSX do CSV zachová pouze datové hodnoty z prvního listu."
+    },
+    "XLSX": {
+      "description": "XLSX je výchozí formát tabulek pro Microsoft Excel. Podporuje více pracovních listů, vzorce, grafy, formátování a ověřování dat. XLSX je formát založený na XML, který se stal standardem pro tabulková data.",
+      "strengths": [
+        "Podpora více pracovních listů",
+        "Vzorce a počítaná pole",
+        "Bohaté formátování a grafy",
+        "Velká kapacita dat"
+      ],
+      "commonUses": [
+        "Finanční tabulky",
+        "Analýza dat",
+        "Obchodní reporting",
+        "Sledování projektů"
+      ],
+      "technicalNote": "Převod CSV do XLSX vytvoří formátovanou tabulku s automaticky přizpůsobenými sloupci a stylizovanými záhlavími. Převod XLSX do CSV extrahuje pouze surové datové hodnoty."
+    },
+    "ZIP": {
+      "description": "ZIP je nejpoužívanější archivní formát. Komprimuje jeden nebo více souborů do jediného kontejneru, čímž snižuje celkovou velikost souboru a zjednodušuje jeho přenos. ZIP je nativně podporován systémy Windows, macOS a Linux.",
+      "strengths": [
+        "Univerzální podpora operačních systémů",
+        "Vestavěná komprese",
+        "Podpora více souborů a složek",
+        "Volitelná ochrana heslem"
+      ],
+      "commonUses": [
+        "Komprese a sdružování souborů",
+        "Přílohy e-mailů",
+        "Distribuce softwaru",
+        "Záložní archivy"
+      ],
+      "technicalNote": "ZIP ve výchozím nastavení využívá kompresi DEFLATE. Převod mezi archivními formáty přebalí obsah bez změny souborů uvnitř."
+    },
+    "TAR": {
+      "description": "TAR je archivní formát, který sdružuje více souborů do jediného souboru bez komprese. Běžně se používá v systémech Unix a Linux, často kombinovaný s gzip (.tar.gz) nebo bzip2 (.tar.bz2) pro kompresi.",
+      "strengths": [
+        "Zachovává oprávnění souborů Unixu",
+        "Standard v systémech Linux/Unix",
+        "Běžně kombinovaný s kompresí",
+        "Dobře zvládá velké množství souborů"
+      ],
+      "commonUses": [
+        "Distribuce softwaru pro Linux",
+        "Zálohy serverů",
+        "Balení zdrojového kódu",
+        "Správa systému"
+      ],
+      "technicalNote": "TAR samotný soubory nekomprimuje. Pro komprimované archivy se TAR obvykle kombinuje s gzip (.tar.gz). Převod ze ZIP do TAR vytvoří nekomprimovaný archiv."
+    },
+    "GZ": {
+      "description": "GZ (gzip) je kompresní formát, který využívá algoritmus DEFLATE. Běžně se používá v prostředí Unix a Linux, často kombinovaný s TAR pro vytváření komprimovaných archivních souborů (.tar.gz). Gzip poskytuje dobré kompresní poměry.",
+      "strengths": [
+        "Efektivní komprese",
+        "Standard v systémech Unix/Linux",
+        "Rychlá komprese a dekomprese",
+        "Široce podporovaný"
+      ],
+      "commonUses": [
+        "Komprese archivů TAR",
+        "Komprese obsahu webových serverů",
+        "Komprese souborů protokolů",
+        "Optimalizace přenosu dat"
+      ],
+      "technicalNote": "GZ komprimuje jediný soubor nebo datový tok. Pro archivaci více souborů s kompresí gzip se soubory nejprve spojí pomocí TAR a poté se komprimují pomocí gzip."
+    }
+  },
+  "benefits": {
+    "sizeReduction": "Zmenšete velikost souboru převodem z formátu {fromName} do kompaktnějšího formátu {to}",
+    "compatibility": "Zlepšete kompatibilitu převodem do formátu {to}, který je podporován prakticky všemi zařízeními a aplikacemi",
+    "lossless": "Převeďte do bezztrátového formátu, který zachovává data bez dodatečné komprese",
+    "webOptimize": "Optimalizujte pro doručování na web pomocí moderního formátu {to}",
+    "transparency": "Získejte podporu průhlednosti, kterou zdrojový formát neposkytuje",
+    "heic": "Zpřístupněte fotografie ze zařízení Apple v systémech Windows, Android a na dalších platformách",
+    "mov": "Převeďte videozáznamy z Apple pro použití na zařízeních jiných výrobců než Apple",
+    "audioExtract": "Extrahujte pouze zvukovou stopu z video souboru bez potřeby softwaru pro střih videa",
+    "pdf": "Vytvořte přenosný dokument, který vypadá stejně na jakémkoli zařízení nebo operačním systému",
+    "csv": "Exportujte data do jednoduchého, univerzálně čitelného textového formátu pro použití v databázích, skriptech nebo jiných aplikacích",
+    "xlsx": "Otevřete data v Excelu s formátovanými sloupci, záhlavími a možností přidávat vzorce a grafy",
+    "generic": "Převeďte svůj soubor {from} do formátu {to} pro použití v aplikacích, které jej vyžadují",
+    "targetUses": "Využijte {toName} pro {toUses}",
+    "browser": "Převeďte {from} do {to} přímo ve svém prohlížeči — není třeba nic instalovat ani zakládat účet"
+  },
+  "faqs": {
+    "howToQ": "Jak převedu {from} do {to}?",
+    "howToA": "Chcete-li převést soubor {from} do {to}, použijte oblast pro nahrávání na této stránce. Přetáhněte svůj soubor {from} nebo klikněte a vyberte jej ze svých souborů. Po nahrání klikněte na tlačítko \"Convert to {to}\". Převod bude zpracován a výsledný soubor {to} bude k dispozici ke stažení.",
+    "freeQ": "Je převod {from} do {to} zdarma?",
+    "freeA": "Ano. Tento nástroj pro převod je zcela zdarma. Neexistují žádné prémiové úrovně, na váš výstup se neaplikují žádné vodoznaky a počet převodů, které můžete provést, není nijak omezen. Služba je financována reklamou.",
+    "differenceQ": "Jaký je rozdíl mezi {from} a {to}?",
+    "differenceA": "{fromName} {fromDescFirst}. {toName} {toDescFirst}. Převod mezi těmito formáty vám umožní využít silné stránky každého formátu podle vašich konkrétních potřeb.",
+    "whenQ": "Kdy bych měl převést {from} do {to}?",
+    "whenA": "Převod {from} do {to} má smysl, když potřebujete to, v čem je {toName} dobrý: {toStrengths}. Běžně se používá pro {toUses}.",
+    "qualityQ": "Ztratím při převodu {from} do {to} kvalitu?",
+    "qualityMediaA": "Výstupní kvalita závisí na použitých kodecích a nastavení. Při převodu mezi ztrátovými formáty je třeba počítat s určitou úpravou kvality. Převody videa a zvuku ve FlipMyFiles jsou zpracovávány ve vašem prohlížeči pomocí standardního nastavení kódování navrženého pro zachování dobré kvality.",
+    "qualityNonMediaA": "Výstupní kvalita závisí na použitých formátech. Převod ze ztrátového formátu do bezztrátového neobnoví ztracená data, ale nedojde k žádné další ztrátě kvality. Převod z bezztrátového do ztrátového formátu zahrnuje určité snížení objemu dat za účelem dosažení menší velikosti souboru. Převody obrázků využívají optimalizované nastavení pro zachování vizuální kvality.",
+    "privacyQ": "Jsou mé soubory v bezpečí a soukromé?",
+    "privacyMediaA": "Ano. Převody videa a zvuku jsou zpracovávány zcela ve vašem prohlížeči pomocí technologie WebAssembly. Váš soubor není nikdy nahrán na naše servery. Převod probíhá lokálně na vašem zařízení, což zajišťuje plné soukromí.",
+    "privacyNonMediaA": "Ano. Soubory nahrané k převodu jsou zpracovány v paměti serveru a okamžitě po vrácení převedeného souboru do vašeho prohlížeče jsou odstraněny. Vaše soubory neukládáme, nekopírujeme ani neanalyzujeme. Veškeré přenosy jsou šifrovány pomocí HTTPS.",
+    "maxSizeQ": "Jaká je maximální velikost souboru pro převod?",
+    "maxSizeMediaA": "Maximální velikost souboru je 250 MB na soubor. Tento limit platí pro všechny typy formátů. U video a zvukových souborů závisí rychlost převodu na výpočetním výkonu vašeho zařízení, protože převod probíhá ve vašem prohlížeči.",
+    "maxSizeNonMediaA": "Maximální velikost souboru je 250 MB na soubor. Tento limit platí pro všechny typy formátů. Většina převodů u běžných velikostí souborů proběhne během několika sekund."
+  },
+  "introFallback": "Převod {from} do {to} změní váš soubor z formátu {fromName} na {toName}. Soubory {from} se běžně používají pro {fromUses}, zatímco {to} se lépe hodí, když potřebujete {toStrength}. Převeďte do {to}, když to vyžaduje nějaká aplikace nebo platforma, nebo když jeho silné stránky vyhovují vašemu projektu lépe než {from}. Nahrajte svůj soubor {from} výše a převeďte jej během několika sekund — žádný software k instalaci a není potřeba žádný účet."
+}
