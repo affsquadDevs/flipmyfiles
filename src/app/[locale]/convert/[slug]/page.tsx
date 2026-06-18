@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { allConversions, popularConversions, getConversionBySlug } from '@/config/formats.config';
+import { getFormatInfo } from '@/lib/content';
 import { routing } from '@/i18n/routing';
 import { buildAlternates, localeUrl, OG_IMAGE } from '@/lib/seo';
 import ConversionPageTemplate from '@/components/pages/ConversionPageTemplate';
@@ -22,19 +23,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!conversion) return { title: 'Not Found' };
 
   const { from, to } = conversion;
-  // English keeps its strong, unique transactional copy. Other locales are
-  // built from already-translated converter strings (howToConvert/online/
-  // freeSecure) so the title & description are in the user's language.
-  let title: string;
-  let description: string;
-  if (locale === routing.defaultLocale) {
-    title = `Convert ${from} to ${to} — Free Online Converter | FlipMyFiles`;
-    description = `${conversion.description}. Free, fast, and secure ${from} to ${to} conversion. No signup required.`;
-  } else {
-    const t = await getTranslations({ locale, namespace: 'converter' });
-    title = `${t('howToConvert', { from, to })} ${t('online')} | FlipMyFiles`;
-    description = `${t('howToConvert', { from, to })} ${t('online')}. ${t('freeSecure')}`;
-  }
+  const t = await getTranslations({ locale, namespace: 'converter' });
+
+  // English keeps its strong, unique transactional title; other locales use the
+  // already-translated converter strings so the title is in the user's language.
+  const title = locale === routing.defaultLocale
+    ? `Convert ${from} to ${to} — Free Online Converter | FlipMyFiles`
+    : `${t('howToConvert', { from, to })} ${t('online')} | FlipMyFiles`;
+
+  // Description (all locales): lead with the localized target-format definition
+  // (unique per format, already translated), capped so the CTA after it stays
+  // within the ~160-char SERP window across languages, then the convert CTA.
+  const firstSentence = getFormatInfo(to, locale).description.split('. ')[0].trim().replace(/\.$/, '');
+  const toSentence = firstSentence.length > 90
+    ? firstSentence.slice(0, 90).replace(/\s+\S*$/, '') + '…'
+    : `${firstSentence}.`;
+  const description = `${toSentence} ${t('howToConvert', { from, to })} ${t('online')} — ${t('freeSecure')}`;
   const path = `/convert/${slug}`;
 
   return {

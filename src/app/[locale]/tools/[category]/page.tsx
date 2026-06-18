@@ -29,13 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   let description: string;
   if (locale === routing.defaultLocale) {
     title = `${cat.name} Conversion Tools — FlipMyFiles`;
-    description = `${cat.description}. Free online ${cat.name.toLowerCase()} converter with no signup required.`;
+    description = `${cat.description} with FlipMyFiles. Free online ${cat.name.toLowerCase()} converter — fast, secure, no signup and no software to install.`;
   } else {
     const t = await getTranslations({ locale, namespace: 'tools' });
     const name = t(`categoryNames.${category}`);
     const converters = t('categoryPage.converters');
     title = `${name} ${converters} — FlipMyFiles`;
-    description = `${name} ${converters}. ${t('badge')}`;
+    // Pad with the (already-translated) tools subtitle so it isn't too short.
+    description = `${name} ${converters}. ${t('subtitle')}`;
   }
   const path = `/tools/${category}`;
 
