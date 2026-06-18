@@ -1,13 +1,15 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { BlogPost, getAllSlugs } from '@/data/blog-posts';
 import { getPostBySlugForLocale } from '@/data/blog-i18n';
 import ReadingProgressBar from '@/components/ui/ReadingProgressBar';
 import FaqAccordion from '@/components/blog/FaqAccordion';
 import { routing } from '@/i18n/routing';
+import { SITE_URL, buildAlternates, localeUrl, toBcp47 } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -24,25 +26,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPostBySlugForLocale(locale, slug);
   if (!post) return { title: 'Not Found' };
 
+  const path = `/blog/${post.slug}`;
+
   return {
     title: post.metaTitle ?? `${post.title} — FlipMyFiles`,
     description: post.metaDescription ?? post.excerpt,
     keywords: post.keywords,
-    alternates: { canonical: `https://flipmyfiles.com/blog/${post.slug}` },
+    alternates: buildAlternates(locale, path),
     openGraph: {
       type: 'article',
       siteName: 'FlipMyFiles',
       title: post.metaTitle ?? post.title,
       description: post.metaDescription ?? post.excerpt,
-      url: `https://flipmyfiles.com/blog/${post.slug}`,
+      url: localeUrl(locale, path),
       publishedTime: post.date,
       modifiedTime: post.dateModified ?? post.date,
       tags: post.keywords,
       ...(post.coverImage && {
         images: [{
           url: `https://flipmyfiles.com${post.coverImage}`,
-          width: 1200,
-          height: 630,
+          width: 1536,
+          height: 1024,
           alt: post.coverImageAlt ?? post.title,
         }],
       }),
@@ -189,13 +193,62 @@ function extractFaqs(content: string): { q: string; a: string }[] {
 
 function BlogContent({ post }: { post: BlogPost }) {
   const t = useTranslations('blog');
+  const locale = useLocale();
 
   const faqs = extractFaqs(post.content);
   const contentWithoutFaq = post.content.split('## Frequently Asked Questions')[0];
 
+  // The hardcoded schemas are English-only and reference the wrong URLs/image/
+  // dates. Rebuild the language-sensitive fields from the (already-localized)
+  // post so the structured data matches the translated, locale-prefixed page.
+  const coverUrl = post.coverImage ? `${SITE_URL}${post.coverImage}` : undefined;
+  const articleUrl = localeUrl(locale, `/blog/${post.slug}`);
+  const schemas = (post.schemas ?? []).map((schema) => {
+    const s = schema as Record<string, unknown>;
+    switch (s['@type']) {
+      case 'BlogPosting':
+        return {
+          ...s,
+          '@id': `${articleUrl}#article`,
+          headline: post.title,
+          description: post.metaDescription ?? post.excerpt,
+          inLanguage: toBcp47(locale),
+          url: articleUrl,
+          mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+          ...(coverUrl ? { image: { '@type': 'ImageObject', url: coverUrl, width: 1536, height: 1024 } } : {}),
+          datePublished: post.date,
+          dateModified: post.dateModified ?? post.date,
+        };
+      case 'BreadcrumbList':
+        return {
+          ...s,
+          '@id': `${articleUrl}#breadcrumb`,
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: t('home'), item: localeUrl(locale, '') },
+            { '@type': 'ListItem', position: 2, name: t('label'), item: localeUrl(locale, '/blog') },
+            { '@type': 'ListItem', position: 3, name: post.title, item: articleUrl },
+          ],
+        };
+      case 'FAQPage':
+        return faqs.length > 0
+          ? {
+              ...s,
+              inLanguage: toBcp47(locale),
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }
+          : s;
+      default:
+        return schema;
+    }
+  });
+
   return (
     <div>
-      {post.schemas?.map((schema, i) => (
+      {schemas.map((schema, i) => (
         <script
           key={i}
           type="application/ld+json"
@@ -246,10 +299,14 @@ function BlogContent({ post }: { post: BlogPost }) {
       {post.coverImage && (
         <div className="bg-white">
           <div className="relative z-20 mx-auto -mt-8 max-w-5xl px-4 sm:px-6 lg:px-8">
-            <img
+            <Image
               src={post.coverImage}
               alt={post.coverImageAlt ?? post.title}
-              className="w-full rounded-2xl shadow-lg"
+              width={1536}
+              height={1024}
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="h-auto w-full rounded-2xl shadow-lg"
             />
           </div>
         </div>

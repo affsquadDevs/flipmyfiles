@@ -1,8 +1,9 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
+import { toBcp47 } from '@/lib/seo';
 import { useState, useRef, useEffect } from 'react';
 
 const localeLabels: Record<string, { label: string; flag: string }> = {
@@ -21,7 +22,6 @@ const localeLabels: Record<string, { label: string; flag: string }> = {
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -46,11 +46,6 @@ export default function LocaleSwitcher() {
     return () => document.removeEventListener('keydown', handleEsc);
   }, []);
 
-  function switchLocale(next: string) {
-    router.replace(pathname, { locale: next });
-    setOpen(false);
-  }
-
   return (
     <div className="relative" ref={ref}>
       <button
@@ -73,30 +68,33 @@ export default function LocaleSwitcher() {
         </svg>
       </button>
 
-      {open && (
-        <div
-          role="listbox"
-          className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-xl border border-white/10 bg-[#0f1724] shadow-xl"
-        >
-          {routing.locales.map((loc) => {
+      {/* Rendered in the DOM (CSS-hidden until open) so the locale <a href> links
+          are present in static HTML and crawlable, while staying a dropdown for users. */}
+      <div
+        role="listbox"
+        className={`absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-xl border border-white/10 bg-[#0f1724] shadow-xl ${open ? '' : 'hidden'}`}
+      >
+        {routing.locales.map((loc) => {
             const info = localeLabels[loc];
             return (
-              <button
+              <Link
                 key={loc}
+                href={pathname}
+                locale={loc}
+                hrefLang={toBcp47(loc)}
                 role="option"
                 aria-selected={loc === locale}
-                onClick={() => switchLocale(loc)}
+                onClick={() => setOpen(false)}
                 className={`flex w-full items-center gap-2.5 px-3.5 py-2.5 text-left text-sm transition-colors hover:bg-white/10 ${
                   loc === locale ? 'bg-white/5 text-white' : 'text-gray-400'
                 }`}
               >
                 <span>{info.flag}</span>
                 <span>{info.label}</span>
-              </button>
+              </Link>
             );
           })}
-        </div>
-      )}
+      </div>
     </div>
   );
 }

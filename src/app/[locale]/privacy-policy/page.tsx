@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { routing } from '@/i18n/routing';
+import { buildAlternates } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${t('title')} — FlipMyFiles`,
     description: 'FlipMyFiles privacy policy. Learn how we handle uploaded files, what data we collect, and how we protect your privacy.',
-    alternates: { canonical: 'https://flipmyfiles.com/privacy-policy' },
+    alternates: buildAlternates(locale, '/privacy-policy'),
   };
 }
 

@@ -318,8 +318,12 @@ export function getConversionBenefits(from: string, to: string): string[] {
     benefits.push(`Convert your ${from.toUpperCase()} file to ${to.toUpperCase()} format for use in applications that require it`);
   }
 
-  benefits.push('No software installation required — convert directly in your browser');
-  benefits.push('No registration or personal information needed to use the service');
+  // Target-format strength — pulls real per-format data so this bullet varies
+  // per conversion instead of being identical boilerplate on every page.
+  if (toInfo.commonUses.length > 0) {
+    benefits.push(`Put ${toInfo.fullName} to work for ${toInfo.commonUses.slice(0, 2).join(' and ')}`);
+  }
+  benefits.push(`Convert ${from.toUpperCase()} to ${to.toUpperCase()} right in your browser — nothing to install and no account to create`);
 
   return benefits;
 }
@@ -348,6 +352,10 @@ export function getDetailedFaqs(from: string, to: string): { question: string; a
       answer: `${fromInfo.fullName} ${fromInfo.description.split('. ').slice(0, 1).join('. ')}. ${toInfo.fullName} ${toInfo.description.split('. ').slice(0, 1).join('. ')}. Converting between these formats allows you to take advantage of the strengths of each format depending on your specific needs.`,
     },
     {
+      question: `When should I convert ${f} to ${t}?`,
+      answer: `Converting ${f} to ${t} makes sense when you need what ${toInfo.fullName} is good at${toInfo.strengths.length ? `: ${toInfo.strengths.slice(0, 3).join(', ')}` : ''}. It is commonly used for ${toInfo.commonUses.slice(0, 3).join(', ')}.${toInfo.technicalNote ? ` ${toInfo.technicalNote}` : ''}`,
+    },
+    {
       question: `Will I lose quality when converting ${f} to ${t}?`,
       answer: isMediaConversion
         ? `The output quality depends on the codecs and settings involved. When converting between lossy formats, some quality adjustment is expected. Video and audio conversions in FlipMyFiles are processed in your browser using standard encoding settings designed to maintain good quality.`
@@ -366,4 +374,64 @@ export function getDetailedFaqs(from: string, to: string): { question: string; a
   ];
 
   return faqs;
+}
+
+/**
+ * Hand-written, genuinely pair-specific overview copy for the highest-traffic
+ * conversions (the `popular` pairs). Keyed by `${FROM}_${TO}` (uppercased).
+ * Pairs not listed here fall back to a richer composed intro (see getConversionIntro).
+ */
+const conversionIntros: Record<string, string> = {
+  PNG_JPG:
+    'Converting PNG to JPG usually comes down to file size. PNG stores images losslessly, which keeps every pixel perfect but produces large files — especially for photographs. JPG uses lossy compression tuned for photographic content, so the same image often shrinks by 70–90% with little visible difference. That makes JPG ideal for websites, email attachments, and anywhere upload size or page-load speed matters. The trade-off is that JPG drops the PNG’s transparency (transparent areas are filled with a solid background) and applies compression that can soften fine text or sharp edges. For photos and screenshots without transparency, converting PNG to JPG is almost always worth it; for logos, icons, or images you’ll keep editing, keep the PNG as your master copy.',
+  JPG_PNG:
+    'Converting JPG to PNG moves an image from a compressed, lossy format to a lossless one. It will not restore detail that JPG compression already removed — those pixels are baked in — but it stops any further quality loss and gives you a format that supports transparency and crisp edges. This is useful when you need to edit and re-save an image repeatedly without accumulating JPG artifacts, when you want to add a transparent background later, or when a tool or platform specifically requires PNG. Keep in mind the resulting PNG will usually be larger than the original JPG, since PNG does not throw data away. For photos you’ll publish as-is, JPG is fine; convert to PNG when you need an editable, lossless working copy or transparency support.',
+  WEBP_PNG:
+    'Converting WebP to PNG is mostly about compatibility. WebP compresses smaller than PNG or JPG, but some older software, editors, and workflows still can’t open it. PNG is supported virtually everywhere, so converting gives you a file you can drop into any application, document, or design tool. Because PNG is lossless, the conversion preserves exactly what the WebP contains, including transparency — though if the source was a lossy WebP, quality already lost stays lost. Expect the PNG to be noticeably larger than the WebP, since PNG trades file size for universal support. Convert WebP to PNG when you’ve downloaded a WebP image and need it to work in a program that doesn’t recognize the format, or when you want a transparent, editable copy.',
+  PNG_WEBP:
+    'Converting PNG to WebP is a web-optimization win. WebP was designed to make web images smaller, and it typically produces files 25–35% smaller than PNG while keeping the same visual quality and full transparency support. Smaller images mean faster page loads, better Core Web Vitals, and lower bandwidth — which is why WebP is now supported by every modern browser. The conversion preserves transparency, so logos, icons, and graphics keep their alpha channel. The main consideration is compatibility: a few older tools and email clients still don’t render WebP, so keep a PNG copy if you need to share the image outside the browser. For images going onto a website, converting PNG to WebP is one of the simplest performance improvements you can make.',
+  HEIC_JPG:
+    'Converting HEIC to JPG solves the compatibility problem most people hit with iPhone photos. HEIC is Apple’s high-efficiency format — it stores great-looking images at roughly half the size of JPG — but Windows, Android, many websites, and older apps often can’t open it. Converting to JPG produces a universally supported file you can upload, email, print, or edit anywhere. The conversion involves a small quality trade-off, since both formats are lossy, but at standard settings the difference is essentially invisible. The resulting JPG may be a little larger than the HEIC for the same image. Convert HEIC to JPG whenever you need to share iPhone photos with someone on a non-Apple device, upload them to a site that rejects HEIC, or open them in software that doesn’t recognize Apple’s format.',
+  SVG_PNG:
+    'Converting SVG to PNG turns a scalable vector graphic into a fixed-resolution raster image. SVG is built from mathematical shapes, so it stays razor-sharp at any size and is perfect for logos and icons — but it isn’t accepted everywhere. Many platforms, social networks, and image tools require a raster format like PNG. Converting rasterizes the vector at a specific pixel size, producing a PNG you can use anywhere, with transparency preserved. The key choice is the output dimensions: because the result is fixed-resolution, render it large enough for its intended use, since a PNG can’t be scaled up later without losing sharpness. Convert SVG to PNG when you need to upload a logo to a site that rejects SVG, embed it in a document, or use it in software that only handles raster images.',
+  MP4_GIF:
+    'Converting MP4 to GIF turns a short video clip into an animated image that plays automatically and loops everywhere — in chats, on social media, in emails, and inside documents. GIFs are ideal for quick reactions, product demos, and tutorials because they need no player and start instantly. The trade-offs are real: GIF supports only 256 colors and compresses poorly, so a GIF is often much larger than the source MP4 and looks less smooth, especially for longer or detailed footage. For the best results, convert short clips of a few seconds rather than full videos. Convert MP4 to GIF when you want a clip that auto-plays and loops without a video player; if file size or visual quality matters more, keeping the MP4 is usually better.',
+  MP4_MP3:
+    'Converting MP4 to MP3 extracts just the audio from a video file. It’s the go-to method for turning lectures, podcasts, interviews, or music videos into a listen-anywhere audio track you can play on a phone, in the car, or in any music app. MP3 is the most universally supported audio format, so the result works essentially everywhere. The conversion discards the video and keeps the sound; because MP3 is lossy, audio is re-encoded at standard quality, which is more than enough for speech and general listening. The resulting file is dramatically smaller than the original video. Convert MP4 to MP3 whenever you only need the audio — to build a podcast library, save a song, or listen to a talk without watching the screen.',
+  WAV_MP3:
+    'Converting WAV to MP3 trades a small amount of audio quality for a huge reduction in file size. WAV is uncompressed and stores audio in full fidelity, which is great for editing but produces very large files — often ten times the size of an equivalent MP3. MP3 uses lossy compression tuned for the way people hear, so at a good bitrate the difference is hard to notice while the file becomes far easier to store, stream, and share. This makes MP3 the practical choice for music libraries, podcasts, and audio you’ll distribute online. Keep the original WAV if you plan to do further editing, since you can’t recover detail once it’s compressed. Convert WAV to MP3 when you’re ready to publish or store audio and want it portable and lightweight.',
+  JPG_WEBP:
+    'Converting JPG to WebP shrinks photographs further without an obvious drop in quality. WebP’s compression is more efficient than JPG’s, so the same image typically comes out 25–35% smaller — a meaningful saving for websites, where every kilobyte affects load time and Core Web Vitals. Because both formats are lossy, you’re re-compressing an already-compressed image, so start from a good-quality JPG to avoid stacking artifacts. WebP is supported by all modern browsers, which makes it an easy upgrade for web images, but a few older tools still don’t read it, so keep the JPG if you need to share the photo outside the browser. Convert JPG to WebP when you’re optimizing images for a website and want smaller files and faster pages while keeping the photo looking the same.',
+  BMP_PNG:
+    'Converting BMP to PNG is almost always an upgrade. BMP is an old, uncompressed bitmap format that stores every pixel with no compression, which makes files enormous for what they contain. PNG stores the same image losslessly — so no quality is lost — but compresses it efficiently, typically cutting the file size dramatically. PNG is also far more widely supported on the web and in modern software, and it adds transparency support that BMP lacks. There’s essentially no downside: the image looks identical and the file gets smaller and more portable. Convert BMP to PNG whenever you need to share, upload, or store a bitmap image and want a smaller, universally supported file without sacrificing any quality.',
+  TIFF_JPG:
+    'Converting TIFF to JPG makes a large, professional-grade image practical to share. TIFF is favored in photography, scanning, and publishing because it stores images at maximum quality, often uncompressed — but that makes files very large and means many websites and everyday apps won’t accept them. JPG compresses the image into a much smaller file that uploads, emails, and displays everywhere. The conversion is lossy, so it’s best for final output rather than archival masters: keep the TIFF as your high-quality original and use the JPG for sharing. For photographs the quality difference at standard settings is minimal while the size saving is enormous. Convert TIFF to JPG when you need to send a scan or high-resolution photo to someone, post it online, or open it in software that doesn’t handle TIFF.',
+};
+
+/**
+ * A pair-specific overview paragraph for a conversion page. Uses hand-written
+ * copy for popular pairs and otherwise composes a richer intro from the real
+ * per-format database (descriptions + common uses), so every page carries
+ * substantive, non-duplicate lead copy.
+ */
+export function getConversionIntro(from: string, to: string): string {
+  const key = `${from.toUpperCase()}_${to.toUpperCase()}`;
+  if (conversionIntros[key]) return conversionIntros[key];
+
+  const fromInfo = getFormatInfo(from);
+  const toInfo = getFormatInfo(to);
+  const f = from.toUpperCase();
+  const t = to.toUpperCase();
+  // Compose from strengths/uses (phrased as prose) rather than repeating each
+  // format's description verbatim — those sentences already appear in the
+  // "What is …" cards lower on the page.
+  const fromUses = fromInfo.commonUses.slice(0, 2).join(' and ');
+  const toStrength = toInfo.strengths.slice(0, 2).join(' and ');
+
+  return (
+    `Converting ${f} to ${t} changes your file from ${fromInfo.fullName} to ${toInfo.fullName}. ` +
+    `${f} files are commonly used for ${fromUses}, while ${t} is a better fit when you need ${toStrength}. ` +
+    `Convert to ${t} when an application or platform requires it, or when its strengths suit your project better than ${f}. ` +
+    `Upload your ${f} file above to convert it in seconds — no software to install and no account required.`
+  );
 }

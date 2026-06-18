@@ -1,11 +1,16 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/seo';
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/',
+      // /api/* are JSON/utility endpoints (convert, formats, stats, metadata-eraser),
+      // not indexable pages — keep crawlers off them so crawl budget goes to real pages.
+      disallow: '/api/',
     },
-    sitemap: 'https://flipmyfiles.com/sitemap.xml',
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: new URL(SITE_URL).host,
   };
 }

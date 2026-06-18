@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { routing } from '@/i18n/routing';
+import { buildAlternates } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${t('title')} — FlipMyFiles`,
     description: 'FlipMyFiles terms of service. Read our terms and conditions for using the free online file conversion service.',
-    alternates: { canonical: 'https://flipmyfiles.com/terms-of-service' },
+    alternates: buildAlternates(locale, '/terms-of-service'),
   };
 }
 

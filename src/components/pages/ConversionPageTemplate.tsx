@@ -13,7 +13,7 @@ import ConversionError from '@/components/conversion/ConversionError';
 import FAQAccordion from '@/components/pages/FAQAccordion';
 import RelatedConversions from '@/components/pages/RelatedConversions';
 import type { ConversionPair } from '@/config/formats.config';
-import { getFormatInfo, getConversionBenefits, getDetailedFaqs } from '@/lib/content';
+import { getFormatInfo, getConversionBenefits, getDetailedFaqs, getConversionIntro } from '@/lib/content';
 
 interface Props {
   conversion: ConversionPair;
@@ -63,6 +63,7 @@ export default function ConversionPageTemplate({ conversion, related }: Props) {
 
   const fromInfo = getFormatInfo(conversion.from);
   const toInfo = getFormatInfo(conversion.to);
+  const intro = getConversionIntro(conversion.from, conversion.to);
   const benefits = getConversionBenefits(conversion.from, conversion.to);
   const faqs = getDetailedFaqs(conversion.from, conversion.to);
 
@@ -246,6 +247,11 @@ export default function ConversionPageTemplate({ conversion, related }: Props) {
       <div className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-14">
+
+            {/* Overview — pair-specific lead copy */}
+            <section>
+              <p className="text-base leading-relaxed text-text-muted sm:text-lg">{intro}</p>
+            </section>
 
             {/* What is FROM + What is TO */}
             <div className="grid gap-8 sm:grid-cols-2">

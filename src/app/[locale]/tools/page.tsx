@@ -1,19 +1,32 @@
 import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import { buildAlternates, localeUrl, OG_IMAGE } from '@/lib/seo';
 import ToolsGrid from '@/components/pages/ToolsGrid';
 
 interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata: Metadata = {
-  title: 'All File Conversion Tools — FlipMyFiles',
-  description: 'Browse all available file conversion tools. Convert images, videos, audio, and documents between 100+ formats for free.',
-  alternates: {
-    canonical: 'https://flipmyfiles.com/tools',
-  },
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const title = 'All File Conversion Tools — FlipMyFiles';
+  const description = 'Browse all available file conversion tools. Convert images, videos, audio, and documents between 100+ formats for free.';
+
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, '/tools'),
+    openGraph: {
+      title,
+      description,
+      url: localeUrl(locale, '/tools'),
+      siteName: 'FlipMyFiles',
+      type: 'website',
+      images: [OG_IMAGE],
+    },
+  };
+}
 
 function ToolsContent() {
   const t = useTranslations('tools');

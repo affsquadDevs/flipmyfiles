@@ -1,13 +1,21 @@
 import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ErrorBoundary from '@/components/shared/ErrorBoundary';
 import { routing } from '@/i18n/routing';
+import { SITE_URL, buildAlternates, localeUrl, toBcp47 } from '@/lib/seo';
 import '../globals.css';
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
   themeColor: '#ffffff',
@@ -15,38 +23,49 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export const metadata: Metadata = {
-  title: 'FlipMyFiles — Free Online File Converter',
-  description: 'Convert images, videos, audio, and documents for free. No signup required. Fast, secure, browser-based file conversion supporting 100+ formats.',
-  keywords: 'file converter, image converter, video converter, audio converter, online converter, free converter, png to jpg, heic to jpg, mp4 to mp3',
-  manifest: '/manifest.json',
-  openGraph: {
-    title: 'FlipMyFiles — Free Online File Converter',
-    description: 'Convert images, videos, audio, and documents for free. No signup required.',
-    url: 'https://flipmyfiles.com',
-    siteName: 'FlipMyFiles',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'FlipMyFiles — Free Online File Converter',
-    description: 'Convert images, videos, audio, and documents for free. No signup required.',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'home' });
+  const title = 'FlipMyFiles — Free Online File Converter';
+  const description = t('hero.subtitle');
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
+    manifest: '/manifest.json',
+    alternates: buildAlternates(locale, ''),
+    openGraph: {
+      title,
+      description,
+      url: localeUrl(locale, ''),
+      siteName: 'FlipMyFiles',
+      type: 'website',
+      locale: toBcp47(locale),
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'FlipMyFiles — Free Online File Converter' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/og-image.png'],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: '32x32' },
+        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      ],
+      apple: [
+        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      ],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -69,7 +88,16 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
+    <html lang={toBcp47(locale)} suppressHydrationWarning>
+    <body className={`${inter.variable} antialiased bg-white text-gray-900`}>
     <NextIntlClientProvider messages={messages}>
+      {/* Resource hints for third-party origins (GTM + AdSense). React 19
+          hoists these <link> tags into <head>. Fonts are self-hosted by
+          next/font, so no font-origin preconnect is needed. */}
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+      <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
+      <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       {/* Google Tag Manager */}
       <Script
         id="gtm-script"
@@ -135,6 +163,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }),
         }}
       />
+      {/* WebSite Schema — links the site entity to the Organization */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://flipmyfiles.com/#website",
+            "url": "https://flipmyfiles.com/",
+            "name": "FlipMyFiles",
+            "inLanguage": toBcp47(locale),
+            "publisher": { "@id": "https://flipmyfiles.com/#organization" },
+          }),
+        }}
+      />
       {/* Google Tag Manager (noscript) */}
       <noscript>
         <iframe
@@ -159,5 +202,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </main>
       <Footer />
     </NextIntlClientProvider>
+    </body>
+    </html>
   );
 }

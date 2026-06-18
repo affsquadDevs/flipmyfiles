@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
+import { buildAlternates } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${t('title')} — FlipMyFiles`,
     description: 'Learn how FlipMyFiles converts your files instantly in three steps. Understand our browser-based and server-side processing methods, privacy handling, and supported formats.',
-    alternates: { canonical: 'https://flipmyfiles.com/how-it-works' },
+    alternates: buildAlternates(locale, '/how-it-works'),
   };
 }
 

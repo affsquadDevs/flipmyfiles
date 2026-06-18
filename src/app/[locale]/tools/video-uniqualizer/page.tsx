@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { routing } from '@/i18n/routing';
+import { buildAlternates, localeUrl, OG_IMAGE } from '@/lib/seo';
 import VideoUniqualizerTool from '@/components/tools/VideoUniqualizerTool';
 
 interface Props {
@@ -12,9 +13,11 @@ export async function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   const title = 'Video Uniqualizer — Make Your Video Unique | FlipMyFiles';
   const description = 'Re-encode your video with subtle imperceptible changes to give it a unique digital fingerprint. Strips metadata, adjusts color and brightness. Free, private, browser-based.';
+  const path = '/tools/video-uniqualizer';
 
   return {
     title,
@@ -22,13 +25,12 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: 'https://flipmyfiles.com/tools/video-uniqualizer',
+      url: localeUrl(locale, path),
       siteName: 'FlipMyFiles',
       type: 'website',
+      images: [OG_IMAGE],
     },
-    alternates: {
-      canonical: 'https://flipmyfiles.com/tools/video-uniqualizer',
-    },
+    alternates: buildAlternates(locale, path),
   };
 }
 

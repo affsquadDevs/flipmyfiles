@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     category: 'Formats',
     keywords: ['jpg vs png', 'difference between jpg and png', 'png vs jpg quality', 'image format comparison', 'convert jpg to png', 'convert png to jpg'],
-    coverImage: '/blog/jpg-vs-png-cover.png',
+    coverImage: '/blog/jpg-vs-png-cover.jpg',
     coverImageAlt: 'JPG vs PNG comparison banner showing differences in compression, quality and transparency.',
     schemas: [
       {
@@ -296,7 +296,7 @@ It may reduce quality slightly because JPG applies lossy compression. The degree
     readTime: '5 min read',
     category: 'Formats',
     keywords: ['what is webp', 'webp meaning', 'webp vs jpg', 'webp vs png', 'webp image format', 'webp compression', 'webp transparency', 'convert webp to jpg', 'convert webp to png', 'convert jpg to webp', 'convert png to webp', 'webp advantages', 'are webp images smaller', 'how to open webp files'],
-    coverImage: '/blog/what-is-webp-cover.png',
+    coverImage: '/blog/what-is-webp-cover.jpg',
     coverImageAlt: 'What Is WebP? Format Explained and JPG/PNG Comparison banner showing compression and transparency differences.',
     schemas: [
       {
@@ -566,7 +566,7 @@ WebP uses advanced compression techniques that reduce file size more efficiently
       'are avif images smaller',
       'how to open avif files',
     ],
-    coverImage: '/blog/what-is-avif-cover.png',
+    coverImage: '/blog/what-is-avif-cover.jpg',
     coverImageAlt: 'AVIF image format comparison banner showing differences between AVIF, JPG, PNG and WebP including compression and quality.',
     schemas: [
       {
@@ -845,7 +845,7 @@ Yes. Converting JPG or PNG to AVIF is commonly done to reduce file size for webs
       'heic compatibility',
       'why iphone uses heic',
     ],
-    coverImage: '/blog/what-is-heic-cover.png',
+    coverImage: '/blog/what-is-heic-cover.jpg',
     coverImageAlt: 'HEIC image format comparison banner showing differences between HEIC, JPG and PNG including file size and compatibility.',
     schemas: [
       {
@@ -1106,7 +1106,7 @@ HEIC is mainly used for photos and is not commonly used for transparent graphics
       'how to open svg files',
       'why use svg',
     ],
-    coverImage: '/blog/what-is-svg-cover.png',
+    coverImage: '/blog/what-is-svg-cover.jpg',
     coverImageAlt: 'SVG format explained banner comparing scalable vector graphics with PNG and JPG raster images.',
     schemas: [
       {
@@ -1375,7 +1375,7 @@ SVG itself does not lose quality when resized, but a PNG export has a fixed reso
       'mp4 codec',
       'mp4 compatibility',
     ],
-    coverImage: '/blog/what-is-mp4-cover.png',
+    coverImage: '/blog/what-is-mp4-cover.jpg',
     coverImageAlt: 'MP4 format explained banner comparing MP4 with MOV and MKV video containers.',
     schemas: [
       {
@@ -1631,7 +1631,7 @@ MP4 offers efficient compression and broad compatibility, making it suitable for
       'mov compatibility',
       'why mov files are large',
     ],
-    coverImage: '/blog/what-is-mov-cover.png',
+    coverImage: '/blog/what-is-mov-cover.jpg',
     coverImageAlt: 'MOV vs MP4 comparison banner explaining QuickTime MOV format and MP4 compatibility.',
     schemas: [
       {
@@ -1900,7 +1900,7 @@ MOV is useful for editing workflows, Apple-centric environments, and cases where
       'mkv subtitles',
       'mkv container explained',
     ],
-    coverImage: '/blog/what-is-mkv-cover.png',
+    coverImage: '/blog/what-is-mkv-cover.jpg',
     coverImageAlt: 'MKV vs MP4 comparison banner explaining Matroska container flexibility and MP4 compatibility.',
     schemas: [
       {
@@ -2201,7 +2201,7 @@ Yes. MKV can store multiple subtitle tracks within a single file.`,
       'mp3 file size',
       'wav quality',
     ],
-    coverImage: '/blog/what-is-mp3-cover.png',
+    coverImage: '/blog/what-is-mp3-cover.jpg',
     coverImageAlt: 'MP3 vs WAV comparison banner showing compressed versus uncompressed audio formats.',
     schemas: [
       {
@@ -2292,7 +2292,7 @@ Yes. MKV can store multiple subtitle tracks within a single file.`,
         "description": "Learn what MP3 is, how audio compression works, and how MP3 compares to WAV in file size, quality, and compatibility.",
         "image": {
           "@type": "ImageObject",
-          "url": "https://flipmyfiles.com/blog/what-is-mp3-cover.png",
+          "url": "https://flipmyfiles.com/blog/what-is-mp3-cover.jpg",
         },
         "author": {
           "@type": "Organization",
@@ -2462,7 +2462,7 @@ MP3 is not outdated. Despite newer formats, it remains widely supported and comm
       'mp3 vs wav quality',
       'wav audio format explained',
     ],
-    coverImage: '/blog/what-is-wav-cover.png',
+    coverImage: '/blog/what-is-wav-cover.jpg',
     coverImageAlt: 'WAV vs MP3 comparison banner showing uncompressed WAV audio and compressed MP3 format differences.',
     schemas: [
       {
@@ -2716,7 +2716,7 @@ No. WAV remains widely used in professional recording and editing environments.`
       'flac vs mp3 quality',
       'audio format comparison',
     ],
-    coverImage: '/blog/mp3-vs-flac-cover.png',
+    coverImage: '/blog/mp3-vs-flac-cover.jpg',
     coverImageAlt: 'MP3 vs FLAC comparison banner highlighting lossy versus lossless audio formats and file size differences.',
     schemas: [
       {
@@ -2972,7 +2972,7 @@ Yes. Because FLAC is lossless, it is often preferred for long-term storage of hi
       'convert flac to mp3',
       'lossless compression explained',
     ],
-    coverImage: '/blog/what-is-flac-cover.png',
+    coverImage: '/blog/what-is-flac-cover.jpg',
     coverImageAlt: 'FLAC lossless audio format banner highlighting high-quality sound preservation.',
     schemas: [
       {
@@ -3212,7 +3212,7 @@ Yes. Because FLAC is lossless, it is commonly used for long-term storage of high
       'audio format comparison',
       'aac streaming format',
     ],
-    coverImage: '/blog/what-is-aac-cover.png',
+    coverImage: '/blog/what-is-aac-cover.jpg',
     coverImageAlt: 'AAC vs MP3 comparison banner highlighting advanced audio compression and streaming efficiency.',
     schemas: [
       {
@@ -3460,7 +3460,7 @@ No. AAC is a lossy compression format.`,
       'ogg compression explained',
       'audio format comparison',
     ],
-    coverImage: '/blog/what-is-ogg-cover.png',
+    coverImage: '/blog/what-is-ogg-cover.jpg',
     coverImageAlt: 'OGG audio format banner highlighting open-source compression and Ogg Vorbis codec.',
     schemas: [
       {
@@ -3712,7 +3712,7 @@ OGG is supported by modern browsers and many players, but not all legacy systems
       'docx structure explained',
       'document file format',
     ],
-    coverImage: '/blog/what-is-docx-cover.png',
+    coverImage: '/blog/what-is-docx-cover.jpg',
     coverImageAlt: 'DOCX document format banner showing XML-based structure and modern word processing features.',
     schemas: [
       {
@@ -3962,7 +3962,7 @@ DOCX is based on the Office Open XML standard, which is publicly documented.`,
       'convert csv to xlsx',
       'xlsx to csv',
     ],
-    coverImage: '/blog/what-is-csv-cover.png',
+    coverImage: '/blog/what-is-csv-cover.jpg',
     coverImageAlt: 'CSV format explained banner showing comma-separated values, tabular data, and CSV to XLSX conversion.',
     schemas: [
       {
@@ -4214,7 +4214,7 @@ Yes. Converting CSV to XLSX can make it easier to edit and analyze data in sprea
       'xlsx to csv',
       'spreadsheet vs text file',
     ],
-    coverImage: '/blog/csv-vs-xlsx-cover.png',
+    coverImage: '/blog/csv-vs-xlsx-cover.jpg',
     coverImageAlt: 'CSV vs XLSX comparison banner highlighting plain-text data versus formatted spreadsheet features.',
     schemas: [
       {
@@ -4470,7 +4470,7 @@ Yes. Converting CSV to XLSX allows you to add formatting and spreadsheet feature
       'text file encoding',
       'plain text format explained',
     ],
-    coverImage: '/blog/what-is-txt-cover.png',
+    coverImage: '/blog/what-is-txt-cover.jpg',
     coverImageAlt: 'TXT plain text format banner highlighting simple unformatted text and universal compatibility.',
     schemas: [
       {
@@ -4718,7 +4718,7 @@ Yes. Converting DOCX to TXT removes formatting and preserves only the textual co
       'convert zip to gz',
       'archive file format',
     ],
-    coverImage: '/blog/what-is-zip-cover.png',
+    coverImage: '/blog/what-is-zip-cover.jpg',
     coverImageAlt: 'ZIP archive format banner showing file compression, archive bundling, and universal compatibility.',
     schemas: [
       {
@@ -4962,7 +4962,7 @@ Yes. ZIP files can be converted to TAR or GZ formats depending on workflow requi
       'convert gz to zip',
       'gzip file',
     ],
-    coverImage: '/blog/what-is-gz-cover.png',
+    coverImage: '/blog/what-is-gz-cover.jpg',
     coverImageAlt: 'GZ compression format banner showing gzip process, single file compression, and TAR relationship.',
     schemas: [
       {
@@ -5208,7 +5208,7 @@ Yes. GZ files can be converted to ZIP for cross-platform compatibility.`,
       'convert tar to gz',
       'unix archive format',
     ],
-    coverImage: '/blog/what-is-tar-cover.png',
+    coverImage: '/blog/what-is-tar-cover.jpg',
     coverImageAlt: 'TAR archive format banner showing file bundling, permission preservation, and comparison with ZIP and GZ.',
     schemas: [
       {
@@ -5456,7 +5456,7 @@ Yes. TAR archives can be converted to ZIP for compatibility with other systems.`
       'mp4 compression',
       'video format comparison',
     ],
-    coverImage: '/blog/avi-vs-mp4-cover.png',
+    coverImage: '/blog/avi-vs-mp4-cover.jpg',
     coverImageAlt: 'AVI vs MP4 comparison banner showing differences in file size, compression, and streaming compatibility.',
     schemas: [
       {

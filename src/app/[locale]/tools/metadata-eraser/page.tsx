@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { routing } from '@/i18n/routing';
+import { buildAlternates, localeUrl, OG_IMAGE } from '@/lib/seo';
 import MetadataEraserTool from '@/components/tools/MetadataEraserTool';
 
 interface Props {
@@ -12,9 +13,11 @@ export async function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
   const title = 'Metadata Eraser — Remove EXIF & Hidden Data | FlipMyFiles';
   const description = 'Strip EXIF data, GPS location, camera info, author details, and other hidden metadata from images, PDFs, videos, and audio files. Free, private, no signup.';
+  const path = '/tools/metadata-eraser';
 
   return {
     title,
@@ -22,13 +25,12 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: 'https://flipmyfiles.com/tools/metadata-eraser',
+      url: localeUrl(locale, path),
       siteName: 'FlipMyFiles',
       type: 'website',
+      images: [OG_IMAGE],
     },
-    alternates: {
-      canonical: 'https://flipmyfiles.com/tools/metadata-eraser',
-    },
+    alternates: buildAlternates(locale, path),
   };
 }
 
