@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'privacy' });
   return {
     title: `${t('title')} — FlipMyFiles`,
-    description: 'FlipMyFiles privacy policy. Learn how we handle uploaded files, what data we collect, and how we protect your privacy.',
+    description: 'FlipMyFiles privacy policy: how we handle uploaded files, what data we collect, how long files are kept, and the steps we take to protect your privacy online.',
     alternates: buildAlternates(locale, '/privacy-policy'),
   };
 }

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'terms' });
   return {
     title: `${t('title')} — FlipMyFiles`,
-    description: 'FlipMyFiles terms of service. Read our terms and conditions for using the free online file conversion service.',
+    description: 'FlipMyFiles terms of service: the conditions for using our free online file conversion tools, including acceptable use, disclaimers, and your rights.',
     alternates: buildAlternates(locale, '/terms-of-service'),
   };
 }
