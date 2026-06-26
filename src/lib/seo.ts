@@ -28,6 +28,15 @@ const BCP47: Record<string, string> = {
   cz: 'cs', // Czech
 };
 
+/** Bound a meta description to the SERP window: returns it unchanged when within
+ *  `max` chars, otherwise truncates at a word boundary and adds an ellipsis.
+ *  Operates on the plain (pre-HTML-encoding) string so the rendered length matches. */
+export function clampMeta(s: string, max = 158): string {
+  const clean = s.trim().replace(/\s+/g, ' ');
+  if (clean.length <= max) return clean;
+  return clean.slice(0, max - 1).replace(/\s+\S*$/, '').replace(/[\s.,;:—–-]+$/, '') + '…';
+}
+
 /** Convert an internal routing locale into a valid BCP-47 tag for hreflang / <html lang>. */
 export function toBcp47(locale: string): string {
   return BCP47[locale] ?? locale;

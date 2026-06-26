@@ -9,7 +9,7 @@ import { getPostBySlugForLocale } from '@/data/blog-i18n';
 import ReadingProgressBar from '@/components/ui/ReadingProgressBar';
 import FaqAccordion from '@/components/blog/FaqAccordion';
 import { routing } from '@/i18n/routing';
-import { SITE_URL, buildAlternates, localeUrl, toBcp47 } from '@/lib/seo';
+import { SITE_URL, buildAlternates, localeUrl, toBcp47, clampMeta } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -27,17 +27,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: 'Not Found' };
 
   const path = `/blog/${post.slug}`;
+  const description = clampMeta(post.metaDescription ?? post.excerpt);
 
   return {
     title: post.metaTitle ?? `${post.title} — FlipMyFiles`,
-    description: post.metaDescription ?? post.excerpt,
+    description,
     keywords: post.keywords,
     alternates: buildAlternates(locale, path),
     openGraph: {
       type: 'article',
       siteName: 'FlipMyFiles',
       title: post.metaTitle ?? post.title,
-      description: post.metaDescription ?? post.excerpt,
+      description,
       url: localeUrl(locale, path),
       publishedTime: post.date,
       modifiedTime: post.dateModified ?? post.date,

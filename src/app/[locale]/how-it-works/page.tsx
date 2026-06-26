@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'howItWorksPage' });
   return {
     title: `${t('title')} — FlipMyFiles`,
-    description: 'Learn how FlipMyFiles converts your files instantly in three steps. Understand our browser-based and server-side processing methods, privacy handling, and supported formats.',
+    description: 'Learn how FlipMyFiles converts your files in three steps — browser-based and server-side processing, how your privacy is handled, and the formats supported.',
     alternates: buildAlternates(locale, '/how-it-works'),
   };
 }

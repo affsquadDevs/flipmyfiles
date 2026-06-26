@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const title = 'Video Uniqualizer — Make Your Video Unique | FlipMyFiles';
-  const description = 'Re-encode your video with subtle imperceptible changes to give it a unique digital fingerprint. Strips metadata, adjusts color and brightness. Free, private, browser-based.';
+  const description = 'Re-encode your video with subtle, imperceptible changes that give it a unique digital fingerprint. Strips metadata and adjusts color. Free and browser-based.';
   const path = '/tools/video-uniqualizer';
 
   return {

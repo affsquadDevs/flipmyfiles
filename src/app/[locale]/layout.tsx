@@ -8,7 +8,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ErrorBoundary from '@/components/shared/ErrorBoundary';
 import { routing } from '@/i18n/routing';
-import { SITE_URL, buildAlternates, localeUrl, toBcp47 } from '@/lib/seo';
+import { SITE_URL, buildAlternates, localeUrl, toBcp47, clampMeta } from '@/lib/seo';
 import '../globals.css';
 
 const inter = Inter({
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'home' });
   const title = 'FlipMyFiles — Free Online File Converter';
-  const description = `${t('hero.subtitle')} ${t('badge')}`;
+  const description = clampMeta(`${t('hero.subtitle')} ${t('badge')}`);
 
   return {
     metadataBase: new URL(SITE_URL),
