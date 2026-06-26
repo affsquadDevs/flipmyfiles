@@ -6,7 +6,7 @@ import { Link } from '@/i18n/navigation';
 import { categories, getConversionsByCategory } from '@/config/formats.config';
 import { ConversionAppIcon } from '@/components/shared/ConversionAppIcon';
 import { routing } from '@/i18n/routing';
-import { buildAlternates, localeUrl, OG_IMAGE } from '@/lib/seo';
+import { buildAlternates, localeUrl, OG_IMAGE, clampMeta } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ locale: string; category: string }>;
@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // Pad with the (already-translated) tools subtitle so it isn't too short.
     description = `${name} ${converters}. ${t('subtitle')}`;
   }
+  description = clampMeta(description);
   const path = `/tools/${category}`;
 
   return {

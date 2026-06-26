@@ -1614,7 +1614,7 @@ MP4 offers efficient compression and broad compatibility, making it suitable for
     slug: 'what-is-mov',
     title: 'What Is MOV? Format Explained and How It Compares to MP4',
     metaTitle: 'What Is MOV? Format Explained and How It Compares to MP4 | FlipMyFiles',
-    metaDescription: 'Learn what MOV is, how the QuickTime video format works, and how it compares to MP4 for compatibility, file size, and editing. Includes when to convert MOV to MP4.',
+    metaDescription: 'Learn what a MOV file is, how the QuickTime video format works, and how it compares to MP4 in compatibility, file size, and editing quality.',
     excerpt: 'MOV is Apple\'s QuickTime container format, widely used in editing and production workflows. Understanding how it compares to MP4 helps you decide when to keep MOV and when to convert for broader compatibility.',
     date: '2026-03-03',
     dateModified: '2026-03-03',
