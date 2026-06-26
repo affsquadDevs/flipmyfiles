@@ -34,11 +34,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Description (all locales): lead with the localized target-format definition
   // (unique per format, already translated), capped so the CTA after it stays
   // within the ~160-char SERP window across languages, then the convert CTA.
-  const firstSentence = getFormatInfo(to, locale).description.split('. ')[0].trim().replace(/\.$/, '');
-  const toSentence = firstSentence.length > 90
-    ? firstSentence.slice(0, 90).replace(/\s+\S*$/, '') + '…'
-    : `${firstSentence}.`;
-  const description = `${toSentence} ${t('howToConvert', { from, to })} ${t('online')} — ${t('freeSecure')}`;
+  const cta = `${t('howToConvert', { from, to })} ${t('online')} — ${t('freeSecure')}`;
+  // Budget the lead against the (locale-dependent) CTA so the whole description
+  // stays in the ~120-158 char SERP window — long enough to avoid Bing's
+  // "too short" flag, short enough to avoid truncation. Pull in additional
+  // sentences from the (already-localized) format definition when the first one
+  // is short (e.g. ZIP), so archive conversions aren't left under-length.
+  const budget = Math.max(32, Math.min(92, 152 - cta.length));
+  const fullDesc = getFormatInfo(to, locale).description.trim().replace(/\s+/g, ' ');
+  const parts = fullDesc.split(/(?<=\.)\s+/);
+  let lead = parts[0] ?? fullDesc;
+  for (let i = 1; i < parts.length && lead.length < budget - 12; i++) lead += ' ' + parts[i];
+  const toSentence = lead.length > budget
+    ? lead.slice(0, budget).replace(/\s+\S*$/, '').replace(/[\s.,;:—–-]+$/, '') + '…'
+    : lead.replace(/\.+$/, '') + '.';
+  const description = `${toSentence} ${cta}`;
   const path = `/convert/${slug}`;
 
   return {

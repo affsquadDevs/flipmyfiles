@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 /**
- * Submit all site URLs to IndexNow (Bing, Yandex, Seznam, Naver — NOT Google).
+ * Submit ALL site URLs to IndexNow (Bing, Yandex, Seznam, Naver — NOT Google).
  *
- * Reads the live sitemap.xml and pushes every <loc> URL in one request.
- * Run after a deploy or whenever content changes:
+ * Reads the live sitemap.xml and pushes every <loc> URL in one bulk request.
  *
- *   node scripts/indexnow-submit.mjs
+ * USE SPARINGLY — only for the initial submission or a full re-index (e.g. a
+ * sitewide template change). Repeatedly re-dumping the whole sitemap is what Bing
+ * Webmaster flags as "IndexNow is in batch mode". For routine content changes,
+ * submit only the URLs that changed with the incremental script instead:
+ *
+ *   node scripts/indexnow-urls.mjs --all-locales /blog/my-new-post
  *
  * The IndexNow key is public by design (it is hosted at KEY_LOCATION), so it is
  * fine to keep it in the repo. The key file lives at public/<KEY>.txt.
