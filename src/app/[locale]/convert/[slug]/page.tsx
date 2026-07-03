@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { allConversions, popularConversions, getConversionBySlug } from '@/config/formats.config';
+import { allConversions, popularConversions, getConversionBySlug, type ConversionPair } from '@/config/formats.config';
 import { getFormatInfo } from '@/lib/content';
 import { routing } from '@/i18n/routing';
 import { buildAlternates, localeUrl, OG_IMAGE } from '@/lib/seo';
@@ -75,19 +75,28 @@ export default async function ConversionPage({ params }: Props) {
 
   // Interlink for crawl discovery & relevance: reverse direction first
   // (X→Y links to Y→X), then same-category, then popular cross-category fillers.
+  // Prioritize this file's "format neighbors": the reverse direction, everything
+  // FROM the same source format, and everything INTO the same target format, then
+  // same-category and popular fillers. This spreads inbound internal links across
+  // the long tail — each converter is linked from all its format siblings — which
+  // aids crawl discovery/indexing rather than concentrating links on popular pairs.
+  const RELATED_MAX = 12;
   const reverse = allConversions.find(
     c => c.from === conversion.to && c.to === conversion.from && c.slug !== slug,
   );
-  const sameCategory = allConversions.filter(
-    c => c.category === conversion.category && c.slug !== slug && c.slug !== reverse?.slug,
-  );
-  const related = [...(reverse ? [reverse] : []), ...sameCategory].slice(0, 6);
-  if (related.length < 6) {
-    const fillers = popularConversions.filter(
-      c => c.slug !== slug && !related.some(r => r.slug === c.slug),
-    );
-    related.push(...fillers.slice(0, 6 - related.length));
-  }
+  const seen = new Set<string>([slug]);
+  const related: ConversionPair[] = [];
+  const add = (list: ConversionPair[]) => {
+    for (const c of list) {
+      if (related.length >= RELATED_MAX) break;
+      if (!seen.has(c.slug)) { seen.add(c.slug); related.push(c); }
+    }
+  };
+  if (reverse) add([reverse]);
+  add(allConversions.filter(c => c.from === conversion.from)); // same source: X -> *
+  add(allConversions.filter(c => c.to === conversion.to));     // same target: * -> Y
+  add(allConversions.filter(c => c.category === conversion.category));
+  add(popularConversions);
 
   // BreadcrumbList matching the on-page breadcrumb (Home > Tools > X to Y),
   // with locale-correct URLs and localized labels.
