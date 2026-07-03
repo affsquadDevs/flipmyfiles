@@ -7017,3 +7017,37 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 export function getAllSlugs(): string[] {
   return blogPosts.map((p) => p.slug);
 }
+
+const RELATED_STOP = new Set([
+  'what', 'is', 'the', 'to', 'and', 'for', 'of', 'vs', 'how', 'file', 'files',
+  'format', 'formats', 'difference', 'explained', 'convert', 'converting',
+  'conversion', 'your', 'when', 'use', 'using', 'open', 'best', 'without',
+  'losing', 'quality', 'should', 'you', 'each', 'between', 'works', 'guide',
+  'online', 'free', 'them', 'with', 'compares', 'compared', 'image', 'anywhere',
+]);
+
+function relatedTokens(p: BlogPost): Set<string> {
+  const text = [...(p.keywords ?? []), p.title].join(' ').toLowerCase();
+  return new Set(
+    text.split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !RELATED_STOP.has(w)),
+  );
+}
+
+/** Slugs of the most topically-related posts (by shared format/keyword tokens,
+ *  tie-broken by recency). Used to interlink the blog for crawl discovery. */
+export function getRelatedSlugs(slug: string, n = 6): string[] {
+  const target = blogPosts.find((p) => p.slug === slug);
+  if (!target) return [];
+  const targetTokens = relatedTokens(target);
+  return blogPosts
+    .filter((p) => p.slug !== slug)
+    .map((p) => {
+      const toks = relatedTokens(p);
+      let score = 0;
+      for (const w of toks) if (targetTokens.has(w)) score++;
+      return { slug: p.slug, score, date: p.date };
+    })
+    .sort((a, b) => b.score - a.score || (a.date < b.date ? 1 : -1))
+    .slice(0, n)
+    .map((s) => s.slug);
+}

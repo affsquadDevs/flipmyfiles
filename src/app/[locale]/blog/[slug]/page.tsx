@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations, useLocale } from 'next-intl';
-import { BlogPost, getAllSlugs } from '@/data/blog-posts';
-import { getPostBySlugForLocale } from '@/data/blog-i18n';
+import { BlogPost, getAllSlugs, getRelatedSlugs } from '@/data/blog-posts';
+import { getPostBySlugForLocale, getBlogPostsForLocale } from '@/data/blog-i18n';
+import RelatedPosts from '@/components/blog/RelatedPosts';
 import ReadingProgressBar from '@/components/ui/ReadingProgressBar';
 import FaqAccordion from '@/components/blog/FaqAccordion';
 import { routing } from '@/i18n/routing';
@@ -192,7 +193,7 @@ function extractFaqs(content: string): { q: string; a: string }[] {
   return faqs;
 }
 
-function BlogContent({ post }: { post: BlogPost }) {
+function BlogContent({ post, related }: { post: BlogPost; related: BlogPost[] }) {
   const t = useTranslations('blog');
   const locale = useLocale();
 
@@ -329,6 +330,8 @@ function BlogContent({ post }: { post: BlogPost }) {
           </div>
         </div>
       )}
+
+      {related.length > 0 && <RelatedPosts posts={related} />}
     </div>
   );
 }
@@ -340,5 +343,12 @@ export default async function BlogPostPage({ params }: Props) {
   const post = await getPostBySlugForLocale(locale, slug);
   if (!post) notFound();
 
-  return <BlogContent post={post} />;
+  const relatedSlugs = getRelatedSlugs(slug, 6);
+  const localized = await getBlogPostsForLocale(locale);
+  const bySlug = new Map(localized.map((p) => [p.slug, p]));
+  const related = relatedSlugs
+    .map((s) => bySlug.get(s))
+    .filter((p): p is BlogPost => Boolean(p));
+
+  return <BlogContent post={post} related={related} />;
 }

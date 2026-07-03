@@ -8,7 +8,7 @@ import { getBlogPostsForLocale } from '@/data/blog-i18n';
 import ProgressBadge from './ProgressBadge';
 import type { BlogPost } from '@/data/blog-posts';
 
-const PER_PAGE = 5;
+const PER_PAGE = 12;
 
 const categoryColors: Record<string, string> = {
   Guides:  'bg-violet-100 text-violet-700',
