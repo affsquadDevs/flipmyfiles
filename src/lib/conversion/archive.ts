@@ -1,5 +1,7 @@
 import archiver from 'archiver';
 import unzipper from 'unzipper';
+import JSZip from 'jszip';
+import { gunzipSync } from 'zlib';
 import { Readable, PassThrough } from 'stream';
 
 const ARCHIVE_FORMATS = new Set(['zip', 'tar', 'gz']);
@@ -17,53 +19,82 @@ export function getArchiveMimeType(format: string): string {
   return map[format.toLowerCase()] || 'application/octet-stream';
 }
 
-/**
- * Create a ZIP archive from a single file buffer
- */
-async function createZip(buffer: Buffer, filename: string): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const archive = archiver('zip', { zlib: { level: 6 } });
-    const chunks: Buffer[] = [];
-
-    archive.on('data', (chunk: Buffer) => chunks.push(chunk));
-    archive.on('end', () => resolve(Buffer.concat(chunks)));
-    archive.on('error', reject);
-
-    archive.append(buffer, { name: filename });
-    archive.finalize();
-  });
+interface ArchiveEntry {
+  name: string;
+  data: Buffer;
 }
 
 /**
- * Create a TAR archive from a single file buffer
+ * Parse a (ustar) TAR buffer into its regular-file entries. Dependency-free —
+ * TAR is a sequence of 512-byte header blocks each followed by padded data.
  */
-async function createTar(buffer: Buffer, filename: string): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const archive = archiver('tar');
-    const chunks: Buffer[] = [];
+function parseTar(buffer: Buffer): ArchiveEntry[] {
+  const entries: ArchiveEntry[] = [];
+  let offset = 0;
+  while (offset + 512 <= buffer.length) {
+    const header = buffer.subarray(offset, offset + 512);
+    if (header.every((b) => b === 0)) break; // end-of-archive marker
 
-    archive.on('data', (chunk: Buffer) => chunks.push(chunk));
-    archive.on('end', () => resolve(Buffer.concat(chunks)));
-    archive.on('error', reject);
+    let name = header.subarray(0, 100).toString('utf8').replace(/\0.*$/, '');
+    const prefix = header.subarray(345, 500).toString('utf8').replace(/\0.*$/, '');
+    if (prefix) name = `${prefix}/${name}`;
 
-    archive.append(buffer, { name: filename });
-    archive.finalize();
-  });
+    const sizeStr = header.subarray(124, 136).toString('ascii').replace(/\0.*$/, '').trim();
+    const size = parseInt(sizeStr, 8) || 0;
+    const typeflag = header[156];
+
+    offset += 512;
+    if (size > 0) {
+      // typeflag '0' (0x30) or NUL = regular file
+      if (typeflag === 0x30 || typeflag === 0) {
+        entries.push({ name, data: Buffer.from(buffer.subarray(offset, offset + size)) });
+      }
+      offset += Math.ceil(size / 512) * 512;
+    }
+  }
+  return entries;
 }
 
-/**
- * Create a GZ (tar.gz) archive from a single file buffer
- */
-async function createGz(buffer: Buffer, filename: string): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const archive = archiver('tar', { gzip: true, gzipOptions: { level: 6 } });
-    const chunks: Buffer[] = [];
+/** Read all regular-file entries out of a zip/tar/gz archive. */
+async function readEntries(buffer: Buffer, format: string): Promise<ArchiveEntry[]> {
+  const fmt = format.toLowerCase();
+  if (fmt === 'zip') {
+    const zip = await JSZip.loadAsync(buffer);
+    const entries: ArchiveEntry[] = [];
+    for (const name of Object.keys(zip.files)) {
+      const file = zip.files[name];
+      if (!file.dir) entries.push({ name, data: await file.async('nodebuffer') });
+    }
+    return entries;
+  }
+  if (fmt === 'tar') {
+    return parseTar(buffer);
+  }
+  if (fmt === 'gz') {
+    // App-produced .gz is a gzipped TAR; external raw gzip decompresses to a single file.
+    const inner = gunzipSync(buffer);
+    const tarEntries = parseTar(inner);
+    return tarEntries.length > 0 ? tarEntries : [{ name: 'file', data: inner }];
+  }
+  throw new Error(`Cannot read ${fmt} archives.`);
+}
 
+/** Write entries into a new zip/tar/gz (tar.gz) archive buffer. */
+async function writeArchive(entries: ArchiveEntry[], format: string): Promise<Buffer> {
+  const fmt = format.toLowerCase();
+  return new Promise((resolve, reject) => {
+    let archive: archiver.Archiver;
+    if (fmt === 'zip') archive = archiver('zip', { zlib: { level: 6 } });
+    else if (fmt === 'tar') archive = archiver('tar', {});
+    else if (fmt === 'gz') archive = archiver('tar', { gzip: true, gzipOptions: { level: 6 } });
+    else return reject(new Error(`Unsupported archive format: ${fmt}`));
+
+    const chunks: Buffer[] = [];
     archive.on('data', (chunk: Buffer) => chunks.push(chunk));
     archive.on('end', () => resolve(Buffer.concat(chunks)));
     archive.on('error', reject);
 
-    archive.append(buffer, { name: filename });
+    for (const entry of entries) archive.append(entry.data, { name: entry.name });
     archive.finalize();
   });
 }
@@ -101,20 +132,10 @@ async function extractZip(buffer: Buffer): Promise<{ buffer: Buffer; filename: s
 export async function createZipFromMultiple(
   files: { buffer: Buffer; filename: string }[]
 ): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const archive = archiver('zip', { zlib: { level: 6 } });
-    const chunks: Buffer[] = [];
-
-    archive.on('data', (chunk: Buffer) => chunks.push(chunk));
-    archive.on('end', () => resolve(Buffer.concat(chunks)));
-    archive.on('error', reject);
-
-    for (const file of files) {
-      archive.append(file.buffer, { name: file.filename });
-    }
-
-    archive.finalize();
-  });
+  return writeArchive(
+    files.map((f) => ({ name: f.filename, data: f.buffer })),
+    'zip'
+  );
 }
 
 /**
@@ -128,29 +149,26 @@ export async function convertArchive(
 ): Promise<{ buffer: Buffer; filename: string }> {
   const inLower = inputFormat.toLowerCase();
   const outLower = outputFormat.toLowerCase();
+  const baseName = originalFilename.replace(/\.[^.]+$/, '');
 
-  // Extract from archive
+  // Archive -> archive: re-package the contents into the target format.
+  if (isArchiveFormat(inLower) && isArchiveFormat(outLower)) {
+    const entries = await readEntries(buffer, inLower);
+    if (entries.length === 0) {
+      throw new Error('The archive appears to be empty or could not be read.');
+    }
+    const result = await writeArchive(entries, outLower);
+    return { buffer: result, filename: `${baseName}.${outLower}` };
+  }
+
+  // Extract a single file out of a zip.
   if (inLower === 'zip' && !isArchiveFormat(outLower)) {
     return extractZip(buffer);
   }
 
-  // Compress to archive
+  // Compress a single file into an archive.
   if (!isArchiveFormat(inLower) && isArchiveFormat(outLower)) {
-    let result: Buffer;
-    switch (outLower) {
-      case 'zip':
-        result = await createZip(buffer, originalFilename);
-        break;
-      case 'tar':
-        result = await createTar(buffer, originalFilename);
-        break;
-      case 'gz':
-        result = await createGz(buffer, originalFilename);
-        break;
-      default:
-        throw new Error(`Unsupported archive format: ${outLower}`);
-    }
-    const baseName = originalFilename.replace(/\.[^.]+$/, '');
+    const result = await writeArchive([{ name: originalFilename, data: buffer }], outLower);
     return { buffer: result, filename: `${baseName}.${outLower}` };
   }
 
